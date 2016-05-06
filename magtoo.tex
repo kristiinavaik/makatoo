@@ -14,15 +14,16 @@
 \usepackage{listings}
 \usepackage{bm}
 \usepackage{amsmath}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{chapterbib}
 
 \restylefloat{table}
 
-
-\usepackage{chapterbib}
-
 \lstset{
     language=XML,
-    morekeywords={encoding, bookstore, book, title, author, year, price, category}
+    morekeywords={encoding, bookstore, book, title, author, year, price, category,
+    Participants, participant, comment, u, w, replacement,t}
 }
 
 \usepackage[
@@ -33,15 +34,17 @@
 ]{natbib}
 \newcommand{\bi}[1]{\bf{\emph{{#1}}}}
 \renewcommand{\refname}{Kasutatud kirjandus}
+\renewcommand{\bibsection}{\vspace{0.5cm}\textbf{{\large Kasutatud kirjandus}}}
 \AtBeginDocument{\renewcommand{\harvardand}{\&}}
 \setcitestyle{aysep={,}}
 
-\usepackage{titlesec}
+
 \titlelabel{\thetitle\ }
 \renewcommand\thesection{\arabic{section}.}
 \renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
 
-\usepackage{enumitem}
+
 \setlist[itemize]{topsep=-1pt}
 \setlist[enumerate]{topsep=-1pt}
 \setlist[description]{
@@ -63,7 +66,7 @@
 \begin{titlepage}
     \begin{center}
         {\large TARTU ÜLIKOOL}\\[0.3cm]
-        {\large HUMANTITAARTEADUSTE JA KUNSTIDE VALDKOND}\\[0.3cm]
+        {\large HUMANITAARTEADUSTE JA KUNSTIDE VALDKOND}\\[0.3cm]
         {\large EESTI JA ÜLDKEELETEADUSE INSTITUUT}\\[0.3cm]
 
         \vfill
@@ -104,45 +107,6 @@ Siin: Reili Argus ja võimalusel ka muudki.
 
 
 \subsection{MINGI PEALKIRI}
-
-Eesti keele morfoloogia on rikkalik, kuid selle omandamine on keerukas protsess. Keele omandamisel tuleb lisaks reeglipärastele mallidele omandada ka ebareeglipärased mallid ning teada, kuidas toimuvad tüvesisesed muutused (astme- ja lõpuvaheldus) ning milliseid morfoloogilisi formatiive (tunnused ja lõpud) tuleb tüve külge lisada. 
-Konstruktivistlik lähenemine jagab morfoloogiasüsteemi omandamise kolme perioodi (Dressler 2003: 9-10) VIIDE:
-
-\begin{itemize}
-    \item Premorfoloogiline omandamine- etapp, millal lapse keeles esinevad morfoloogilised muuted, kuid morfoloogiline süsteem pole lahus kognitiivsetest struktuuridest;
-    \item Protomorfoloogiline periood- etapp, mil hakkab arenema morfoloogiline produktiivsus. Laps loob omale grammatika, mis on täiskasvanutest reeglipärasem ja pisem, kuid siiski abistab omandamist siis, kui muutemorfoloogia süsteem pole veel selge. Toimub esimeste reeglite ja analoogiaseoste loomine. Alguses keskendutakse erinevatele vormidele, mis muutuvad teatud kategooriate prototüüpideks;
-    \item Täiskasvanute morfoloogia omandamine- etapp, mil keelesüsteemi allmoodulid hakkavad omavahel koostööd tegema. Sel ajal hakkavad lapsel aktiivselt välja kujunema muutmissüsteemid, sealhulgas liitmine ja tuletamine.
-\end{itemize}
-
-Esimesed poolteist eluaastat tegelevad lapsed sisendkeele dešifreerimisega ehk püütakse öeldule tähendust omistada. Morfeemide hulk keeles on väga suur, seega pole 
-laps võimeline korraga kõiki morfeeme ära õppima ning selle tõttu keskendutakse pigem sagedasematele ja esilduvamatele morfeemidele. Olulised tegurid morfeemide valiku juures on sagedus, segmenteeritavus, morfeemi asend tüves ning selle allomorfide esinemise seaduspärasused. (Argus 2004: 16, Argus 2008: 19) VIIDE Esmalt peab laps selgeks saama kust algab ja lõpeb sõna. Esmalt omandatakse lühikesi lahtiseid silpe, kuna neid on lihtsam hääldada ja segmenteerida kui kinniseid. Kõnejada segmenteerimist ja silbipiiri ära tundmist hõlbustab reduplikatsioon, mis on hoidjakeelele väga omane (ta-da, ai-ai jne). Hoidjakeele rutiinsed väljendid aitavad lapsel aru saada, kust algab samasugune foneetiline realisatsioon. Reduplikatsioon aitab mõista sõnu kui mitmest osast koosnevast tervikust, mis omakorda aitab hilisemas etapis tajuda sõnavormis esinevat muutumatut (tüvi) ja muutuvat (tunnused ja lõpud) osa. Reduplikatiivsed sõnad hõlbustavad morfoloogia omandamist, sest tunnuseta vorme hakatakse tasapisi asendama morfoloogilisi elemente sisaldavate üksustega. Reduplikatsioon aitab omandada ka eesti keelele iseloomulikku kõnetakti ehk trohheust, mille puhul ühest lahtisest silbist tekitatakse kahesilbiline keeleüksus, kus vahelduvad rõhuline ja rõhuta silp. Enne kahe aastaseks saamist on lapse kõnes enamik keeleüksuseid trohheilise rütmiga. (Argus 2008a: 19-20) VIIDE
-
-Premorfoloogilisel etapil omandavad lapsed vorme terviklike üksustena, ilma et toimuks tüve ja tunnuse analüüsimist. Sel perioodil esineb laste kõnes kõige rohkem tunnusteta kahesilbilisi sõnu. Pikemates vormides, kas loobutakse rõhutust ehk viimasest silbist (nt \emph{sitikas} > \emph{siti}, \emph{traktor} > \emph{takku}/\emph{takka}), \emph{rebane} > \emph{repa} või jäetakse käändelõpp ära ja kasutatakse selle asemel genitiivi tüve (nt \emph{poti} > \emph{potile}). Kahesilbiliste vormide kasutust võib vaadata nii eelistuse kui ka piiranguna. Piirang selles mõttes, et laps ei pruugi olla suuteline hääldama pikemates sõnades teatud rõhutut silpi. Eelistus selles mõttes, et laps eelistab kahesilbilisi sõnu, kuna need on sisendkeeles kõige sagedasemad. Nii eesti kui ka soome keeles on lapsekeele uurijad märganud, et on perioode, mil laps pikendab ühesilbilise sõna kahesilbiliseks, nt \emph{lutt} > \emph{luti}, \emph{pai} > \emph{paia}. Näiteid on ka sellest, et liitsõnade omandamisel püütakse eelistada kahesilbilisi sõnu, nt \emph{jõuluvana} > \emph{jõvvu}. Vahetult enne protomorfoloogilist etappi lõpeb kahesilbiliste sõnade periood. (Argus 2008a: 20–21) VIIDE
-
-Kinniste silpide omandamine toimub nende hääldamise raskuse tõttu hiljem. Eesti keeles toimub kinniste esimeste silpide omandamine kinnistest järgsilpidest varem. Leidub näiteid, kus kinnise järgsilbiga sõnu mugandatakse trohheiliseks, nt \emph{viiul} > \emph{villu}/\emph{illu}, \emph{ämber} > \emph{ämpu}, \emph{põrr} > \emph{põrra}. Premorfoloogilisele etapile on iseloomulik, et lapse kõnes kinnise järgsilbi lõppkonsonant on ära jäetud, kuna laps ei kasuta selliseid käände- ja pöördelõppe, mis muudaksid järgsilbi kinniseks. Näiteks, partitiivi lõpp -\emph{t} jääb hääldamata (\emph{küpsist} > \emph{kispi}), mitmuse nominatiivi lõpp -\emph{d} jääb hääldamata (\emph{mammud} > \emph{mammu}), inessiivi lõpp -\emph{s} jääb hääldamata (\emph{vannis} > \emph{vanni}, \emph{aias} > \emph{aia}). Konsonandi hääldamine sõltub paljuski konsonandi positsioonist: sõnaalguline konsonant jääb tavaliselt alles, kuid sõnalõpuline konsonant mitte. Kinnise järgsilbi hilisem omandamine on ootuspärane, kuna eesti keeles on kahesilbilised lahtised lõppsilbiga sõnad väga sagedased. (Argus 2008a: 22) VIIDE
-
-
-Reili Argus (2008a: 23)VIIDE kirjutab, et võiks justkui eeldada, et morfoloogilised formatiivid ja õiges astmes välte valimine raskendab morfoloogilise süsteemi omandamist, aga selgub, et eesti keeles omandatakse produktiivsed vältevaheldusmallid (nõrgeneva tüvega ühesilbilised substantiivid) juba premorfoloogilisel perioodil, mil ei ole tunnused ega lõpud veel omandatatud. Vältevaheldus omandatakse varakult, kuna vältevahelduslikud sõnad on sisendkeeles sagedased ning väldete opositsioonidel on grammatiliste tähenduste eristamisel tähtis roll. Näiteks nõrga- või tugevaastmelised sõnad eristavad lapse jaoks grammatilisi tähendusi- valdaja ja objekt või objekt ja asukoht. (Argus 2008a: 23) VIIDE
-
-Lõpuvaheldusega seotud vigu esineb üleminekul premorfoloogiliselt perioodilt protomorfoloogilisele perioodile. Enim valmistab probleeme II-välteliste konsonantlõpuliste sõnade vormimoodustus. Peamiselt just selliste fonoloogiliselt keeruliste sõnadega (\emph{el}-, \emph{er}-lõpulised), kus laps väldib kolmest konsonandist koosnevat kaashäälikuühendit (nt *\emph{numbert}, *\emph{numberit} ’\emph{numbrit}’; *\emph{kahvelga}, *\emph{kahveliga} ’\emph{kahvliga}’). Raskusi on ka \emph{s}-lõpuliste sõnade vormimoodustusega (nt *\emph{kärbese} ’\emph{kärbse}’; *\emph{võõraseid} ’\emph{võõraid}’). Vigu esineb ka \emph{ne}-liiteliste sõnade vormimoodustusega, näiteks nominatiivkujulise tüve \emph{rebane} asemel kasutatakse *\emph{reba} ja genitiivivormina *\emph{rebali}. Olgugi, et Arguse poolt vaatluse all olevad lapsed olid vältevahelduse varakult omandanud, siis laadivaheldus koos lõpuvaheldusega nagu \emph{V} > \emph{me} põhjustas mõningaid raskusi. Näiteks oli laps ära õppinud vormi \emph{juhtmed} ning järgmiste vormide käänamine toimubki selle ühe vormi analoogial (ehk *\emph{juhtme} ’\emph{juhe}’; *\emph{juhtmet} ’\emph{juhet}’) ning hilisemas materjalis on näha, et lapse keelekasutusse tekib vorm *\emph{juhte} ’\emph{juhtme}’. See näitab, et laps on tajunud, et \emph{m}-häälik kaob, kuid ei oska seda veel õigesti kasutada. (Argus 2008a: 23–24) VIIDE
-
-Lõpuvaheldus pole nii süsteemne kui astmevaheldus ja selle omandamine on raske, kuna tüvevahelduslike vormide puhul tuleb lõpufoneemide järjestust vahetada. Lihtsaim viis sõnade moodustamiseks on lõpuhäälikute lisamine, kuid vahel üldistatakse muutesufiksit ka sõnadele, kus see ei ole normikohane, nt \emph{kauss}: *\emph{kausi}-\emph{t} (partitiivi läbipaistva lõpu -\emph{t} üldistamine), \emph{tühi}: *\emph{tühja}-\emph{sse} (illatiivi läbipaistva lõpu -\emph{sse} üldistamine). Eesti keeles on noomenitel lõpuvaheldusmalle rohkem kui pöördsõnadel, mistõttu ei valmista pöördsõnade lõpuvaheldusmallid lastele ka probleeme. Näiteks sellised tüvevaheldused nagu \emph{sööme}: \emph{süüa}, \emph{lööb}: \emph{lüüa}, \emph{ei pea}: \emph{pidime} on omandatud veatult. (Argus 2008a: 24, 26-27, 2008b: 20) VIIDE
-
-Reduplikatiivsuse kõrval on morfoloogia süsteemi omandamisel tähtis roll ka deminutiivtuletustel, mille käigus nihutatakse astmevaheldusega sõnad astmevahelduseta muuttüüpi. Näiteks \emph{kiisu} ja \emph{kutsu} saavad selle nihke tõttu partitiivi läbipaistva lõpu -\emph{t}: \emph{kiisu}-\emph{t}, \emph{kutsu}-\emph{t}. Siinkohal on hõlbustav tegur ka vormihomonüümia, sest tuletatud sõnad nihkuvad sellisesse muuttüüpi, kus nominatiivi- ja genitiivivormid on homonüümsed. Väidetakse, et samakujulised vormid soodustavad muuteparadigmade omandamist, kuid see võib olla ka pidurdavaks teguriks. Nimelt võib laps hakata käänama ka \emph{pesa}-tüüpi sõnu astmevahelduseta muuttüübi järgi, nt *\emph{muna}-\emph{t}, *\emph{saba}-\emph{t}.(Argus 2008a: 25, 2008b: 19-20) VIIDE
-
-Lähemalt võiks natuke rääkida ka muutemorfoloogia arengust sõnaliigiti. Argus kirjutab (2008a), et morfoloogiasüsteemi omandamine toimub sõnaliigiti erineva kiirusega ja et mõnes keeles omandatakse noomeni morfoloogia kiiremini kui verbi morfoloogia. Seda on põhjendatud sellega, et noomenite puhul tuleb omandada vähem morfoloogilisi kategooriaid. Lisaks arvatakse, et verbe omandatakse teisiti, sest noomenite referentsiaalsust on kergem hoomata. Verbid on semantiliselt keerukamad ja on rohkem seotud keele süntaktilise struktuuriga. (Argus 2008a: 37)VIIDE Kasutuspõhise lähenemise järgi konstrueerivad lapsed grammatika sellest, mida nad kuulevad. Näiteks kui keeles on ülekaalus substantiivid, siis ainult sellepärast, et substantiivide esinemissagedus on sisendkeeles suur. 
-
-
-<<<<<<< Updated upstream
-
- Melissa Bowerman annab oma loengusarjas ``Ten lectures on language, cognition and language acquisition'' (2010 VIIDE) ülevaate sellest, kuidas lapsed õpivad kaardistama keelelisi vorme (sõnad, morfeemid, sõnajärg konstruktsioonid jpm) ja nende tähendusi. Sellele küsimusele läheneti keeltevahelise võrdluse perspektiivist. Välja tuli see, et mõned keeled on verbi-``sõbralikumad'' kui teised. Näiteks inglise hoidjakeeles domineerivad noomenid, kuid on keeli, kus noomenite ja verbide kasutus on ühtlasemalt jaotunud, nt korea ja mandariini keel ning tseltali ja tsotsili keel. Nendes keeltes on objekti informatsioon peidetud verbidesse. Näiteks tseltali ja tsotsili keeles on mitu verbi söömise tähistamiseks ja vastava verbi valik sõltub sellest, mida süüakse. Seega verbid kannavad endas objekti kohta palju informatsiooni ja seetõttu muutuvad noomenid diskursuses vähem oluliseks. See, millise sõnaliigi muutemorfoloogia omandamine kiiremini toimub, oleneb sisendkeele eripärast ja on vägagi keelespetsiifiline. (Bowerman) VIIDE.
-=======
-JAMA:
-Melissa Bowerman annab oma loengusarjas ``Ten lectures on language, cognition and language acquisition'' (2010 VIIDE) ülevaate sellest, kuidas lapsed õpivad kaardistama keelelisi vorme (sõnad, morfeemid, sõnajärg konstruktsioonid jpm) ja nende tähendusi. Sellele küsimusele läheneti keeltevahelise võrdluse perspektiivist. Välja tuli see, et mõned keeled on verbi-``sõbralikumad'' kui teised. Näiteks inglise hoidjakeeles domineerivad noomenid, kuid on keeli, kus noomenite ja verbide kasutus on ühtlasemalt jaotunud, nt korea ja mandariini keel ning tseltali ja tsotsili keel. Nendes keeltes on objekti informatsioon peidetud verbidesse. Näiteks tseltali ja tsotsili keeles on mitu verbi söömise tähistamiseks ja vastava verbi valik sõltub sellest, mida süüakse. Seega verbid kannavad endas objekti kohta palju informatsiooni ja seetõttu muutuvad noomenid diskursuses vähem oluliseks. See, millise sõnaliigi muutemorfoloogia omandamine kiiremini toimub, oleneb sisendkeele eripärast ja on vägagi keelespetsiifiline. (Bowerman) VIIDE.
->>>>>>> Stashed changes
-
-Argus ja Kõrgesaar uurisid sõnaliikide jaotumist ja esinemissagedust lapse ja täiskasvanu vahelistes spontaansetes igapäevavestlustes. Sõnaliikide jaotusena kasutati traditsioonilist liigitust, onomatopoeetilisi sõnu ning ebaselgeid sõnu ja üneeme arvestati eraldi. 
-
 
 
 
@@ -226,259 +190,7 @@ Süntaktiline märgendamine põhineb kitsenduste grammatika formalismil, mille k
 märgendamise all sõnatähenduste ühestamist. Oluline see, et korpus oleks korralikult ja standardselt märgendatud,
 sest nii saab seda korpust kasutada erinevate eesmärkide tarbeks. Morfoloogiline analüüs on kõikide teiste märgendustasemete (süntaktiline, semantiline jne) alus. \citep[13--14]{KR}
 
-\section{Sõnaliikide kitsaskohad}
-
-``Kas tegelik tekst allub eesti keele morfoloogilistele kirjeldustele'' (Heiki-Jaan Kaalep, Kadri Muischnek, Kaili Müürisep, Andriela Rääbis, Külli Habicht).
-
-Kadri Muischnek ja Kadri Vider ``Sõnaliigituse kitsaskohad eesti keele arvutianalüüsis''\\
-Miskit saaks ka siit:\\
-Rudolf Karelson ``Taas probleemidest sõnaliigi määramisel''\\
-Tiit Hennoste artikkel ``Suulise kõne uurimine ja sõnaliigi probleemid'' või ``Suuline kõne ja morfoloogiaanalüsaator''\\ 
-
-Üks huvitav artikkel Reili Arguselt on ``Imitatiivide kohast lastekeeles: reduplikatsioonist, morfoloogiast ja sõnaliigilisest ambivalentsusest'', kus räägitakse imitatiividest ja onomatopoeetilistest sõnadest. Ja see teema haakub väga palju praktilise osaga: morfanalüüsaatori kategooriad ei sobi hästi selliste sõnade jaoks.
-
-AGA ma kindlasti ootan ettepanekuid!
-
-
-
-\newpage
-\section{Morfoloogiliselt märgendatud lapsekeele korpus}
-
-Selles peatükis tutvustatakse CHILDES-i korpust ja eesti keele alamkorpuseid, mida siinkirjutaja kasutab tulevase magistritöö materjalina. Lisaks antakse lühiülevaade alamkorpuste standardiseerimise probleemidest.
-
-\subsection{CHILDES}
-CHILDES (\emph{Child Language Data Exchange System}) on \emph{Talkbank}i alamkorpus, mis loodi 1984. aastal Brian MacWhinney (Carnagie Melloni ülikool) ja Catherine Snow (Harvardi ülikool) poolt selleks, et koondada kokku erinevate keeleuurijate kogutud keelematerjali eesmärgiga, et need oleksid kõigile vabalt kättesaadavad ja võimaldaksid eri keelte uurijatel oma andmeid ja uurimistulemusi teiste keeltega võrrelda. CHILDES-ist on saanud mahukas, rahvusvaheline ja usaldusväärne andmebaas, mis sisaldab nii audio- ja videolindistusi kui ka standardsel viisil transkribeeritud tekste. \citep[1]{Gillis}
-
-CHILDES-i süsteemi juures peab silmas pidada seda, et see funktsioneerib \emph{repositooriumina}. Repositooriumist võib mõelda kui laost või arhiivist, kuhu üles laetud materjali talletatakse digitaalselt. Repositooriumi jaoks on oluline, et korpused oleksid avalikult kättesaadavad ja standardsel viisil transkribeeritud ja et andmekogu oleks kooskõlas rahvusvaheliste standarditega. Seetõttu pakub CHILDES erinevaid tarkvaralisi töövahendeid, mida arendatakse ja kaasajastatakse kõigil platvormidel (\emph{Windows}, \emph{MacOS}, \emph{Unix}). \citep[1]{Gillis}
-
-CHILDES-i andmebaas jaguneb nelja suurde kategooriasse:
-\begin{enumerate}
-    \item esimese keele omandamise korpused;
-    \item teise keele keele omandamise korpused;
-    \item kakskeelsuse korpused ja 
-    \item kliiniliste probleemide uurimiseks mõeldud korpused. \citep[1]{Gillis}
-\end{enumerate}
-
-Andmebaasi korpuste tekstide/lindistuste transkribeerimiseks/kodeerimiseks kasutatakse CHAT-käsiraamatut (\emph{Codes of the Human Analysis of Transcripts}, vt \citep{CHAT}). CHAT-käsiraamat on mõeldud selleks, et kõik lindistused/tekstid oleksid standartsel viisil transkribeeritud ja kodeeritud. Käsiraamatus on väga suur valik kodeeringuid, kuid transkribeerija ei ole kohustatud neid kõiki kasutama. Oluline oleks, et transkribeerimist ja kodeerimist tehakse vähemalt baastasemel. Lisaks CHAT-käsiraamatule on keeleuurijatel võimalus kasutada ka analüüsimistarkvara ja redaktorit CLAN (\emph{Computerized Language Analysis}), mis abistab keeleuurijat korpuse transkribeerimisel, kodeerimisel ja analüüsimisel. CLAN tarkvaraga loodud failiformaati nimetatakse CHAT-failiks ja see salvestatakse laiendiga .\emph{cha} (xxx.cha) \citep[1--2, 6]{Gillis} Talkbankis on kasutusel ka Chatter tarkvara, mis teostab CHAT-failide ranget valideerimist ja ka konverteerimist valiidseteks XML-failideks \citep{CHATTER}.
-
-Hetkel on andmebaasis esindatud 39 keelt: germaani keeled (afrikaani, taani, hollandi, inglise, saksa, norra ja rootsi keel), romaani keeled (katalaani, prantsuse, itaalia, portugali, rumeenia ja hispaania keel), slaavi keeled (horvaadi, vene, serbia ja sloveenia keel), keldi keeled (iiri ja kõmri keel), afroaasia keeled (araabia, heebrea ja berberi keeled), hiina-tiibeti keeled (mandariini hiina, kantoniini, taiwani ja tai keel), draviidi keeled (tamili keel), uurali keeled (eesti ja ungari keel), indoiraani keeled (farsi keel), austroneesia keeled (indoneesia keel), kreeka, cree ja baski keeled. 2013. aasta maikuu seisuga koosnes andmebaas 13 miljonist lausungist ja rohkem kui 50 miljonist sõnavormist. Kõige suurema mahuga on esimesse kategooriasse kuuluvad ehk esimese keele korpused (11 miljonit lausungit ja 43 miljonit sõnavormi). Kõige enam on esindatud inglise, saksa ja prantsuse keel.\citep[2--5]{Gillis}
-
-\subsection{Eesti keele alamkorpused}
-
-CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lastekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}. Tabelid 1--7 kajastavad infot iga alamkorpuse lindistuste arvu ja suuruse kohta. Lisaks on välja toodud ka laste nimed ning lapse vanuseline ja sooline jaotumine.\\
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Vija korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi               & Vanus     & Sugu               & Sessioonid & Suurus  \\ \hline\hline
-\multirow{3}{*}{Andreas} & 1;7--1;11 & \multirow{3}{*}{m} & 7          & 126.9kB   \\ \cline{2-2} \cline{4-5} 
-                         & 2;0--2;8  &                    & 37         & 1100kB    \\ \cline{2-2} \cline{4-5} 
-                         & 3;0--3;1  &                    & 30         & 998.85kB  \\ \hline
-Kokku                    & \multicolumn{2}{l|}{}          & 74         & 2225.75kB \\ \hline
-\end{tabular}
-\end{table}
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Arguse korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi               & Vanus     & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-\multirow{2}{*}{Hendrik} & 1;8--1;11 & \multirow{2}{*}{m}        & 5                               & 25.6kB   \\ \cline{2-2} \cline{4-5} 
-                         & 2;0--2;5  &                           & 12                              & 103.5kB  \\ \hline
-Kokku                    & \multicolumn{2}{l|}{}                 & 17                              & 129.1kB  \\ \hline
-\end{tabular}
-\end{table}
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Kõrgesaare korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi              & Vanus      & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-Andri                   & 11;7--11;9 & m                         & 2                               & 63.6kB   \\ \hline
-Arabella                & 11;8       & f                         & 1                               & 19kB     \\ \hline
-Artur                   & 1;4        & m                         & 1                               & 29.2kB   \\ \hline
-Gregory                 & 6;6--10;5  & m                         & 10                              & 344.7kB  \\ \hline
-\multirow{2}{*}{Harley} & 4;0--14;1  & m                         & 19                              & 387.8kB  \\ \cline{2-5} 
-                        & 4;0        & f                         & 2                               & 10.7kB   \\ \hline
-Hellyn                  & 8;7        & f                         & 1                               & 26.4kB   \\ \hline
-Jaana                   & 2;5        & f                         & 1                               & 25.1kB   \\ \hline
-Kaisa                   & 5;8--5;9   & f                         & 2                               & 59.9kB   \\ \hline
-Mia                     & 2;3        & f                         & 1                               & 49.2kB   \\ \hline
-Olivia                  & 3;2        & f                         & 1                               & 37.8kB   \\ \hline
-Ruuben                  & 1;3--3;6   & m                         & 4                               & 96.4kB   \\ \hline
-Sirlin                  & 1;3        & f                         & 1                               & 19.3kB   \\ \hline
-Kokku                   & \multicolumn{2}{l|}{}                  & 46                              & 1169.1kB \\ \hline
-\end{tabular}
-\end{table}
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Beeki korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi               & Vanus      & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-\multirow{3}{*}{Liisbet} & 0;9--0;11 & \multirow{3}{*}{f}        & 6                               & 103.7kB  \\ \cline{2-2} \cline{4-5} 
-                         & 1;0--1;2   &                           & 7                               & 132.3kB  \\ \cline{2-2} \cline{4-5} 
-                         & 2;0--2;5   &                           & 7                               & 212.2  \\ \hline
-Kokku                    & \multicolumn{2}{l|}{}                  & 20                              & 448.2kB  \\ \hline
-\end{tabular}
-\end{table}
-
-
-\begin{table}[H]
-\centering
-\caption{Kapaneni korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi           & Vanus     & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-Martina              & 1;3--2;1  & f                         & 2                               & 78.4kB   \\ \hline
-\multirow{2}{*}{n/a} & 2;3--2;7  & n/a                       & 2                               & 62.5kB   \\ \cline{2-5} 
-                     & 1;10--3;1 & f                         & 7                               & 220.4kB  \\ \hline
-Kokku                & \multicolumn{2}{l|}{}                 & 11                              & 361.3kB  \\ \hline
-\end{tabular}
-\end{table}
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Zuppingi korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi             & Vanus     & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-\multirow{2}{*}{Linda} & 1;5--1;7  & \multirow{2}{*}{f}        & 3                               & 40.4kB   \\ \cline{2-2} \cline{4-5} 
-                       & 2;0--2;9  &                           & 3                               & 64kB     \\ \hline
-\multirow{4}{*}{n/a}   & 1;3--1;11 & \multirow{4}{*}{f}        & 6                               & 80kB     \\ \cline{2-2} \cline{4-5} 
-                       & 2;1--2;11 &                           & 9                               & 153.9kB  \\ \cline{2-2} \cline{4-5} 
-                       & 3;0       &                           & 1                               & 20.3kB   \\ \cline{2-2} \cline{4-5} 
-                       & 4;2       &                           & 1                               & 16.6kB   \\ \hline
-Kokku                  & \multicolumn{2}{l|}{}                 & 23                              & 375.2kB  \\ \hline
-\end{tabular}
-\end{table}
-\hfill
-
-\begin{table}[H]
-\centering
-\caption{Kohleri korpus}
-\begin{tabular}{|l|l|c|c|l|}
-\hline
-Lapse nimi              & Vanus      & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & Suurus \\ \hline\hline
-\multirow{2}{*}{Anna}   & 1;10--1;11 & \multirow{2}{*}{f}        & 4                               & 51.7kB   \\ \cline{2-2} \cline{4-5} 
-                        & 2;0--2;1   &                           & 3                               & 42kB     \\ \hline
-Carlos                  & 1;7--1;10  & m                         & 9                               & 98.5kB   \\ \hline
-Helen                   & 1;1--1;10  & f                         & 7                               & 94.9kB   \\ \hline
-Henri                   & 2;2--2;3   & m                         & 3                               & 33.4kB   \\ \hline
-Mari                    & 2;5--2;8   & f                         & 7                               & 97.7kB   \\ \hline
-\multirow{2}{*}{Sandor} & 1;2--1;10  & \multirow{2}{*}{m}        & 7                               & 120.3kB  \\ \cline{2-2} \cline{4-5} 
-                        & 2;2        &                           & 3                               & 58.9kB   \\ \hline
-\multirow{2}{*}{Stella} & 0;11       & \multirow{2}{*}{f}        & 1                               & 3.9kB    \\ \cline{2-2} \cline{4-5} 
-                        & 1;0--1;6   &                           & 8                               & 82.2kB   \\ \hline
-Taimo                   & 1;5--1;11  & m                         & 9                               & 86.2kB   \\ \hline
-Kokku                   & \multicolumn{2}{l|}{}                  & 61                              & 769.7kB  \\ \hline
-\end{tabular}
-\end{table}
-
-Kõige mahukamad on Vija, Kõrgesaare ja Kohleri korpused. Neist mahukaim on Vija korpus, koosnedes 74 transkriptsioonist. Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. Kõrgesaare korpus koosneb 46 transkriptsioonist ja materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. Kohleri korpus koosneb 61 transkriptsioonist. Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
-
-Mahult kõige väiksemad on Arguse, Zuppingi, Kapaneni ja Beeki korpus. Arguse korpus koosneb 17 transkriptsioonist ja lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat. Beeki korpus koosneb 20 trankriptsioonist ja lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat. Kapaneni korpus sisaldab 11 trankstriptsiooni. Muist trankriptsioonides puudub info lapse nime ja soo kohta, kuid võib oletada, et tegu on Martinaga, ja lindistusi tehti vahemikus 1;3--2;7 eluaastat. Zuppingi korpus koosneb 23 transkiptsioonist. Ka siin mõnes failis on info puudulik, aga võib samuti oletada, et kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. CHILDES-i eesti keele alamkorpus koosneb 252 CHAT-failist ja ühtlasi on ka iga fail konverteeritud XML-kujule.
-
-Transkriptsioonid algavad päisega (ingl k. \emph{header}), kus antakse informatsiooni lindistuse aja, koha, osalejate, kestuse, laste vanuse jms kohta. Põhiridadele paigutatakse kõnelejat tähistav kolmetäheline kood, millele järgneb  kõneleja tegelik kõne. Tegelikule kõnele lisatakse juurde, kas transkribeerija- või uurijapoolsed kommentaarid või kodeeringud (neid nimetatakse \emph{sõltridadeks}). Sõltridade arv oleneb keeleuurija eesmärkidest. Nagu suulise kõne puhulgi, pole ainuüksi verbaalse info järgi aru saada, millest hetkel jutt käib, seega tuleks transkribeerimisel kasutada vähemalt üht sõltrida, nt kommentaaririda. (\citealp[68]{Argus2007}; \citealp{CHAT}) Vt näide (1) ja (2).
-\hfill
-
-(1):
-\begin{description}
-    \item*MOT: arvuta need kõigepealt ära.
-    \item*CHI: jah mm kaheksa miinus seitse on üks.
-    \item*CHI: niimoodi kümme miinus üks on üheksa.
-    \item\%com CHI kirjutab ja ise räägib samal ajal kaasa.
-    \item(Kõrgesaar, gregory03.cha)
-\end{description}
-\hfill
-
-(2)
-\begin{description}
-    \item*FAT:   köögis saab teritada , köögis on nuga .
-    \item*MOT:   +< aga siin oli ka teritaja .
-    \item*FAT:   jaa aga ma ei tea , kus see on .
-    \item*CHI:   +< seda kätte .
-    \item*FAT:   mida sa tahad kätte , issi ei tea , kus see teritaja on .
-    \item*MOT:   see teritas väga ilusasti muidu .
-    \item*CHI:   telita [*] .
-    \item\%err:   terita=teritaja \$MOR
-    \item\%par:   CHI aevastab
-    \item(Vija, 20008.cha)
-\end{description}
-
-
-\subsection{Mida teistes keeltes tehtud vms...}
-
-Siin rääkida ehk sellest, et kas ja millised teised keeled on CHILDES-is morfanalüüsiga esindatud, nt heebrea keeles on sellega usinasti tegeldud. Aga ma ei ole kindel, et see alapeatükk siia vahele sobib. 
-
-\subsection{Alamkorpuste standardiseerimise probleemid}
-
-\emph{TO-DO}:\\
-SIIN TAHAKS KIRJUTADA KA ``From CHILDES to TalkBank'' (Brian MacWhinney, CHILDES-i asutaja), sest siin tuuakse välja üldised transkriptsiooni probleemid.\\
-SIIN tahaks puudutada ka morfoloogiliste vigade teemat (et mida veaks pidada, vea liigitusprobleemist, vigade transkribeerimis- ja kodeerimisprobleemidest, veakodeerimisvõimalustest ja see kõik puudutab CHILDES-it). Aluseks oleks Arguse artikkel ``Eesti lastekeelekorpuse morfoloogiliste vigade
-märgendamisest ja liigitamisest''.\\
-\emph{END-TO-DO}
-
-Reili Argus kirjeldab oma artiklis \citep{Argus2007} mõningaid tranksribeerimise ja CHILDES-i tarkvara kasutamisega seonduvaid probleeme.
-
-Esiteks, CLAN-i analüüsitarkvara on mõeldud inglise keelele, seega tuleb eesti keele analüüsimisel arvestada sellega, et eesti keel on võrreldes inglise keelega sünteetilisema süsteemiga keel. Seega, kui keeleuurija tahab CLAN-i tarkvara kasutades teha mingisuguseid sagedusloendeid, siis ei saada adekvaatseid tulemusi. Näiteks lekseemi \emph{kala} kolm sõnavormi \emph{kala}, \emph{kalaga}, \emph{kalale} loetakse programmi poolt eri lekseemideks. Selline asjaolu põhjustab ka statistiliselt väärate arvude tekkimist. Homonüümide eristamist tuleb teha näiteks käsitsi.\citep[70]{Argus2007}
-
-Argus väidab, et kuna lindistuste transkribeerimisel kasutatakse kuuldeortograafiat, siis need transkriptsioonid ei anna tõetruud pilti sellest, milline on lapse tegelik keelekasutus. Kui juba suulise kõne automaatne analüüsimine on keeruline, siis on lapse suulise keele analüüsimine veel keerukam. Lindistuste puhul on tegemist spontaanse suulise kõnega, mis sisaldab elemente, mida pole tarvis analüüsida, nt häälitsused. Seega selleks, et korpuseid oleks võimalik analüüsida nii, et need annaksid keelekasutuse kohta autentse pildi, ja et oleks võimalik neid standardsele kujule viia, tuleb alustada juba korpuse tekstide transkribeerimise tasandist. \citep[71]{Argus2007}
-
-Teiseks, probleeme tekitab see, et lapse puhul on tegemist ju areneva keelekasutusega, milles esineb palju erilisi tunnuseid, nt sõnakordus. Näiteks, kui sellist lausungit transkribeeritakse nii \emph{*CHI: onu, onu, onu}, siis tähendab see seda, et lapse lausung koosneb kolmest sõnavormist, aga kui näiteks transkribeerida seda lausungit viisil \emph{*CHI: onu [/] onu [/] onu [/]}, siis koosneb see lausung ühest sõnavormist, kuna CLAN-süsteem kohtleb seda kui korduvat üksust. Lisaks sõnakordusele on probleemiks ka onomatopoeetilised sõnad, mida esineb lapsekeeles väga palju ja seetõttu tuleb transkribeerimisel läbi mõelda, kuidas selliseid juhtumeid lahendada. CHAT-käsiraamat soovitab onomatopoeetiliste sõnade lõppu lisada sümbol \emph{@} \citep[72--73]{Argus2007}, aga reaalsuses kasutatakse seda ikka väga vähe ja see omakorda põhjustab seda, et transkriptsioonid ei järgi ühtset märgendamisstiili.
-
-Võrreldes täiskasvanutega esineb lapsekeeles rohkem vigaseid vorme. Transkribeerimisel (nt vigade korral) on oluline, et transkribeerija peab nägema ja teadma seda, mida tegelikult öelda taheti, ja vastavad kodeeringud ka transkriptsiooni lisama nii, et vead oleksid juba esimesel tasandil liigitatud. \citep[74]{Argus2007} Kahjuks praegused alamkorpused pole veakodeerimise osas järjepidevad, kord on viga kodeeritud ühtmoodi, kord teistmoodi ja vahel üldse mitte. Näites (2) on viga põhireal kodeeritud kooloniga (\emph{:}), mille järele lisatakse korrektne sõnavorm. Näites (3) on veakodeerimine hoopis teine: põhireal järgneb vigasele sõnale [*] ja sõltreale on lisatud vearida (\emph{\%err}), kus  toimub vea lahtikodeerimine ja sümboli \emph{=} järele lisatakse korrektne vorm. Näites (4) on viga üldse kodeerimata jäetud.\\
-\hfill
-
-(2)
-\begin{description}
-    \item*FAT: kriit pane tahvli peale .
-    \item*CHI: kit [: kriit] .
-    \item*CHI: kit [: kriit] (.) vahvlile [= tahvlile] pääle [: peale] .
-    \item(Vija; 20007.cha)
-\end{description}
-\hfill
-
-(3)
-\begin{description}
-    \item*CHI: issi , loe seda .
-    \item*CHI: issi , nüüd see [*] ei pane kinni !
-    \item\%err: see=seda \$MOR
-    \item(Vija; 20007.cha)
-\end{description}
-\hfill
-
-(4)
-\begin{description}
-    \item*FAT: viskad minema või?
-    \item*FAT: kus sa viskad selle?
-    \item*CHI: kinn.
-    \item*FAT: sinna viskad jah.
-    \item(Kõrgesaar; arabella01f.cha)
-\end{description}
-\hfill
-
-
-Morfoloogiliselt märgendatud korpuse loomine on väga vajalik, sest CHILDES-i analüüsitarkvara ei võimalda eesti keele morfoloogilist analüüsimist ja selle käsitsi tegemine oleks väga ajamahukas töö. Seega, praegusel hetkel on lapsekeele uurijatel automaatse statistika tegemine raskendatud ja paraku tehakse distributsioonianalüüse käsitsi \citep[78]{Argus2007}.
-
-\newpage
-
-\section{Praktiline osa}
-Siit edasi kirjutaks oma praktilisest osast.
-
 \subsection{Mis on XML?}
-
-Mis on XML?
 
 XML (\emph{EXtensible Markup Language}) on \emph{World Wide Web} konsortsiumi poolt soovitatud markeerimiskeel, mille eesmärk on andmete talletamine ja jagamine erinevate infosüsteemide vahel. XML-dokumentides kujutatakse andmeid hierarhilise puustruktuurina. XML-i puu koosneb juurelemendist (\emph{root}), millel on alamelemendid ehk järglased (\emph{child elements}). Kõikidel elementidel võib olla järglaseid. Elementidevahelisi suhteid kirjeldavad sellised mõisted nagu ülem (\emph{parent}), alluv (\emph{child}) ja kolleeg (\emph{sibling}). Ülemal on alluvad, alluval on ülem ja kolleegid on samal tasemel paiknevad alluvad. Kõikidel elementidel võib olla sisu (\emph{text content}) ja atribuut ehk tunnus. \citep{XML} Joonis 1 illustreerib raamatupoe elementide ehk raamatute hierarhilist struktuuri:
 
@@ -522,58 +234,597 @@ Märgendite abil pannakse paika andmete loogiline struktuur. XML-il pole eeldefi
 \begin{enumerate}
     \item eksisteerib juurelement;
     \item elementidel peab olema lõpumärgend;
-    \item elementide pesitsemine (\emph{nesting}) on rangelt määratletud;
+    \item elementide pesitsemine ehk üksteise sees paiknemine (\emph{nesting}) on rangelt määratletud;
     \item atribuutide väärtused peavad olema jutumärkides.
     \citep{XML}
 \end{enumerate}
 
 Kui kasutaja loob enda märgenduse, siis XML-protsessoril pole võimalik selle valiidsuses veenduda, sest pole midagi millegagi võrrelda. Selleks tuleb kasutajal XML-dokumendis defineerida kasutatav süntaks. XML-dokumentide valideerimiseks on kaks viisi: dokumenditüübi definitsioon (\emph{document type definition} -- DTD) ja XML-skeema (\emph{XML schema}). Nende asukoht on vahetult peale XML-versiooni deklaratsiooni ja kindlasti enne dokumendi keha. Juhul kui XML-dokument on DTD või XML skeemaga vastavuses, siis on ka XML-dokument kehtiv. \citep{XML}
 
-\subsection{Tööprotsess}
+\subsection{Sõnaliikide kitsaskohad}
 
-Magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lapsekeele korpus, kuhu on koondatud kõik CHILDES-i eesti keele alamkorpused. Esialgne plaan oli konverteerida omalkäel kõik CHAT-failid XML-kujule, kuid sellega tekkisid mõningad tagasilöögid. Selleks, et CHAT-faile XML-kujule konverteerida, oleks tarvis, et kõik alamkorpused oleksid ühtsel kujul transkribeeritud ja kodeeritud. Peatükis 5.4 tõin välja mõned näited sellest, kui ebajärjepidevalt on seda tehtud. Isegi, kui korpused oleksid olnud standartsel kujul, siis oleks konverteerimisskripti tegemine muutunud väga keeruliseks ja ülejõukäivaks ülesandeks. Põhjus seisneb selles, et CHAT-käsiraamatus on väga suur ja lai valik kodeeringuid, mida on paraku ühel inimesel raske hallata, vt näide (5).
+``Kas tegelik tekst allub eesti keele morfoloogilistele kirjeldustele'' (Heiki-Jaan Kaalep, Kadri Muischnek, Kaili Müürisep, Andriela Rääbis, Külli Habicht).
 
-(5)
+Kadri Muischnek ja Kadri Vider ``Sõnaliigituse kitsaskohad eesti keele arvutianalüüsis''\\
+Miskit saaks ka siit:\\
+Rudolf Karelson ``Taas probleemidest sõnaliigi määramisel''\\
+Tiit Hennoste artikkel ``Suulise kõne uurimine ja sõnaliigi probleemid'' või ``Suuline kõne ja morfoloogiaanalüsaator''\\ 
+
+Üks huvitav artikkel Reili Arguselt on ``Imitatiivide kohast lastekeeles: reduplikatsioonist, morfoloogiast ja sõnaliigilisest ambivalentsusest'', kus räägitakse imitatiividest ja onomatopoeetilistest sõnadest. Ja see teema haakub väga palju praktilise osaga: morfanalüüsaatori kategooriad ei sobi hästi selliste sõnade jaoks.
+
+AGA ma kindlasti ootan ettepanekuid!
+
+
+\newpage
+\section{CHILDES ja eesti keele alamkorpused}
+
+Selles peatükis tutvustatakse CHILDES-i korpust ja eesti keele alamkorpuseid, mida siinkirjutaja kasutab tulevase magistritöö materjalina. Lisaks antakse lühiülevaade alamkorpuste standardiseerimise probleemidest.
+
+\subsection{CHILDES}
+CHILDES (\emph{Child Language Data Exchange System}) on \emph{Talkbank}i alamkorpus, mis loodi 1984. aastal Brian MacWhinney (Carnagie Melloni ülikool) ja Catherine Snow (Harvardi ülikool) poolt selleks, et koondada kokku erinevate keeleuurijate kogutud keelematerjali eesmärgiga, et need oleksid kõigile vabalt kättesaadavad ja võimaldaksid eri keelte uurijatel oma andmeid ja uurimistulemusi teiste keeltega võrrelda. CHILDES-ist on saanud mahukas, rahvusvaheline ja usaldusväärne andmebaas, mis sisaldab nii audio- ja videolindistusi kui ka standardsel viisil transkribeeritud tekste. \citep[1]{Gillis}
+
+CHILDES-i süsteemi juures peab silmas pidama seda, et see funktsioneerib \emph{repositooriumina}. Repositooriumist võib mõelda kui laost või arhiivist, kuhu üles laetud materjali talletatakse digitaalselt. Repositooriumi jaoks on oluline, et korpused oleksid avalikult kättesaadavad ja standardsel viisil transkribeeritud ja et andmekogu oleks kooskõlas rahvusvaheliste standarditega. Seetõttu pakub CHILDES erinevaid tarkvaralisi töövahendeid, mida arendatakse ja kaasajastatakse kõigil platvormidel (\emph{Windows}, \emph{MacOS}, \emph{Unix}). \citep[1]{Gillis}
+
+CHILDES-i andmebaas jaguneb nelja suurde kategooriasse:
+\begin{enumerate}
+    \item esimese keele omandamine;
+    \item teise keele keele omandamine;
+    \item kakskeelsus ja 
+    \item kliinilised probleemid. \citep[1]{Gillis}
+\end{enumerate}
+
+Andmebaasi korpuste tekstide/lindistuste transkribeerimiseks/kodeerimiseks kasutatakse CHAT-käsiraamatut (\emph{Codes of the Human Analysis of Transcripts}, vt \citep{CHAT}). CHAT-käsiraamat on mõeldud selleks, et kõik lindistused/tekstid oleksid standardsel viisil transkribeeritud ja kodeeritud. Käsiraamatus on väga suur valik kodeeringuid, kuid transkribeerija ei ole kohustatud neid kõiki kasutama. Oluline oleks, et transkribeerimist ja kodeerimist tehakse vähemalt baastasemel. Lisaks CHAT-käsiraamatule on keeleuurijatel võimalus kasutada ka analüüsimistarkvara ja redaktorit CLAN (\emph{Computerized Language Analysis}), mis abistab keeleuurijat korpuse transkribeerimisel, kodeerimisel ja analüüsimisel. CLAN tarkvaraga loodud failiformaati nimetatakse CHAT-failiks ja see salvestatakse laiendiga .\emph{cha} (xxx.cha) \citep[1--2, 6]{Gillis} Talkbankis on kasutusel ka Chatter tarkvara, mis teostab CHAT-failide ranget valideerimist ja ka konverteerimist valiidseteks XML-failideks \citep{CHATTER}.
+
+Hetkel on andmebaasis esindatud 39 keelt: germaani keeled (afrikaani, taani, hollandi, inglise, saksa, norra ja rootsi keel), romaani keeled (katalaani, prantsuse, itaalia, portugali, rumeenia ja hispaania keel), slaavi keeled (horvaadi, vene, serbia ja sloveenia keel), keldi keeled (iiri ja kõmri keel), afroaasia keeled (araabia, heebrea ja berberi keeled), hiina-tiibeti keeled (mandariini hiina, kantoniini, taiwani ja tai keel), draviidi keeled (tamili keel), uurali keeled (eesti ja ungari keel), indoiraani keeled (farsi keel), austroneesia keeled (indoneesia keel), kreeka, cree ja baski keeled. 2013. aasta maikuu seisuga koosnes andmebaas 13 miljonist lausungist ja rohkem kui 50 miljonist sõnavormist. Kõige suurema mahuga on esimesse kategooriasse kuuluvad ehk esimese keele korpused (11 miljonit lausungit ja 43 miljonit sõnavormi). Kõige enam on esindatud inglise, saksa ja prantsuse keel.\citep[2--5]{Gillis}
+
+Transkriptsioonid algavad päisega (ingl k. \emph{header}), kus antakse informatsiooni lindistuse aja, koha, osalejate, kestuse, laste vanuse jms kohta. Põhiridadele paigutatakse kõnelejat tähistav kolmetäheline kood, millele järgneb  kõneleja tegelik kõne. Tegelikule kõnele lisatakse juurde, kas transkribeerija- või uurijapoolsed kommentaarid või kodeeringud (neid nimetatakse \emph{sõltridadeks}). Sõltridade arv oleneb keeleuurija eesmärkidest. Nagu suulise kõne puhulgi, pole ainuüksi verbaalse info järgi aru saada, millest hetkel jutt käib, seega tuleks transkribeerimisel kasutada vähemalt üht sõltrida, nt kommentaaririda. (\citealp[68]{Argus2007}; \citealp{CHAT}) Vt näide (1) ja (2).
+\hfill
+
+(1):
 \begin{description}
-    \item*CHI:   see kifiir \textbf{[:} kefiir\textbf{]} .
-    \item*MOT:   kus sa $\pmb{+/}$.
-    \item*CHI:   $\pmb{+<}$ \textbf{(}h\textbf{)}akkas põlema .
-    \item*MOT:   see ei ole kefiir ju .
-    \item*CHI:   kefiir . $\pmb{[+}$ sr\textbf{]}
-    \item*MOT:   see on piim .
-    \item*FAT:   mis see kook teeb ?
-    \item*FAT:   tuleb ära panna $\pmb{[=}$ visata\textbf{]} või ?
-    \item*MOT:   mina ei tea , vist jah .
-    \item*CHI:   kuidas emme küpsetab saia , lihat\textbf{@n} \textbf{[*]} .
-    \item\%err:   lihat=liha \$MOR
-    \item*FAT:   saia ei ei küpseta .
-    \item*FAT:   kartulit küpsetame , \textbf{(.)} ahjus .
-    \item*CHI:   $\pmb{+<}$ saia .
-    \item*CHI:   lihat\textbf{@n} \textbf{[*]} . $\pmb{[+}$ \textbf{sr]}
-    \item\%err:   lihat=liha \$MOR
-    \item*FAT:   liha ka jah .
-    \item*CHI:   lihat\textbf{@n} \textbf{[*]} . $\pmb{[+}$ \textbf{sr]}
-    \item\%err:   lihat=liha \$MOR
-    \item\%act:   MOT koorib sibulat
-    \item...
-    \item*CHI:   Atu \textbf{[:} Andreas\textbf{]} sõi $\pmb{+...}$
-    \item*CHI:   $\pmb{+}$\textbf{"} a .
-    \item...
-    \item*CHI:   käpad \textbf{(}h\textbf{)}aige \textbf{[*]} \textbf{[$\pmb{/]}$} käpad \textbf{(}h\textbf{)}aige \textbf{[*]} .
-    \item (Vija; 20018.cha)
+    \item*MOT: arvuta need kõigepealt ära.
+    \item*CHI: jah mm kaheksa miinus seitse on üks.
+    \item*CHI: niimoodi kümme miinus üks on üheksa.
+    \item\%com CHI kirjutab ja ise räägib samal ajal kaasa.
+    \item(Kõrgesaar, gregory03.cha)
+\end{description}
+\hfill
+
+(2)
+\begin{description}
+    \item*FAT:   köögis saab teritada , köögis on nuga .
+    \item*MOT:   +< aga siin oli ka teritaja .
+    \item*FAT:   jaa aga ma ei tea , kus see on .
+    \item*CHI:   +< seda kätte .
+    \item*FAT:   mida sa tahad kätte , issi ei tea , kus see teritaja on .
+    \item*MOT:   see teritas väga ilusasti muidu .
+    \item*CHI:   telita [*] .
+    \item\%err:   terita=teritaja \$MOR
+    \item\%par:   CHI aevastab
+    \item(Vija, 20008.cha)
 \end{description}
 
 
-Näites (5) on näha, kui mitmekesine võib ühes transkriptsioonis kodeeringute kasutus olla. On arusaadav, et iga uurija transkribeerib ja kodeerib lindistusi lähtuvalt enda eesmärkidest. Ühest käest on hea, et CHAT-käsiraamatus on niivõrd detailne kodeering, kuid teisalt võib selles orienteerumine vägagi raskeks osutuda. Kuna sellise konverteerimisskripti kirjutamise töömaht oleks selle magistritöö kirjutamise jaoks liiga töömahukaks osutunud, siis tuli leida uus lahendus. Korpuse tegemiseks vajalik keelematerjal pärineb samuti CHILDES-i andmebaasist, kuid need on juba eelnevalt CHAT-kujult XML-kujule konverteeritud failid. Aga kuna selle töö eesmärk on luua morfoloogiliselt märgendatud korpus, siis tuleb nendele XML-failidele ka lisada morfoloogiline tasand, mida nendes failides ei ole. Selleks oli tarvis lähemalt tutvuda Talkbanki XML-skeema süntaksiga.
+\subsection{Mida teistes keeltes tehtud vms...}
+
+Siin rääkida ehk sellest, et kas ja millised teised keeled on CHILDES-is morfanalüüsiga esindatud, nt heebrea keeles on sellega usinasti tegeldud. Aga ma ei ole kindel, et see alapeatükk siia vahele sobib. 
+
+\subsection{Alamkorpuste standardiseerimise probleemid}
+
+\emph{TO-DO}:\\
+SIIN TAHAKS KIRJUTADA KA ``From CHILDES to TalkBank'' (Brian MacWhinney, CHILDES-i asutaja), sest siin tuuakse välja üldised transkriptsiooni probleemid.\\
+SIIN tahaks puudutada ka morfoloogiliste vigade teemat (et mida veaks pidada, vea liigitusprobleemist, vigade transkribeerimis- ja kodeerimisprobleemidest, veakodeerimisvõimalustest ja see kõik puudutab CHILDES-it). Aluseks oleks Arguse artikkel ``Eesti lastekeelekorpuse morfoloogiliste vigade
+märgendamisest ja liigitamisest''.\\
+\emph{END-TO-DO}
+
+Reili Argus kirjeldab oma artiklis \citep{Argus2007} mõningaid transkribeerimise ja CHILDES-i tarkvara kasutamisega seonduvaid probleeme.
+
+Esiteks, CLAN-i analüüsitarkvara on mõeldud inglise keelele, seega tuleb eesti keele analüüsimisel arvestada sellega, et eesti keel on võrreldes inglise keelega sünteetilisema süsteemiga keel. Seega, kui keeleuurija tahab CLAN-i tarkvara kasutades teha mingisuguseid sagedusloendeid, siis ei saada adekvaatseid tulemusi. Näiteks lekseemi \emph{kala} kolm sõnavormi \emph{kala}, \emph{kalaga}, \emph{kalale} loetakse programmi poolt eri lekseemideks. Selline asjaolu põhjustab ka statistiliselt väärate arvude tekkimist. Homonüümide eristamist tuleb teha näiteks käsitsi.\citep[70]{Argus2007}
+
+Argus väidab, et kuna lindistuste transkribeerimisel kasutatakse kuuldeortograafiat, siis need transkriptsioonid ei anna tõetruud pilti sellest, milline on lapse tegelik keelekasutus. Kui juba suulise kõne automaatne analüüsimine on keeruline, siis on lapse suulise keele analüüsimine veel keerukam. Lindistuste puhul on tegemist spontaanse suulise kõnega, mis sisaldab elemente, mida pole tarvis analüüsida, nt häälitsused. Seega selleks, et korpuseid oleks võimalik analüüsida nii, et need annaksid keelekasutuse kohta autentse pildi, ja et oleks võimalik neid standardsele kujule viia, tuleb alustada juba korpuse tekstide transkribeerimise tasandist. \citep[71]{Argus2007}
+
+Teiseks, probleeme tekitab see, et lapse puhul on tegemist ju areneva keelekasutusega, milles esineb palju erilisi tunnuseid, nt sõnakordus. Näiteks, kui sellist lausungit transkribeeritakse nii \emph{*CHI: onu, onu, onu}, siis tähendab see seda, et lapse lausung koosneb kolmest sõnavormist, aga kui näiteks transkribeerida seda lausungit viisil \emph{*CHI: onu [/] onu [/] onu [/]}, siis koosneb see lausung ühest sõnavormist, kuna CLAN-süsteem kohtleb seda kui korduvat üksust. Lisaks sõnakordusele on probleemiks ka onomatopoeetilised sõnad, mida esineb lapsekeeles väga palju ja seetõttu tuleb transkribeerimisel läbi mõelda, kuidas selliseid juhtumeid lahendada. CHAT-käsiraamat soovitab onomatopoeetiliste sõnade lõppu lisada sümbol \emph{@} \citep[72--73]{Argus2007}, aga reaalsuses kasutatakse seda ikka väga vähe ja see omakorda põhjustab seda, et transkriptsioonid ei järgi ühtset märgendamisstiili.
+
+Võrreldes täiskasvanutega esineb lapsekeeles rohkem vigaseid vorme. Transkribeerimisel (nt vigade korral) on oluline, et transkribeerija peab nägema ja teadma seda, mida tegelikult öelda taheti, ja vastavad kodeeringud ka transkriptsiooni lisama nii, et vead oleksid juba esimesel tasandil liigitatud. \citep[74]{Argus2007} Kahjuks praegused alamkorpused pole veakodeerimise osas järjepidevad, kord on viga kodeeritud ühtmoodi, kord teistmoodi ja vahel üldse mitte. Näites (2) on viga põhireal kodeeritud kooloniga (\emph{:}), mille järele lisatakse korrektne sõnavorm. Näites (3) on veakodeerimine hoopis teine: põhireal järgneb vigasele sõnale [*] ja sõltreale on lisatud vearida (\emph{\%err}), kus  toimub vea lahtikodeerimine ja sümboli \emph{=} järele lisatakse korrektne vorm. Näites (4) on viga üldse kodeerimata jäetud.\\
+\hfill
+
+(2)
+\begin{description}
+    \item*FAT: kriit pane tahvli peale .
+    \item*CHI: kit [: kriit] .
+    \item*CHI: kit [: kriit] (.) vahvlile [= tahvlile] pääle [: peale] .
+    \item(Vija; 20007.cha)
+\end{description}
+\hfill
+
+(3)
+\begin{description}
+    \item*CHI: issi , loe seda .
+    \item*CHI: issi , nüüd see [*] ei pane kinni !
+    \item\%err: see=seda \$MOR
+    \item(Vija; 20007.cha)
+\end{description}
+\hfill
+
+(4)
+\begin{description}
+    \item*FAT: viskad minema või?
+    \item*FAT: kus sa viskad selle?
+    \item*CHI: kinn.
+    \item*FAT: sinna viskad jah.
+    \item(Kõrgesaar; arabella01f.cha)
+\end{description}
+\hfill
 
 
-SIIA SKEEMA ELEMNTIDE KOHTA!!
+Morfoloogiliselt märgendatud korpuse loomine on väga vajalik, sest CHILDES-i analüüsitarkvara ei võimalda eesti keele morfoloogilist analüüsimist ja selle käsitsi tegemine oleks väga ajamahukas töö. Seega, praegusel hetkel on lapsekeele uurijatel automaatse statistika tegemine raskendatud ja paraku tehakse distributsioonianalüüse käsitsi \citep[78]{Argus2007}.
+
+\subsection{Eesti keele alamkorpused}
+
+CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lastekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}.  Tabelid 1--7 kajastavad laste vanuselist jaotumist alamkorpuste lõikes. Lisaks on välja toodud ka lapse nimi ja sugu, lapsega tehtud sessioonide arv, lapse ja lapsele suunatud kõne ehk hoidjakeele sõnade arv igas sessioonis.\\
+\hfill
+
+\begin{table}[H]
+\centering
+\caption{Vija korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi               & Vanus    & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{3}{*}{Andreas} & 1;7-1;11 & \multirow{3}{*}{p}        & 7                               & 2845                             & 8521                              & 11366                      \\ \cline{2-2} \cline{4-7} 
+                         & 2;0-2;8  &                           & 37                              & 41498                            & 59272                             & 100770                     \\ \cline{2-2} \cline{4-7} 
+                         & 3;0-3;1  &                           & 30                              & 66038                            & 48137                             & 114175                     \\ \hline\hline
+KOKKU                    & \multicolumn{2}{l|}{}                & 74                              & 110381                           & 115930                            & 226311                     \\ \hline
+\end{tabular}}
+\end{table}
+\hfill
+
+\begin{table}[H]
+\centering
+\caption{Arguse korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi               & Vanus    & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{2}{*}{Hendrik} & 1;8-1;11 & \multirow{2}{*}{p}        & 5                               & 566                              & 1963                              & 2529                       \\ \cline{2-2} \cline{4-7} 
+                         & 2;0-2;5  &                           & 12                              & 3654                             & 7190                              & 10844                      \\ \hline\hline
+KOKKU                    & \multicolumn{2}{l|}{}                & 17                              & 4220                             & 9153                              & 13373                      \\ \hline
+\end{tabular}}
+\end{table}
+\hfill
+
+
+\begin{table}[H]
+\centering
+\caption{Kõrgesaare korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi               & Vanus      & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+Andri                    & 11;7-11;9  & p                         & 2                               & 4253                             & 4445                              & 8698                       \\ \hline
+Arabella                 & 11;8       & t                         & 1                               & 200                              & 2439                              & 2639                       \\ \hline
+Artur                    & 1;4        & p                         & 1                               & 94                               & 3540                              & 3634                       \\ \hline
+\multirow{5}{*}{Gregory} & 6;6        & \multirow{5}{*}{p}        & 1                               & 3435                             & 4570                              & 8005                       \\ \cline{2-2} \cline{4-7} 
+                         & 7;1-7;8    &                           & 2                               & 4501                             & 7559                              & 12060                      \\ \cline{2-2} \cline{4-7} 
+                         & 8;4-8;10   &                           & 3                               & 4840                             & 5823                              & 10663                      \\ \cline{2-2} \cline{4-7} 
+                         & 9;7-9;8    &                           & 2                               & 3927                             & 4125                              & 8052                       \\ \cline{2-2} \cline{4-7} 
+                         & 10;5       &                           & 2                               & 4822                             & 4740                              & 9562                       \\ \hline
+\multirow{8}{*}{Harley}  & 4;0-4;1    & \multirow{7}{*}{p}        & 5                               & 1357                             & 3269                              & 4626                       \\ \cline{2-2} \cline{4-7} 
+                         & 7;2        &                           & 3                               & 3589                             & 3208                              & 6797                       \\ \cline{2-2} \cline{4-7} 
+                         & 10;1-10;2  &                           & 2                               & 3232                             & 3355                              & 6587                       \\ \cline{2-2} \cline{4-7} 
+                         & 11;0-11;11 &                           & 4                               & 7838                             & 6716                              & 14554                      \\ \cline{2-2} \cline{4-7} 
+                         & 12;5       &                           & 1                               & 2003                             & 1344                              & 3347                       \\ \cline{2-2} \cline{4-7} 
+                         & 13;2-13;3  &                           & 2                               & 4290                             & 4261                              & 8551                       \\ \cline{2-2} \cline{4-7} 
+                         & 14;0-14;1  &                           & 2                               & 4976                             & 4665                              & 9641                       \\ \cline{2-7} 
+                         & 4;0        & t                         & 2                               & 412                              & 870                               & 1282                       \\ \hline
+Hellyn                   & 8;7        & t                         & 1                               & 1438                             & 2066                              & 3504                       \\ \hline
+Jaana                    & 2;5        & t                         & 1                               & 1447                             & 1841                              & 3288                       \\ \hline
+Kaisa                    & 5;8-5;9    & t                         & 2                               & 3256                             & 4690                              & 7946                       \\ \hline
+Mia                      & 2;3        & t                         & 1                               & 1643                             & 1841                              & 3484                       \\ \hline
+Olivia                   & 3;2        & t                         & 1                               & 1275                             & 2882                              & 4157                       \\ \hline
+\multirow{3}{*}{Ruuben}  & 1;3-1;4    & \multirow{3}{*}{p}        & 2                               & 777                              & 3544                              & 4321                       \\ \cline{2-2} \cline{4-7} 
+                         & 2;2        &                           & 1                               & 936                              & 3355                              & 4291                       \\ \cline{2-2} \cline{4-7} 
+                         & 3;6        &                           & 1                               & 1259                             & 2669                              & 3928                       \\ \hline
+Sirlin                   & 1;3        & t                         & 1                               & 19                               & 2348                              & 2367                       \\ \hline\hline
+KOKKU                    & \multicolumn{2}{l|}{}                  & 46                              & 65819                            & 90165                             & 155984                     \\ \hline
+\end{tabular}}
+\end{table}
+\hfill
+
+\begin{table}[H]
+\centering
+\caption{Beeki korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi               & Vanus    & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{3}{*}{Liisbet} & 0;9-0;11 & \multirow{3}{*}{t}        & 6                               & 1450                             & 11487                             & 12937                      \\ \cline{2-2} \cline{4-7} 
+                         & 1;0-1;2  &                           & 5                               & 1143                             & 10463                             & 11606                      \\ \cline{2-2} \cline{4-7} 
+                         & 2;0-2;5  &                           & 9                               & 7571                             & 27022                             & 34593                      \\ \hline\hline
+KOKKU                    & \multicolumn{2}{l|}{}                & 20                              & 10164                            & 48972                             & 59136                      \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Kapaneni korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi               & Vanus    & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{3}{*}{Martina} & 1;3-1;11 & \multirow{3}{*}{t}        & 6                               & 7302                             & 17791                             & 25093                      \\ \cline{2-2} \cline{4-7} 
+                         & 2;1-2;7  &                           & 4                               & 6831                             & 9831                              & 16662                      \\ \cline{2-2} \cline{4-7} 
+                         & 3;1      &                           & 1                               & 1805                             & 2115                              & 3920                       \\ \hline\hline
+KOKKU                    & \multicolumn{2}{l|}{}                & 11                              & 15938                            & 29737                             & 45675                      \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Zuppingi korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi             & Vanus    & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{4}{*}{Linda} & 1;3-1;11 & \multirow{4}{*}{t}        & 9                               & 3677                             & 15191                             & 18868                      \\ \cline{2-2} \cline{4-7} 
+                       & 2;0-2;11 &                           & 12                              & 6785                             & 13114                             & 19899                      \\ \cline{2-2} \cline{4-7} 
+                       & 3;0      &                           & 1                               & 542                              & 1052                              & 1594                       \\ \cline{2-2} \cline{4-7} 
+                       & 4;2      &                           & 1                               & 628                              & 1472                              & 2100                       \\ \hline\hline
+KOKKU                  & \multicolumn{2}{l|}{}                & 23                              & 11632                            & 30829                             & 42461                      \\ \hline
+\end{tabular}}
+\end{table}
+\hfill
+
+\begin{table}[H]
+\centering
+\caption{Kohleri korpus}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|}
+\hline
+Lapse nimi              & Vanus     & \multicolumn{1}{l|}{Sugu} & \multicolumn{1}{l|}{Sessioonid} & \multicolumn{1}{l|}{Lapse sõnad} & \multicolumn{1}{l|}{Hoidja sõnad} & \multicolumn{1}{l|}{KOKKU} \\ \hline\hline
+\multirow{2}{*}{Anna}   & 1;10-1;11 & \multirow{2}{*}{t}        & 4                               & 550                              & 4298                              & 4848                       \\ \cline{2-2} \cline{4-7} 
+                        & 2;0-2;1   &                           & 3                               & 645                              & 3454                              & 4099                       \\ \hline
+Carlos                  & 1;7-1;10  & p                         & 9                               & 1797                             & 6809                              & 8606                       \\ \hline
+Helen                   & 1;1-1;10  & t                         & 7                               & 551                              & 7745                              & 8296                       \\ \hline
+Henri                   & 2;2-2;3   & p                         & 3                               & 633                              & 2612                              & 3245                       \\ \hline
+Mari                    & 2;5-2;8   & t                         & 7                               & 2455                             & 7850                              & 10305                      \\ \hline
+\multirow{2}{*}{Sandor} & 1;2-1;10  & p                         & 7                               & 1219                             & 9445                              & 10664                      \\ \cline{2-7} 
+                        & 2;2       & p                         & 3                               & 1374                             & 4564                              & 5938                       \\ \hline
+\multirow{2}{*}{Stella} & 0;11      & \multirow{2}{*}{t}        & 1                               & 6                                & 295                               & 301                        \\ \cline{2-2} \cline{4-7} 
+                        & 1;0-1;6   &                           & 8                               & 287                              & 6629                              & 6916                       \\ \hline
+Taimo                   & 1;5-1;11  & p                         & 9                               & 536                              & 6958                              & 7494                       \\ \hline\hline
+KOKKU                   & \multicolumn{2}{l|}{}                 & 61                              & 10053                            & 60659                             & 70712                      \\ \hline
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Alamkorpuste \% kogu korpuses}
+\begin{tabular}{|l|c|c|}
+\hline
+Korpus    & \multicolumn{1}{l|}{Sõnade arv} & \multicolumn{1}{l|}{\% kogu korpusest} \\ \hline\hline
+Vija      & 226311                          & 37\%                                   \\ \hline
+Kõrgesaar & 155984                          & 25\%                                   \\ \hline
+Argus     & 13373                           & 2\%                                    \\ \hline
+Beek      & 59136                           & 10\%                                   \\ \hline
+Kapanen   & 45675                           & 7\%                                    \\ \hline
+Zupping   & 42461                           & 7\%                                    \\ \hline
+Kohler    & 70712                           & 12\%                                   \\ \hline\hline
+KOKKU     & 613652                          & 100\%                                  \\ \hline
+\end{tabular}
+\end{table}
+
+Kõige mahukamad on Vija, Kõrgesaare ja Kohleri korpused. Neist mahukaim on Vija korpus, moodustades kogu korpusest 37\%. Korpus sisaldab 226311 sõna, millest 110381 olid lapse sõnad ja 115930 hoidjasõnad. Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. Kõrgesaare korpus moodustab kogu korpusest 25\% ja koosneb 155984 sõnast, neist 65819 on lapse sõnad ja 90165 hoidjasõnad. Materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. Kohleri korpus moodustab kogu korpusest 12\% ja sisaldab 70712 sõna, lapse sõnade hulk 10053 ja hoidjakeele sõnade hulk 60659. Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
+
+Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest lapse sõnad on 10164 ja hoidjasõnad 48972. Lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat. Kapaneni korpus moodustab kogu korpusest 7\%, sisaldades 45675 sõna, neist 15938 lapse sõnad ja 29737 hoidjakeele sõnad. Kapaneni materjal pärineb lindistustest Martinaga vahemikus 1;3--2;7 eluaastat. Zuppingi korpus moodustab samuti kogu korpusest 7\%, sisaldades 42461 sõna, neist 11632 on lapse sõnad ja 30829 hoidjakeele sõnad. Kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. Mahult kõige väiksem on Arguse korpus (2\%). Korpus sisaldab 13373 sõna, millest 4220 on lapse ja 9153 hoidjasõnad. Lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat. CHILDES-i eesti keele alamkorpuse kogu suuruseks on 613652 sõna.
+
+\subsection{Tabelid}
+
+\subsubsection{Kõrgesaar}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{toovoog}
+    \includegraphics[width=\textwidth]{korgesaar_vanus_sonad}
+    \caption{Kõrgesaar: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{korgesaar_sugu_sonad}
+    \caption{Kõrgesaar: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{korgesaar_kum_crop}
+    \caption{Kõrgesaar: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{korgesaar_sugu}
+    \caption{Kõrgesaar: sõnavormide sooline jaotumine}
+\end{figure}
+
+\subsubsection{Kapanen}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kapanen_vanus_sonad}
+    \caption{Kapanen: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm, height=8cm]{kapanen_sugu_sonad}
+    \caption{Kapanen: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kapanen_kum_crop}
+    \caption{Kapanen: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\subsubsection{Beek}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{beek_vanus_sonad}
+    \caption{Beek: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{beek_sugu_sonad}
+    \caption{Beek: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{beek_kum_crop}
+    \caption{Beek: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\subsubsection{Kohler}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kohler_vanus_sonad}
+    \caption{Kohler: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kohler_sugu_sonad}
+    \caption{Kohler: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kohler_kum_crop}
+    \caption{Kohler: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{kohler_sonavormid_sugu}
+    \caption{Kohler: sõnavormide sooline jaotumine}
+\end{figure}
+
+
+\subsubsection{Vija}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{vija_vanus_sonad}
+    \caption{Vija: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{vija_sugu_sonad}
+    \caption{Vija: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{vija_kum_crop}
+    \caption{Vija: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+
+\subsubsection{Argus}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{argus_vanus_sonad}
+    \caption{Argus: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{argus_sugu_sonad}
+    \caption{Argus: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{argus_kum_crop}
+    \caption{Argus: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\subsubsection{Zupping}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{zupping_vanus_sonad}
+    \caption{Zupping: lapse ja hoidja sõnade vanuseline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{zupping_sugu_sonad}
+    \caption{Zupping: lapse ja hoidja sõnade sooline jaotumine}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{zupping_kum_crop}
+    \caption{Zupping: sõnavormide kasv vanuseliselt}
+\end{figure}
+
+\subsubsection{Kõik korpused}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm, height=9cm]{koik_korpus_sonad}
+    \caption{hoidja ja lapse sõnade jaotumine korpustes}
+\end{figure}
+
+
+
+
+\begin{table}[H]
+\centering
+\caption{Sõnavormide jaotumine alamkorpustes}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+korpus    & \multicolumn{1}{l|}{lapse sõnavormid}               & \multicolumn{1}{l|}{hoidja sõnavormid}              & \multicolumn{1}{l|}{kattuvad sõnavormid}            & \multicolumn{1}{l|}{KOKKU}                            \\ \hline\hline
+Argus     & \begin{tabular}[c]{@{}c@{}}291\\ 17\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}1185\\ 69\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}248\\ 14\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}1724\\ 100\%\end{tabular}  \\ \hline
+Beek      & \begin{tabular}[c]{@{}c@{}}732\\ 16\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}3517\\ 78\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}272\\ 6\%\end{tabular}   & \begin{tabular}[c]{@{}c@{}}4521\\ 100\%\end{tabular}  \\ \hline
+Kapanen   & \begin{tabular}[c]{@{}c@{}}2661\\ 39\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}2708\\ 39\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}1533\\ 22\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}6902\\ 100\%\end{tabular}  \\ \hline
+Kohler    & \begin{tabular}[c]{@{}c@{}}817\\ 17\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}2700\\ 58\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}1160\\ 25\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}4677\\ 100\%\end{tabular}  \\ \hline
+Kõrgesaar & \begin{tabular}[c]{@{}c@{}}5402\\ 35\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}5665\\ 36\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}4455\\ 29\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}15522\\ 100\%\end{tabular} \\ \hline
+Vija      & \begin{tabular}[c]{@{}c@{}}4834\\ 35\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}4484\\ 32\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}4643\\ 33\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}13961\\ 100\%\end{tabular} \\ \hline
+Zupping   & \begin{tabular}[c]{@{}c@{}}1615\\ 29\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}3016\\ 54\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}982\\ 17\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}5613\\ 100\%\end{tabular}  \\ \hline
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\section{Morfoloogiliselt märgendatud lapsekeele korpus}
+
+\subsection{Tööprotsess}
+
+Magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lapsekeele korpus, kuhu on koondatud kõik CHILDES-i eesti keele alamkorpused. Esialgne plaan oli konverteerida omalkäel kõik CHAT-failid XML-kujule, kuid sellega tekkisid mõningad tagasilöögid. Selleks, et CHAT-faile XML-kujule konverteerida, oleks tarvis, et kõik alamkorpused oleksid ühtsel kujul transkribeeritud ja kodeeritud. Peatükis 5.4 tõin välja mõned näited sellest, kui ebajärjepidevalt on seda tehtud. Isegi, kui korpused oleksid olnud standardsel kujul, siis oleks konverteerimisskripti tegemine muutunud väga keeruliseks ja ülejõukäivaks ülesandeks. Põhjus seisneb selles, et CHAT-käsiraamatus on väga suur ja lai valik kodeeringuid, mida on paraku ühel inimesel raske hallata. Näide (5) illustreerib seda, kuidas juba üsna lühikeses transkriptsiooni lõigus võib kodeeringute kasutus väga mitmekesine olla (kodeeringu seletus paikneb lausungi järel).
+
+(5)
+\begin{description}
+    \item*CHI:   see kifiir \textbf{[:} kefiir\textbf{]} . | \emph{asendus}
+    \item*MOT:   kus sa $\pmb{+/}$. | \emph{vahele segamine}
+    \item*CHI:   $\pmb{+<}$ \textbf{(}h\textbf{)}akkas põlema . | \emph{pealerääkimine}, \emph{mittetäielik sõna}
+    \item*MOT:   see ei ole kefiir ju .
+    \item*CHI:   kefiir . $\pmb{[+}$ sr\textbf{]} | \emph{postcode}
+    \item*MOT:   see on piim .
+    \item*FAT:   mis see kook teeb ?
+    \item*FAT:   tuleb ära panna $\pmb{[=}$ visata\textbf{]} või ? | \emph{seletus, tähendus}
+    \item*MOT:   mina ei tea , vist jah .
+    \item*CHI:   kuidas emme küpsetab saia , lihat\textbf{@n} \textbf{[*]} . | \emph{üleüldistamine}, \emph{vea markeerimine}
+    \item\%err:   lihat=liha \$MOR
+    \item*FAT:   saia ei ei küpseta .
+    \item*FAT:   kartulit küpsetame , \textbf{(.)} ahjus . | \emph{paus}
+    \item*CHI:   $\pmb{+<}$ saia . | \emph{pealerääkimine}
+    \item*CHI:   lihat\textbf{@n} \textbf{[*]} . $\pmb{[+}$ \textbf{sr]} | \emph{postcode}
+    \item\%err:   lihat=liha \$MOR
+    \item*FAT:   liha ka jah .
+    \item*CHI:   lihat\textbf{@n} \textbf{[*]} . $\pmb{[+}$ \textbf{sr]} | \emph{üleüldistamine}, \emph{vea markeerimine}, \emph{postcode}
+    \item\%err:   lihat=liha \$MOR
+    \item\%act:   MOT koorib sibulat
+    \item...
+    \item*CHI:   Atu \textbf{[:} Andreas\textbf{]} sõi $\pmb{+...}$ | \emph{asendus}, \emph{kõrvalekalle}
+    \item*CHI:   $\pmb{+}$\textbf{"} a . | \emph{lausung jutumärkides}
+    \item...
+    \item*CHI:   käpad \textbf{(}h\textbf{)}aige \textbf{[*]} \textbf{[$\pmb{/]}$} käpad \textbf{(}h\textbf{)}aige \textbf{[*]} . | \emph{mittetäielik sõna}, \emph{vea markeerimine}, \emph{kordus}
+    \item (Vija; 20018.cha)\\
+\end{description}
+
+
+On arusaadav, et iga uurija transkribeerib ja kodeerib lindistusi lähtuvalt enda eesmärkidest. Ühelt poolt on hea, et CHAT-käsiraamatus on niivõrd detailne kodeering, kuid teisalt võib selles orienteerumine vägagi raskeks osutuda. Kuna sellise konverteerimisskripti kirjutamise töömaht oleks selle magistritöö kirjutamise jaoks liiga töömahukaks osutunud, siis tuli leida uus lahendus. Korpuse tegemiseks vajalik keelematerjal pärineb samuti CHILDES-i andmebaasist, kuid need on juba eelnevalt CHAT-kujult XML-kujule konverteeritud failid. Aga kuna selle töö eesmärk on luua morfoloogiliselt märgendatud korpus, siis tuleb nendele XML-failidele ka lisada morfoloogiline tasand, mida neis failides ei ole. Selleks oli tarvis lähemalt tutvuda Talkbanki XML-skeema süntaksiga.
+
+
+On arusaadav, et iga uurija transkribeerib ja kodeerib lindistusi lähtuvalt enda eesmärkidest. Ühelt poolt on hea, et CHAT-käsiraamatus on niivõrd detailne kodeering, kuid teisalt võib selles orienteerumine vägagi raskeks osutuda. Kuna sellise konverteerimisskripti kirjutamise töömaht oleks selle magistritöö kirjutamise jaoks liiga töömahukaks osutunud, siis tuli leida uus lahendus. Korpuse tegemiseks vajalik keelematerjal pärineb samuti CHILDES-i andmebaasist, kuid need on juba eelnevalt CHAT-kujult XML-kujule konverteeritud failid. Aga kuna selle töö eesmärk on luua morfoloogiliselt märgendatud korpus, siis tuleb nendele XML-failidele ka lisada morfoloogiline tasand, mida neis failides ei ole. Selleks oli tarvis lähemalt tutvuda \emph{Talkbank}i XML-skeema süntaksiga.
+
+\subsubsection{\emph{Talkbank}i skeema}
+
+Joonisel 2 on kujutatud minu töö seisukohalt olulisimad skeema elemendid.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=10cm]{tag_elemendid}
+    \caption{Talkbanki skeema elemendid}
+\end{figure}
+
+Talkbanki skeema juurelement on \emph{<CHAT>}, mille alluvad on \emph{<comment>}, \emph{<Participants>} ja \emph{<u>}. Elemendi \emph{<Participants>} alluv on \emph{<participant>}. \emph{<participant>} elemendis peitub metainfo lindistuse osalejate kohta (kõneleja ID, nimi, roll, keel, vanus ja sugu). Element \emph{<comment>} talletab metainfot lindistuse konteksti kohta (nt koht, kuupäev, lindistuse algus ja lõpp jne).
+
+Näide (6) (Argus; hend10.xml)
+\begin{lstlisting}
+  <Participants>
+    <participant
+      id="CHI"
+      name="Hendrik"
+      role="Target_Child"
+      language="est"
+      age="P2Y2M6D"/>
+    <participant
+      id="EMA"
+      role="Mother"
+      language="est"/>
+  </Participants>
+  <comment type="Date">02-JUN-1997</comment>
+\end{lstlisting}
+
+Element \emph{<u>} tähistab kõneleja lausungit, selle kohustuslikeks atribuutideks on kõneleja ID ja lausungi järjekorra ID. \emph{<u>}-elemendil on palju alluvaid, aga selle töö juures osutusid olulisimateks \emph{<w>} ja \emph{<g>}. Element \emph{<w>} tähistab sõna ja \emph{<g>} sõnade gruppi. \emph{<g>} alluvaks võib olla tema ise või \emph{<w>}. Elemendi \emph{<w>} alluvaks võib olla \emph{<replacement>}. See element tähistab neid üksuseid, mida CHAT-käsiraamatu järgi kodeeritakse [: text] abil (vt näide (5) kifiir [: kefiir]), vt näide (7).\\
+
+Näide (7) (Kohler; car030900.xml)
+\begin{lstlisting}
+  <u who='CHI' uID='u58'>
+    <w>ehitame</w>
+    <w>galaasi<replacement><w>garaazhi</w></replacement></w>
+    <t type='p'></t>
+  </u>
+\end{lstlisting}
+
+Morfoloogilise tasandi lisamine algab elemendiga \emph{<mor>}, mille alluv on \emph{<mw>} ehk \emph{morphemicWordType}. See jaguneb elemendiks \emph{<pos>} ja \emph{<stem>}. \emph{<pos>} tähistab sõnaliiki (ingl k. \emph{part of speech}). Selle alluvaks on \emph{<c>} ehk sõna morfoloogiline kategooria, mille sisuks on mittetühi string. Element \emph{<stem>} tähistab sõnatüve, mille sisuks on samuti mittetühi string.
+
+\subsection{Morfoloogilise info lisamise protsess}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{toovoog}
     \caption{Töövoog}
 \end{figure}
+
+
+Programmi kirjutamiseks on kasutatud Python 3.4 versiooni. Töövoog (vt joonis 3) on jaotatud 4 suuremaks osaks: XML-failide sisselugemine, faili parsimine, töötlemine ja modifitseeritud XML-faili salvestamine. Faili parsimiseks kasutan Pythoni moodulit \emph{ElementTree}, mis võimaldab lugeda ja genereerida XML hierarhiat. Parsimise käigus pannakse paika XML-faili juurelement ja sellele alluvad elemendid. Töötluse käigus navigeeritakse esmalt iga vestlusest osavõtja lausungi juurde. Seejärel leitakse kõik sõned ehk \emph{<w>}-elemendid. Juhul kui \emph{<w>}-elemendi alluv on element \emph{<replacement>}, siis uueks sõneks määratakse \emph{<replacement>}-elemendi \emph{<w>}-element.
+
+Kui lausungi sõne on leitud, siis tehakse sõnele morfoloogiline analüüs. Morfoloogilise analüsaatorina kasutatakse \emph{etanat}. Sõne analüüs salvestatakse mällu, aga kui analüsaator saab sisendiks seni nägemata sõne (ehk mida mälus ei eksisteeri), siis tehakse sellele morfoloogiline analüüs. Põhjus seisneb programmi optimeerimises: morfoloogilise analüsaatori kutsumine iga sõne juures on üsna kulukas protsess. Seejärel lisatakse igale sõnele morfoloogiline tasand. Programm genereerib kirjutatud koodis järk-järgult puu elemendid ning morfoloogilisele tasandile jõudes hakkab sõne analüüse neile vastavatesse elementidesse lisama (vt joonis 2 ja näide (8)). Juhul kui sõne analüüse on rohkem kui üks, siis igale analüüsile genereeritakse uuesti morfoloogilise taseme elemendid. Samme korratakse seni, kuni jõutakse viimase lausungini ja lõpptulemus salvestatakse modifitseeritud XML-faili.
+
+Näide (8) (Vija; 11120.xml)
+\begin{lstlisting}
+  <u uID="u7" who="CHI">
+    <w>tuli
+        <mor type="mor">
+            <mw>
+                <pos><c>_V_ Pers Prt Ind Sg3 Aff</c></pos>
+                <stem>tule+i</stem>
+            </mw>
+        </mor>
+        <mor type="mor">
+            <mw>
+                <pos><c>_S_ Sg Nom</c></pos>
+                <stem>tuli+0</stem>
+            </mw>
+        </mor>
+    </w>
+    ...
+\end{lstlisting}
+
 
 
 \section{Kokkuvõte}
@@ -585,7 +836,7 @@ Selle töö eesmärk oli lühidalt tutvustada ja näidata, et selleks, et lapsek
 \newpage
 \cleardoublepage
 \phantomsection
-\addcontentsline{toc}{section}{\refname}
+\addcontentsline{toc}{section}{Kasutatud kirjandus}
 \bibliographystyle{dcu}
 \bibliography{viited}
 
