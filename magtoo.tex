@@ -43,6 +43,7 @@
 \renewcommand\thesection{\arabic{section}.}
 \renewcommand\thesubsection{\thesection\arabic{subsection}.}
 \renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
+% \renewcommand\thesubsubsubsection{\thesubsubsection\arabic{subsubsubsection}.}
 
 
 \setlist[itemize]{topsep=-1pt}
@@ -305,10 +306,6 @@ Transkriptsioonid algavad päisega (ingl k. \emph{header}), kus antakse informat
 \end{description}
 
 
-\subsection{Mida teistes keeltes tehtud vms...}
-
-Siin rääkida ehk sellest, et kas ja millised teised keeled on CHILDES-is morfanalüüsiga esindatud, nt heebrea keeles on sellega usinasti tegeldud. Aga ma ei ole kindel, et see alapeatükk siia vahele sobib. 
-
 \subsection{Alamkorpuste standardiseerimise probleemid}
 
 \emph{TO-DO}:\\
@@ -359,9 +356,10 @@ Võrreldes täiskasvanutega esineb lapsekeeles rohkem vigaseid vorme. Transkribe
 
 Morfoloogiliselt märgendatud korpuse loomine on väga vajalik, sest CHILDES-i analüüsitarkvara ei võimalda eesti keele morfoloogilist analüüsimist ja selle käsitsi tegemine oleks väga ajamahukas töö. Seega, praegusel hetkel on lapsekeele uurijatel automaatse statistika tegemine raskendatud ja paraku tehakse distributsioonianalüüse käsitsi \citep[78]{Argus2007}.
 
-\subsection{Eesti keele alamkorpused}
+\subsection{Eesti keele alamkorpuste struktuur}
 
-CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lastekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}.  Tabelid 1--7 kajastavad laste vanuselist jaotumist alamkorpuste lõikes. Lisaks on välja toodud ka lapse nimi ja sugu, lapsega tehtud sessioonide arv, lapse ja lapsele suunatud kõne ehk hoidjakeele sõnade arv igas sessioonis.\\
+CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lastekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}. Tabelid 1--7 kajastavad laste vanuselist jaotumist alamkorpuste lõikes. Lisaks on välja toodud ka lapse nimi ja sugu, lapsega tehtud sessioonide arv, lapse ja lapsele suunatud kõne ehk hoidjakeele sõnade arv igas sessioonis. \emph{Sõna} all mõeldakse tekstisõna ehk tühikute vahele jäävat tähtede järjendit. Töös on kasutusel ka termin \emph{sõnavorm}, mis tähistab leksikaalse sõna üht grammatilist vormi ja moodustab sõnavara ehk leksikoni.
+
 \hfill
 
 \begin{table}[H]
@@ -420,13 +418,13 @@ Artur                    & 1;4        & p                         & 1           
 Hellyn                   & 8;7        & t                         & 1                               & 1438                             & 2066                              & 3504                       \\ \hline
 Jaana                    & 2;5        & t                         & 1                               & 1447                             & 1841                              & 3288                       \\ \hline
 Kaisa                    & 5;8-5;9    & t                         & 2                               & 3256                             & 4690                              & 7946                       \\ \hline
-Mia                      & 2;3        & t                         & 1                               & 1643                             & 1841                              & 3484                       \\ \hline
+Mia                      & 2;3        & t                         & 1                               & 1643                             & 5368                              & 7011                       \\ \hline
 Olivia                   & 3;2        & t                         & 1                               & 1275                             & 2882                              & 4157                       \\ \hline
 \multirow{3}{*}{Ruuben}  & 1;3-1;4    & \multirow{3}{*}{p}        & 2                               & 777                              & 3544                              & 4321                       \\ \cline{2-2} \cline{4-7} 
                          & 2;2        &                           & 1                               & 936                              & 3355                              & 4291                       \\ \cline{2-2} \cline{4-7} 
                          & 3;6        &                           & 1                               & 1259                             & 2669                              & 3928                       \\ \hline
 Sirlin                   & 1;3        & t                         & 1                               & 19                               & 2348                              & 2367                       \\ \hline\hline
-KOKKU                    & \multicolumn{2}{l|}{}                  & 46                              & 65819                            & 90165                             & 155984                     \\ \hline
+KOKKU                    & \multicolumn{2}{l|}{}                  & 46                              & 65819                            & 93692                             & 159511                     \\ \hline
 \end{tabular}}
 \end{table}
 \hfill
@@ -504,25 +502,27 @@ KOKKU                   & \multicolumn{2}{l|}{}                 & 61            
 \caption{Alamkorpuste \% kogu korpuses}
 \begin{tabular}{|l|c|c|}
 \hline
-Korpus    & \multicolumn{1}{l|}{Sõnade arv} & \multicolumn{1}{l|}{\% kogu korpusest} \\ \hline\hline
-Vija      & 226311                          & 37\%                                   \\ \hline
-Kõrgesaar & 155984                          & 25\%                                   \\ \hline
-Argus     & 13373                           & 2\%                                    \\ \hline
-Beek      & 59136                           & 10\%                                   \\ \hline
-Kapanen   & 45675                           & 7\%                                    \\ \hline
-Zupping   & 42461                           & 7\%                                    \\ \hline
-Kohler    & 70712                           & 12\%                                   \\ \hline\hline
-KOKKU     & 613652                          & 100\%                                  \\ \hline
+Korpus    & \multicolumn{1}{l|}{Sõnade arv} & \multicolumn{1}{l|}{\% kogu korpuses} \\ \hline\hline
+Vija      & 226311                          & 37\%                                  \\ \hline
+Kõrgesaar & 159511                          & 26\%                                  \\ \hline
+Argus     & 13373                           & 2\%                                   \\ \hline
+Beek      & 59136                           & 10\%                                  \\ \hline
+Kapanen   & 45675                           & 7\%                                   \\ \hline
+Zupping   & 42461                           & 7\%                                   \\ \hline
+Kohler    & 70712                           & 11\%                                  \\ \hline
+KOKKU     & 617179                          & 100\%                                 \\ \hline\hline
 \end{tabular}
 \end{table}
 
-Kõige mahukamad on Vija, Kõrgesaare ja Kohleri korpused. Neist mahukaim on Vija korpus, moodustades kogu korpusest 37\%. Korpus sisaldab 226311 sõna, millest 110381 olid lapse sõnad ja 115930 hoidjasõnad. Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. Kõrgesaare korpus moodustab kogu korpusest 25\% ja koosneb 155984 sõnast, neist 65819 on lapse sõnad ja 90165 hoidjasõnad. Materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. Kohleri korpus moodustab kogu korpusest 12\% ja sisaldab 70712 sõna, lapse sõnade hulk 10053 ja hoidjakeele sõnade hulk 60659. Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
+Kõige mahukamad on Vija, Kõrgesaare ja Kohleri korpused. Neist mahukaim on Vija korpus, moodustades kogu korpusest 37\%. Korpus sisaldab 226311 sõna, millest 110381 olid lapse sõnad ja 115930 hoidjasõnad. Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. Kõrgesaare korpus moodustab kogu korpusest 26\% ja koosneb 159511 sõnast, neist 65819 on lapse sõnad ja 93692 hoidjasõnad. Materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. Kohleri korpus moodustab kogu korpusest 11\% ja sisaldab 70712 sõna, lapse sõnade hulk 10053 ja hoidjakeele sõnade hulk 60659. Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
 
-Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest lapse sõnad on 10164 ja hoidjasõnad 48972. Lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat. Kapaneni korpus moodustab kogu korpusest 7\%, sisaldades 45675 sõna, neist 15938 lapse sõnad ja 29737 hoidjakeele sõnad. Kapaneni materjal pärineb lindistustest Martinaga vahemikus 1;3--2;7 eluaastat. Zuppingi korpus moodustab samuti kogu korpusest 7\%, sisaldades 42461 sõna, neist 11632 on lapse sõnad ja 30829 hoidjakeele sõnad. Kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. Mahult kõige väiksem on Arguse korpus (2\%). Korpus sisaldab 13373 sõna, millest 4220 on lapse ja 9153 hoidjasõnad. Lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat. CHILDES-i eesti keele alamkorpuse kogu suuruseks on 613652 sõna.
+Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest lapse sõnad on 10164 ja hoidjasõnad 48972. Lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat. Kapaneni korpus moodustab kogu korpusest 7\%, sisaldades 45675 sõna, neist 15938 lapse sõnad ja 29737 hoidjakeele sõnad. Kapaneni materjal pärineb lindistustest Martinaga vahemikus 1;3--2;7 eluaastat. Zuppingi korpus moodustab samuti kogu korpusest 7\%, sisaldades 42461 sõna, neist 11632 on lapse sõnad ja 30829 hoidjakeele sõnad. Kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. Mahult kõige väiksem on Arguse korpus (2\%). Korpus sisaldab 13373 sõna, millest 4220 on lapse ja 9153 hoidjasõnad. Lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat. CHILDES-i eesti keele alamkorpuse kogu suuruseks on 617179 sõna.
 
-\subsection{Tabelid}
 
 \subsubsection{Kõrgesaar}
+
+Joonisel 2 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Varasemalt olen kõiki vanuseid eristanud, kuid sellel joonisel on 10- ja 11-aastased ning 12-, 13- ja 14-aastased lapsed kokku pandud. Enamjaolt on kõigis vanusegruppides hoidja keele sõnad ülekaalus, v.a. 10--11- ja 12--14-aastased. 5-aastaste grupist alates on hoidja ja lapse sõnade osakaal mõnevõrra ``võrdsemalt'' jaotunud kui väiksemate lastega. 1-aastaste seas on hoidja sõnade osakaal lausa 92\% 
+ja lapse sõnad vaid 8\%. 2-aastaste seas on hoidja sõnade osakaal 72\% ja lapse sõnad 28\%. 3- ja 4-aastaste laste puhul jaotuvad hoidja ja lapse sõnad enam-vähem ühesuguselt (69\% ja 31\% vs 70\% ja 30\%). 10--11-aastaste seas on lapse sõnade osakaal 51\% ja hoidja sõnu 49\%. 12--14-aastaste laste puhul on lapse sõnade osakaal 52\% ja hoidja sõnad 48\%.
 
 \begin{figure}[H]
     \centering
@@ -530,11 +530,15 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Kõrgesaar: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
+Joonis 3 kujutab lapse ja hoidja sõnade soolist jaotumist. Nii tüdrukute kui ka poiste seas on ülekaalus hoidja sõnad, kuid poiste puhul on see jaotumine ühtlasem (56\% vs 70\%). Siinkohal peab arvesse võtma seda, et poistega tehtud sessioone oli rohkem kui tüdrukutega (37 sessiooni vs 9 sessiooni). Järelikult: mida rohkem sessioone, seda rohkem nii hoidja kui lapse sõnu. Vanuse kasvades hakkab laps loomult rohkem rääkima ja nii suureneb ka tema sõnade arv. Sellega saab põhjendada lapse ja hoidja sõnade võrdsemat jaotumist poiste seas, kuna Kõrgesaare korpuses on sessioonid vanuses 6--14 tehtud valdavalt poistega (8--aastaste ja 11-aastaste seas vaid üks sessioon tüdrukuga, vt tabel 3).
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{korgesaar_sugu_sonad}
+    \includegraphics[width=11cm, height=12cm]{korgesaar_sugu_sonad}
     \caption{Kõrgesaar: lapse ja hoidja sõnade sooline jaotumine}
 \end{figure}
+
+
 
 \begin{figure}[H]
     \centering
@@ -548,65 +552,82 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Kõrgesaar: sõnavormide sooline jaotumine}
 \end{figure}
 
+
+
+
 \subsubsection{Kapanen}
+
+Joonisel 6 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 2- ja 3-aastaste vanusegrupis on hoidja ja lapse sõnade osakaal mõnevõrra ``võrdsemalt'' jaotunud kui 1-aastaste laste seas. 2-aastaste seas on hoidja sõnu 59\% ja lapse sõnu 41\%. 3-aastaste seas on hoidja sõnu 54\% ja lapse sõnu 46\%. 1-aastaste seas on hoidja sõnu 71\% ja lapse sõnu 29\%.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{kapanen_vanus_sonad}
+    \includegraphics[width=\textwidth]{kapanen_vanus_sonad}
     \caption{Kapanen: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm, height=8cm]{kapanen_sugu_sonad}
-    \caption{Kapanen: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=8cm, height=8cm]{kapanen_sugu_sonad}
+%     \caption{Kapanen: lapse ja hoidja sõnade sooline jaotumine}
+% \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{kapanen_kum_crop}
+    \includegraphics[width=12cm, height=9cm]{kapanen_kum_crop}
     \caption{Kapanen: sõnavormide kasv vanuseliselt}
 \end{figure}
 
+
+
+
 \subsubsection{Beek}
+
+Joonisel 8 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 0-aastaste laste seas on hoidja sõnu 89\% ja lapse sõnu 11\%. 1-aastaste seas on hoidja sõnu 90\% ja lapse sõnu vaid 10\%. 2-aastaste seas kahaneb hoidja sõnade (78\%) ja suureneb lapse sõnade osakaal (22\%).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{beek_vanus_sonad}
+    \includegraphics[width=12cm]{beek_vanus_sonad}
     \caption{Beek: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{beek_sugu_sonad}
-    \caption{Beek: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=11cm, height=9cm]{beek_sugu_sonad}
+%     \caption{Beek: lapse ja hoidja sõnade sooline jaotumine}
+% \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{beek_kum_crop}
+    \includegraphics[width=12cm, height=9cm]{beek_kum_crop}
     \caption{Beek: sõnavormide kasv vanuseliselt}
 \end{figure}
 
+
+
+
 \subsubsection{Kohler}
+
+Joonisel 10 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 0-aastaste laste seas on hoidja sõnu lausa 98\% ja lapse sõnu vaid 2\%. 1-aastaste seas on hoidja sõnu 89\% ja lapse sõnu vaid 11\%. 2-aastaste seas kahaneb hoidja sõnade (78\%) ja suureneb lapse sõnade osakaal (22\%).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{kohler_vanus_sonad}
+    \includegraphics[width=12cm, height=9cm]{kohler_vanus_sonad}
     \caption{Kohler: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
+Joonis 11 kujutab lapse ja hoidja sõnade soolist jaotumist. Nii tüdrukute kui ka poiste seas on hoidja ja lapse sõnade jaotumine ühtlane. Tüdrukute seas on hoidja sõnade osakaal 87\% ja poiste seas 85\%. Lapse sõnade osakaal tüdrukute seas on 13\% ja poiste seas 15\%.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{kohler_sugu_sonad}
+    \includegraphics[width=12cm, height=10cm]{kohler_sugu_sonad}
     \caption{Kohler: lapse ja hoidja sõnade sooline jaotumine}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{kohler_kum_crop}
+    \includegraphics[width=12cm, height=9cm]{kohler_kum_crop}
     \caption{Kohler: sõnavormide kasv vanuseliselt}
 \end{figure}
 
@@ -619,17 +640,19 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
 
 \subsubsection{Vija}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{vija_vanus_sonad}
-    \caption{Vija: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
+Joonisel 14 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Valdavalt kõigis vanusegruppides on hoidja keele sõnad ülekaalus, v.a. 3-aastased. 1-aastaste laste seas on hoidja sõnade osakaal 75\% ja lapse sõnad 25\%. Vanuse suurenedes suureneb ka lapse sõnade osakaal ja väheneb hoidja sõnade osakaal. 2-aastaste seas on hoidja sõnade hulk 59\% ja lapse sõnu 41\%. 3-aastaste laste seas on hoidja sõnu vähem kui lapse sõnu (42\% vs 58\%).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{vija_sugu_sonad}
-    \caption{Vija: lapse ja hoidja sõnade sooline jaotumine}
+    \includegraphics[width=12cm, height=9cm]{vija_vanus_sonad}
+    \caption{Vija: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=11cm, height=9cm]{vija_sugu_sonad}
+%     \caption{Vija: lapse ja hoidja sõnade sooline jaotumine}
+% \end{figure}
 
 \begin{figure}[H]
     \centering
@@ -638,7 +661,10 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
 \end{figure}
 
 
+
 \subsubsection{Argus}
+
+Joonisel 16 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 1-aastaste laste seas on hoidja sõnade osakaal 78\% ja lapse sõnad 22\%. 2-aastaste seas on hoidja sõnade hulk 66\% ja lapse sõnu 34\%.
 
 \begin{figure}[H]
     \centering
@@ -646,11 +672,11 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Argus: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{argus_sugu_sonad}
-    \caption{Argus: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=11cm, height=9cm]{argus_sugu_sonad}
+%     \caption{Argus: lapse ja hoidja sõnade sooline jaotumine}
+% \end{figure}
 
 \begin{figure}[H]
     \centering
@@ -658,7 +684,11 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Argus: sõnavormide kasv vanuseliselt}
 \end{figure}
 
+
+
 \subsubsection{Zupping}
+
+Joonisel 18 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 1-aastaste laste seas on hoidja sõnade osakaal 81\% ja lapse sõnad 19\%. 2- ja 3-aastaste laste seas on hoidja ja lapse sõnade jaotumine ühetaoline (66\% ja 34\%). 4-aastaste laste seas on hoidja sõnade osakaal 70\% ja lapse sõnu 30\%.
 
 \begin{figure}[H]
     \centering
@@ -666,11 +696,11 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Zupping: lapse ja hoidja sõnade vanuseline jaotumine}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{zupping_sugu_sonad}
-    \caption{Zupping: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=11cm, height=9cm]{zupping_sugu_sonad}
+%     \caption{Zupping: lapse ja hoidja sõnade sooline jaotumine}
+% \end{figure}
 
 \begin{figure}[H]
     \centering
@@ -678,15 +708,17 @@ Beeki korpus moodustab kogu korpusest 10\% ja sisaldab 59136 sõna, millest laps
     \caption{Zupping: sõnavormide kasv vanuseliselt}
 \end{figure}
 
-\subsubsection{Kõik korpused}
+
+
+\subsubsection{Kõik alamkorpused}
+
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{koik_korpus_sonad}
+    \includegraphics[width=\textwidth]{koik_korpus_sonad}
     \caption{hoidja ja lapse sõnade jaotumine korpustes}
 \end{figure}
-
-
 
 
 \begin{table}[H]
@@ -704,6 +736,37 @@ Vija      & \begin{tabular}[c]{@{}c@{}}4834\\ 35\%\end{tabular} & \begin{tabular
 Zupping   & \begin{tabular}[c]{@{}c@{}}1615\\ 29\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}3016\\ 54\%\end{tabular} & \begin{tabular}[c]{@{}c@{}}982\\ 17\%\end{tabular}  & \begin{tabular}[c]{@{}c@{}}5613\\ 100\%\end{tabular}  \\ \hline
 \end{tabular}
 \end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=9cm]{hoidja_lapse_sonad_crop}
+    \caption{hoidja ja lapse sõnade jaotumine kogu korpuses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{lapse_sonad_kogu_korpus}
+    \caption{lapse sõnade jaotumine kogu korpuses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{hoidja_sonad_kogu_korpuses}
+    \caption{hoidja sõnade jaotumine kogu korpuses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{vanus_laps_sonad}
+    \caption{lapse sõnade vanuseline jaotumine kogu korpuses}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{vanus_hoidja_sonad}
+    \caption{hoidja sõnade vanuseline jaotumine kogu korpuses}
+\end{figure}
+
 
 
 \newpage
@@ -825,6 +888,195 @@ Näide (8) (Vija; 11120.xml)
     ...
 \end{lstlisting}
 
+\subsection{Tabelid}
+
+\subsubsection{Kõrgesaar}
+
+\begin{table}[H]
+\centering
+\caption{Kõrgesaar: analüüsi saanud ja tundmatuks jäänud sõnade jaotumine}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                     & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                    \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                             & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                             \\ \hline\hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}515\\ 47\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}575\\ 53\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1090\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11033\\ 93\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}838\\ 7\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11871\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3208\\ 80\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}818\\ 20\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4026\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10030\\ 95\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}534\\ 5\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10564\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{3}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2292\\ 90\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}242\\ 10\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2534\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5232\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}319\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5551\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{4}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1439\\ 81\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}330\\ 19\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1769\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3929\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}210\\ 5\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4139\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{5}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2947\\ 91\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}309\\ 9\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3256\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4531\\ 97\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}159\\ 3\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4690\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{6}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3222\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}213\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3435\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4435\\ 97\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}135\\ 3\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4570\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{7}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7572\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}518\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8090\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10489\\ 97\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}278\\ 3\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10767\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{8}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5878\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}400\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6278\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7522\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}367\\ 5\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7889\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{9}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3658\\ 93\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}269\\ 7\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3927\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3879\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}246\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4125\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{10}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7536\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}518\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8054\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7717\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}378\\ 5\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8095\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{11}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11240\\ 93\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}851\\ 7\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}12091\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10762\\ 96\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}399\\ 4\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11161\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{12}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1847\\ 92\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}156\\ 8\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2003\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1274\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}70\\ 5\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1344\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{13}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3798\\ 89\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}492\\ 11\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4290\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4062\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}199\\ 5\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4261\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{14}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4525\\ 91\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}451\\ 9\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4976\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4318\\ 93\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}347\\ 7\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4665\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}59677\\ 91\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6142\\ 9\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}65819\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}89213\\ 95\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4479\\ 5\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}93692\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                     &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+\subsubsection{Kapanen}
+
+\begin{table}[H]
+\centering
+\caption{Kapanen: analüüsi saanud ja tundmatuks jäänud sõnade jaotumine}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                      & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                    \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                       & \multicolumn{1}{l|}{KOKKU}                                             & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                             \\ \hline\hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5093\\ 70\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2209\\ 30\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7302\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}16584\\ 93\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1207\\ 7\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}17791\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                      &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5689\\ 83\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1142\\ 17\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6831\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9248\\ 94\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}583\\ 6\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9831\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                      &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{3}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1601\\ 89\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}204\\ 11\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1805\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2067\\ 98\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}48\\ 2\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2115\\ 100\%\end{tabular}}  \\
+                       &                                                                       &                                                                      &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}12383\\ 78\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3555\\ 22\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}15938\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}27899\\ 94\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1838\\ 6\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}29737\\ 100\%\end{tabular}} \\
+                       &                                                                       &                                                                      &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+\subsubsection{Beek}
+
+\begin{table}[H]
+\centering
+\caption{Beek: analüüsi saanud ja tundmatuks jäänud sõnade jaotumine}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                     & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                     \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                     & \multicolumn{1}{l|}{tundmatud}                                       & \multicolumn{1}{l|}{KOKKU}                                             & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                       & \multicolumn{1}{l|}{KOKKU}                                             \\ \hline\hline
+\multirow{2}{*}{0}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}455\\ 31\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}995\\ 69\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1450\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10282\\ 90\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1205\\ 10\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11487\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                      &                                                                        \\ \hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}297\\ 26\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}846\\ 74\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1143\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9605\\ 92\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}858\\ 8\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10463\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                      &                                                                        \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5034\\ 66\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2537\\ 34\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7571\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}25196\\ 93\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1826\\ 7\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}27022\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                      &                                                                        \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5786\\ 57\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4378\\ 43\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10164\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}45083\\ 92\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3889\\ 8\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}48972\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                      &                                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\subsubsection{Kohler}
+
+\begin{table}[H]
+\centering
+\caption{Kohler: analüüsi saanud ja tundmatuks jäänud sõnade jaotumine}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                   & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                    \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                     & \multicolumn{1}{l|}{tundmatud}                                     & \multicolumn{1}{l|}{KOKKU}                                             & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                             \\ \hline\hline
+\multirow{2}{*}{0}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6\\ 100\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}0\\ 0\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6\\ 100\%\end{tabular}}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}281\\ 95\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}14\\ 5\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}295\\ 100\%\end{tabular}}   \\
+                       &                                                                      &                                                                    &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4592\\ 93\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}348\\ 7\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4940\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}40724\\ 97\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1160\\ 3\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}41884\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                    &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4992\\ 98\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}115\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5107\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}18224\\ 99\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}256\\ 1\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}18480\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                    &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9590\\ 95\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}463\\ 5\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10053\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}59229\\ 98\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1430\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}60659\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                    &                                                                        &                                                                       &                                                                     &                                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\subsubsection{Vija}
+
+\begin{table}[H]
+\centering
+\caption{Vija: tundmatuks jäänud ja analüüsi saanud sõnad}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                       & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                      \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                       & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                              & \multicolumn{1}{l|}{analüüsitud}                                       & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                              \\ \hline\hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2213\\ 78\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}632\\ 22\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2845\\ 100\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8391\\ 98\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}130\\ 2\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8521\\ 100\%\end{tabular}}   \\
+                       &                                                                        &                                                                     &                                                                         &                                                                        &                                                                     &                                                                         \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}39313\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2185\\ 5\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}41498\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}57989\\ 98\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1283\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}59272\\ 100\%\end{tabular}}  \\
+                       &                                                                        &                                                                     &                                                                         &                                                                        &                                                                     &                                                                         \\ \hline
+\multirow{2}{*}{3}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}64231\\ 97\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1807\\ 3\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}66038\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}47466\\ 99\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}671\\ 1\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}48137\\ 100\%\end{tabular}}  \\
+                       &                                                                        &                                                                     &                                                                         &                                                                        &                                                                     &                                                                         \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}105757\\ 96\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4624\\ 4\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}110381\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}113846\\ 98\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2084\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}115930\\ 100\%\end{tabular}} \\
+                       &                                                                        &                                                                     &                                                                         &                                                                        &                                                                     &                                                                         \\ \hline
+\end{tabular}}
+\end{table}
+
+
+\subsubsection{Argus}
+
+\begin{table}[H]
+\centering
+\caption{Argus: tundmatuks jäänud ja analüüsi saanud sõnad}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                   & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                 \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                     & \multicolumn{1}{l|}{tundmatud}                                      & \multicolumn{1}{l|}{KOKKU}                                            & \multicolumn{1}{l|}{analüüsitud}                                     & \multicolumn{1}{l|}{tundmatud}                                     & \multicolumn{1}{l|}{KOKKU}                                            \\ \hline\hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}361\\ 64\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}205\\ 36\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}566\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1884\\ 96\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}79\\ 4\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1963\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                     &                                                                       &                                                                      &                                                                    &                                                                       \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3092\\ 85\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}562\\ 15\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3654\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6945\\ 97\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}245\\ 3\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}7190\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                     &                                                                       &                                                                      &                                                                    &                                                                       \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3453\\ 82\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}767\\ 18\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}4220\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8829\\ 96\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}324\\ 4\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9153\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                     &                                                                       &                                                                      &                                                                    &                                                                       \\ \hline
+\end{tabular}}
+\end{table}
+
+\subsubsection{Zupping}
+
+\begin{table}[H]
+\centering
+\caption{Zupping: tundmatuks jäänud ja analüüsi saanud sõnad}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+vanus                  & \multicolumn{3}{c|}{lapse sõnad}                                                                                                                                                                                     & \multicolumn{3}{c|}{hoidja sõnad}                                                                                                                                                                                   \\ \hline
+                       & \multicolumn{1}{l|}{analüüsitud}                                     & \multicolumn{1}{l|}{tundmatud}                                       & \multicolumn{1}{l|}{KOKKU}                                             & \multicolumn{1}{l|}{analüüsitud}                                      & \multicolumn{1}{l|}{tundmatud}                                     & \multicolumn{1}{l|}{KOKKU}                                             \\ \hline\hline
+\multirow{2}{*}{1}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2508\\ 68\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1169\\ 32\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}3677\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}14756\\ 97\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}435\\ 3\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}15191\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                    &                                                                        \\ \hline
+\multirow{2}{*}{2}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5782\\ 85\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1003\\ 15\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6785\\ 100\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}12882\\ 98\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}232\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}13114\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                    &                                                                        \\ \hline
+\multirow{2}{*}{3}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}470\\ 87\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}72\\ 13\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}542\\ 100\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1028\\ 98\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}24\\ 2\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1052\\ 100\%\end{tabular}}  \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                    &                                                                        \\ \hline
+\multirow{2}{*}{4}     & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}596\\ 95\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}32\\ 5\%\end{tabular}}    & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}628\\ 100\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1455\\ 99\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}17\\ 1\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1472\\ 100\%\end{tabular}}  \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                    &                                                                        \\ \hline\hline
+\multirow{2}{*}{KOKKU} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}9356\\ 80\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2276\\ 20\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}11632\\ 100\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}30121\\ 98\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}708\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}30829\\ 100\%\end{tabular}} \\
+                       &                                                                      &                                                                      &                                                                        &                                                                       &                                                                    &                                                                        \\ \hline
+\end{tabular}}
+\end{table}
+
+\subsubsection{Kõik alamkorpused}
+
+\begin{table}[H]
+\centering
+\caption{tundmatuks jäänud ja analüüsi saanud sõnad kogu korpuses}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|l|c|c|c|c|c|c|c|c|}
+\hline
+korpus            &                              & \multicolumn{1}{l|}{Vija}                                              & \multicolumn{1}{l|}{Argus}                                           & \multicolumn{1}{l|}{Kõrgesaar}                                         & \multicolumn{1}{l|}{Beek}                                            & \multicolumn{1}{l|}{Kapanen}                                         & \multicolumn{1}{l|}{Zupping}                                         & \multicolumn{1}{l|}{Kohler}                                           & \multicolumn{1}{l|}{KOKKU}                                              \\ \hline\hline
+\multirow{4}{*}{} & \multirow{2}{*}{analüüsitud sõnad} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}219603\\ 38\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}12282\\ 2\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}148890\\ 26\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}50869\\ 9\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}40282\\ 7\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}39477\\ 7\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}68819\\ 12\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}580222\\ 100\%\end{tabular}} \\
+                  &                              &                                                                        &                                                                      &                                                                        &                                                                      &                                                                      &                                                                      &                                                                       &                                                                         \\ \cline{2-10} 
+                  & \multirow{2}{*}{tundmatud sõnad}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}6708\\ 18\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1091\\ 3\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}10621\\ 29\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}8267\\ 22\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}5393\\ 15\%\end{tabular}} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}2984\\ 8\%\end{tabular}}  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}1893\\ 5\%\end{tabular}}   & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}36957\\ 100\%\end{tabular}}  \\
+                  &                              &                                                                        &                                                                      &                                                                        &                                                                      &                                                                      &                                                                      &                                                                       &                                                                         \\ \hline
+\end{tabular}}
+\end{table}
 
 
 \section{Kokkuvõte}
