@@ -24,7 +24,7 @@
 \lstset{
     language=XML,
     morekeywords={encoding, bookstore, book, title, author, year, price, category,
-    Participants, participant, comment, u, w, replacement,t}
+    Participants, participant, comment, u, w, replacement,t, mor, mw, pos, stem, c}
 }
 
 \usepackage[
@@ -59,7 +59,7 @@
 \setlength{\parskip}{10pt}
 
 \def\autor{Kristiina Vaik}
-\def\pealkiri{Eesti morfoloogiliselt märgendatud lastekeele korpus}
+\def\pealkiri{Morfoloogiliselt märgendatud eesti lapsekeele korpus}
 
 \graphicspath{{figures/}}
 
@@ -103,38 +103,38 @@ Esimesed lapsekeele uurimise tööd põhinesid päevikumärkmetel, kus lapsevane
 
 1984. aastal lõid Brian MacWhinney ja Catherine Snow arvutipõhise andmebaasi CHILDES (\emph{Child Language Exchange System}), mis nõudis andmete digitaliseerimiseks standartset süsteemi. Paljusid Ochsi ettepanekuid implementeeriti CHAT käsiraamatus (\emph{Codes of the Human Analysis of Transcripts}), mis annab ülevaate CHILDES-i formaadi koostamise printsiipidest. CHILDES võimaldas keeleuurijatel oma keeleandmeid jagada, standartsel viisil transkribeerida, töödelda ning teiste keeltega võrrelda \citep{SnowMacWhinney}. Lisaks CHAT käsiraamatule on keeleuurijatel võimalus kasutada CLAN tarkvara (\emph{Computerized Language Analysis}), mis abistab keeleuurijat korpuse transkribeerimisel, kodeerimisel ja analüüsimisel.
 
-Käesoleva magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lastekeele korpus. CLAN tarkvara ei võimalda eesti keele jaoks teha muutevormide automaatset statistikat, sest süsteemis pole eesti keelele rakendatavat morfoloogilist analüsaatorit, mistõttu teevad lastekeele uurijad hetkel distributiivset analüüsi käsitsi. Morfoloogiliselt märgendatud korpuse abil tekiksid uued võimalused uurimaks nii lapse kui ka lapsele suunatud kõne. Eesti lastekeele korpuse struktuuri esitamiseks ja morfoloogilise tasandi lisamiseks kasutasin oma loodud töövahendeid, morfoloogilist analüüsi teostasin eesti keele morfoloogilise analüsaatori \emph{etana} abil. Loodud korpus pole ideaalselt analüüsitud, sest tegemist on esimese katsetusega. Töö käigus arutlen lastekeelekorpuse transkribeerimisega seotud probleemidest ja muudest kitsaskohtadest, mis omakorda mõjutavad morfoloogilise analüüsi kvaliteeti.
+Käesoleva magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lapsekeele korpus. CLAN tarkvara ei võimalda eesti keele jaoks teha muutevormide automaatset statistikat, sest süsteemis pole eesti keelele rakendatavat morfoloogilist analüsaatorit, mistõttu teevad lapsekeele uurijad hetkel distributiivset analüüsi käsitsi. Morfoloogiliselt märgendatud korpuse abil tekiksid uued võimalused uurimaks nii lapse kui ka lapsele suunatud kõne. Eesti lapsekeele korpuse struktuuri esitamiseks ja morfoloogilise tasandi lisamiseks kasutasin oma loodud töövahendeid, morfoloogilist analüüsi teostasin eesti keele morfoloogilise analüsaatori \emph{etana} abil. Loodud korpus pole ideaalselt analüüsitud, sest tegemist on esimese katsetusega. Töö käigus arutlen lapsekeelekorpuse transkribeerimisega seotud probleemidest ja muudest kitsaskohtadest, mis omakorda mõjutavad morfoloogilise analüüsi kvaliteeti.
 
-Töö esimeses peatükis annan põgusa ülevaate lapse- ja hoidjakeele morfoloogiast. Teises peatükis räägin lähemalt korpuses olemusest, selle liigitusvõimalustest ja arengutendentsidest ning eesti keele korpustest. Lisaks annan lühiülevaate korpuse märgendamisest, morfoloogilisest analüüsist ja XML-ist. Kolmandas peatükis tutvustan CHILDES-i andmebaasi ja trankriptsioonide formaati ning tutvustan eesti keele korpuse struktuuri. Peatükis annan ülevaate ka alamkorpuste standardiseerimise probleemidest. Töö neljanda peatüki esimeses alajaotuses kirjeldan morfoloogiliselt märgendatud lastekeele korpuse tööprotsessi: kirjeldan töö jooksul tekkinud probleeme, programmi töövoogu ja morfoloogilise info lisamist, ja teises alajoatuses hindan morfoloogilise märgenduse adekvaatsust. Viimases peatükis annan ülevaate sellest, kuidas korpusega edasi toimida ehk kuidas korpuse märgendamist ja standardiseerimist paremaks muuta ning kuidas oleks võimalik täiustada morfoloogilise analüüsaatori töö tulemust.
+Töö esimeses peatükis annan põgusa ülevaate lapse- ja hoidjakeele morfoloogiast. Teises peatükis räägin lähemalt korpuses olemusest, selle liigitusvõimalustest ja arengutendentsidest ning eesti keele korpustest. Lisaks annan lühiülevaate korpuse märgendamisest, morfoloogilisest analüüsist ja XML-ist. Kolmandas peatükis tutvustan CHILDES-i andmebaasi ja trankriptsioonisüsteemi ning tutvustan eesti keele korpuse struktuuri. Peatükis annan ülevaate ka alamkorpuste standardiseerimise probleemidest. Töö neljanda peatüki esimeses alajaotuses kirjeldan morfoloogiliselt märgendatud lapsekeele korpuse tööprotsessi: kirjeldan töö jooksul tekkinud probleeme, programmi töövoogu ja morfoloogilise info lisamist, ja teises alajoatuses hindan morfoloogilise märgenduse adekvaatsust. Viimases peatükis annan ülevaate sellest, kuidas korpusega edasi toimida ehk kuidas korpuse märgendamist ja standardiseerimist paremaks muuta ning kuidas oleks võimalik täiustada morfoloogilise analüüsaatori töö tulemust.
 
 \newpage
 \section{Lapse- ja hoidjakeele morfoloogia}
 
-Lapsekeel on keel, mida produtseerib laps ise ning mis aja jooksul muutub ja täiustub, sarnanedes lõpuks täiskasvanu kõnele. Lapsekeele all mõeldakse üldjuhul väikelapse kõnet, kuid konkreetseid vanuselisi piiranguid pole seatud. Hoidjakeel on lapsele suunatud keel ehk sisendkeel- või kõne. Lapse- ja hoidjakeelt võib vaadelda kui suulise keele allkeeli. Ehkki mõlemale keelele on iseloomulik mitteformaalne kõne ja emotsionaalselt lähedane kõnelemise situatsioon, tuleks neid kahte eristada, sest neil mõlemal on oma kindlad tunnused. \citep[178--181]{Korgesaar}
+Lapsekeel on keel, mida produtseerib laps ise ning mis aja jooksul muutub ja täiustub, sarnanedes lõpuks täiskasvanu kõnele. Lapsekeele all mõeldakse üldjuhul väikelapse kõnet, kuid konkreetseid vanuselisi piiranguid pole seatud. Keelekasutuse areng on individuaalne ja pidev, misõttu ei ole võimalik defineerida kindlat ajapiiri, mil enam pole tegemist areneva keelega. Hoidjakeel on lapsele suunatud keel ehk sisendkeel või -kõne. Lapse- ja hoidjakeelt võib vaadelda kui suulise keele allkeeli. Ehkki mõlemale keelele on iseloomulik mitteformaalne kõne ja emotsionaalselt lähedane kõnelemise situatsioon, tuleks neid kahte eristada, sest neil mõlemal on oma kindlad tunnused. \citep[178--181]{Korgesaar}
+
+Keeleomandamise uurimisel on pälvib enim tähelepanu see, kuidas omandatakse grammatikat. Vastuseid otsitakse küsimustele, kuidas ja millal grammatikat omandatakse, missugused tegurid mõjutavad morfoloogia omandamist ja kuidas mõjutab morfoloogia omandamine teiste keeletasandite omandamist. \citep[10]{ARGUSdiss} Keeleomandamiskäsitlused võib jagada formaalseteks ehk generatiivsest grammatikast lähtuvateks ja kasutuspõhisteks lähenemisteks. Generatiivne lähenemine väidab, et laps analüüsib sisendkeelt lähtuvalt sünnipärastest kategooriatest, vt \citep{Wexler}. Kasutuspõhise lähenemise järgi konstrueerivad lapsed grammatika sellest, mida nad kuulevad. Näiteks, lapse keelekasutusse tekkinud kindlad verbid on seotud nende verbide esinemissagedusega sisendkeeles. Lapsel tekib sõnavormidest fonoloogiliselt ja semantiliselt jagatud võrgustik, milles tekivad teatud paradigmad (nt nimisõnad, mis on sama käändelõpuga markeeritud, ja ühe nimisõna eri muutevormid). Produktiivsus ongi uue üksuse ja olemasoleva võrgustiku suhte tulemus. Produktiivsus sõltub tüübisagedusest ehk kui palju sõnu on sama mustri abil tuletatud ja piirangutest ehk mustri jagatud tunnuste mõjust uuele üksusele. (\citealp[2546--2547, 2550]{LIEVEN}; vt ka \citealp{Poola})
+
+Morfoloogiline paradigma piirdub alguses väikese arvu sarnaste vormidega, kuid järk-järgult muutub skeem abstraktsemaks ja produktiivsemaks (ehk mida vähem on jagatud tunnuseid, seda rohkem on see uutele vormidele rakendatav) \citep[2549]{LIEVEN}. Inglise keele verbi \emph{go} eri vormide (ja ka tähenduse) omandamine võtab aega ning on seotud nende sagedusega sisendkeeles. Peale sageduse on ka muid võimalusi, nt mõned vormid on esilduvamad, prototüüpilisemad või fonoloogiliselt (+ morfoloogiliselt, semantiliselt) lihtsamad kui teised vormid, nt \emph{go}, \emph{going} vs \emph{went}. (\citealp{Theakston}; vt ka \citealp{Hispaania}) Eesti keeles on \emph{minema} verbi omandamist uurinud Kaisa Seene (vt \citealp{Seene}).
 
 
-Keeleomandamise uurimisel on pälvib enim tähelepanu see, kuidas omandatakse grammatikat. Teadlasi huvitab, kuidas ja millal grammatikat omandatakse, missugused tegurid mõjutavad morfoloogia omandamist ja kuidas mõjutab morfoloogia omandamine teiste keeletasandite omandamist. \citep[10]{ARGUSdiss} Keeleomandamiskäsitlused võib jagada formaalseteks (ehk generatiivsest grammatikast lähtuvateks) ja kasutuspõhisteks lähenemisteks. Generatiivne lähenemine väidab, et laps analüüsib sisendkeelt lähtuvalt sünnipärastest kategooriatest. Kasutuspõhise lähenemise järgi konstrueerivad lapsed grammatika sellest, mida nad kuulevad. Näiteks, lapse keelekasutusse tekkinud kindlad verbid on seotud nende verbide esinemissagedusega sisendkeeles. Lapsel tekib sõnavormidest fonoloogiliselt ja semantiliselt jagatud võrgustik, milles tekivad teatud paradigmad (nt nimisõnad, mis on sama käändelõpuga markeeritud). Produktiivsus ongi uue üksuse ja olemasoleva võrgustiku suhte tulemus. Produktiivsus sõltub tüübisagedusest ehk kui palju sõnu on sama mustri abil tuletatud ja piirangutest ehk mustri jagatud tunnuste mõjust uuele üksusele. (\citealp[2546--2547, 2550]{LIEVEN}; vt ka \citealp{Poola})
+Katsed laste ja täiskasvanutega kinnitavad, et kuigi muutemorfoloogia omandamist alustatakse varakult, siis muutemorfoloogia produktiivsus sõltub lisaks fonoloogilistele ja semantilistele faktoritele ka tüübi- ja sõnesagedusest. Kuid morfoloogia omandamise uurimisel ei piisa sellest, kui me lihtsalt loendame sisendkeeles esinevaid vorme ja vaatame, kuidas need peegelduvad lapse keelekasutuses. Lieven toob näite lapse poolt produtseeritud lausungitest, kus markeeritud verbi asemel kasutatakse selle markeerimata vormi. Hispaania keelt kõnelevad lapsed teevad selles osas vähem vigu kui hollandi või saksa keelt kõnelevad lapsed. Kasutuspõhise lähenemise järgi võiks mõelda, et kui sisendkeeles on markeerimata vormide suhteline sagedus suur, siis tehakse rohkem vigu markeerimise ärajätuga. Kuid tegelikult tuleb ilmsiks, et hispaania sisendkeeles on markeerimata verbivorme pea sama palju kui saksa või hollandi keeles. Niisiis tuleb kohe paika panna, mida täpselt sisendkeeles mõõta ja kuidas see suhestub lapse keelekasutusega. \citep[2552--2554]{LIEVEN}
 
-Morfoloogiline paradigma piirdub alguses väikese arvu sarnaste vormidega, kuid järk-järgult muutub skeem abstraktsemaks ja produktiivsemaks (ehk mida vähem on jagatud tunnuseid, seda rohkem on see uutele vormidele rakendatav) \citep[2549]{LIEVEN}. Inglisekeelse verbi \emph{go} eri vormide ja ka tähenduse omandamine võtab aega ja on seotud nende sagedusega sisendkeeles. Üks võimalus on ka see, et mõned vormid ja nende tähendused on sarnasemad ehk prototüüpilisemad kui teised ning prototüüpilisuse tõttu omandatakse need kiiremini. Teine variant on ka see, et mõned vormid on fonoloogiliselt sarnasemad (nt \emph{go}, \emph{going} vs \emph{went}), mistõttu omandatakse need kiiremini. (\citealp{Theakston}; vt ka \citealp{Hispaania})
+Eesti keele morfoloogia on väga mitmekesine, sest lisaks reeglipärastele mallidele tuleb omandada ka ebareeglipärased mallid, tuleb teada, kuidas toimuvad tüvesisesed muutused (astme- ja lõpuvaheldus), ning milliseid morfoloogilisi formatiive (tunnused ja lõpud) tüve külge lisada. Eesti keele vormimoodustust on palju uurinud Reili Argus \citep{ARGUSdiss}, kes samuti lähtub kasutuspõhisest lähenemisest. Hoidjakeelele on iseloomulik reduplikatsioon, mis hõlbustab kõnejada segmenteerimist ja silbipiiri ära tundmist (nt \emph{ta-da}, \emph{ai-ai} jne). Reduplikatsioon abistab last ka sõnade ära tundmisel ja aitab mõelda sõnadest kui mitmest osast koosnevast tervikust, mis omakorda hõlbustab hilisemas etapis tajuda sõnavormis esinevat muutumatut (tüvi) ja muutuvat (tunnused ja lõpud) osa. \citep[19--20]{ARGUSdiss}
 
-Katsed laste ja täiskasvanutega kinnitavad, et kuigi muutemorfoloogia omandamist alustatakse varakult, siis muutemorfoloogia produktiivsus sõltub lisaks fonoloogilistele ja semantilistele faktoritele ka tüübi- ja sõnesagedusest. Kuid morfoloogia omandamise uurimisel ei piisa sellest, kui me lihtsalt loendame sisendkeeles esinevaid vorme ja vaatame, kuidas need peegelduvad lapse keelekasutuses. Võtame näiteks lausungid, kus puudub finiitsuse markeerimine. Hispaania keelt kõnelevad lapsed teevad selles osas vähem vigu kui hollandi või saksa keelt kõnelevad lapsed. Kasutuspõhise lähenemise järgi võiks mõelda, et kui sisendkeeles on finiitsete vormide suhteline sagedus suur, siis tehaksegi rohkem vigu. Kuid tegelikult tuleb ilmsiks, et hispaania sisendkeeles on finiitsete verbide hulk pea sama suur kui saksa või hollandi keeles. Niisiis tuleb kohe paika panna, mida täpselt sisendkeeles mõõta ja kuidas see suhestub lapse keelekasutusega. \citep[2552--2554]{LIEVEN}
+Reili Argus \citep[23]{ARGUSdiss} kirjutab, et võiks justkui eeldada, et morfoloogilised formatiivid ja õiges astmes välte valimine raskendab morfoloogilise süsteemi omandamist, aga selgub, et eesti keeles omandatakse produktiivsed vältevaheldusmallid (nõrgeneva tüvega ühesilbilised substantiivid) juba perioodil, mil ei ole tunnused ega lõpud veel omandatatud. Vältevaheldus omandatakse varakult, kuna vältevahelduslikud sõnad on sisendkeeles sagedased ning väldete opositsioonidel on grammatiliste tähenduste eristamisel tähtis roll. Näiteks nõrga- või tugevaastmelised sõnad eristavad lapse jaoks grammatilisi tähendusi- valdaja ja objekt või objekt ja asukoht. Lõpuvaheldus pole nii süsteemne kui astmevaheldus ja selle omandamine on raske, kuna tüvevahelduslike vormide puhul tuleb lõpufoneemide järjestust vahetada. 
+Probleeme valmistavad näiteks fonoloogiliselt keerulised sõnad, kus laps väldib kolmest konsonandist koosnevat ühendit (*\emph{numbert}, *\emph{numberit} ’\emph{numbrit}’; *\emph{kahvelga}, *\emph{kahveliga} ’\emph{kahvliga}’) ja \emph{s}-lõpulised sõnad (*\emph{kärbese} ’\emph{kärbse}’; *\emph{võõraseid} ’\emph{võõraid}’). Lihtsaim viis sõnade moodustamiseks on lõpuhäälikute lisamine, kuid vahel üldistatakse muutesufiksit ka sõnadele, kus see ei ole normikohane, nt \emph{kauss}: *\emph{kausi}-\emph{t} (partitiivi läbipaistva lõpu -\emph{t} üldistamine), \emph{tühi}: *\emph{tühja}-\emph{sse} (illatiivi läbipaistva lõpu -\emph{sse} üldistamine). (\citealp[23--24, 26--27]{ARGUSdiss}; \citealp[20--21]{ARGUS_2})
 
-Eesti keele morfoloogia on rikkalik, sest lisaks reeglipärastele mallidele omandada ka ebareeglipärased mallid ning teada, kuidas toimuvad tüvesisesed muutused (astme- ja lõpuvaheldus) ning milliseid morfoloogilisi formatiive (tunnused ja lõpud) tuleb tüve külge lisada. Eesti keele vormimoodustust on palju uurinud Reili Argus \citep{ARGUSdiss}, kes samuti lähtub kasutuspõhisest lähenemisest. Kõnejada segmenteerimist ja silbipiiri ära tundmist hõlbustab reduplikatsioon, mis on hoidjakeelele väga omane (\emph{ta-da}, \emph{ai-ai} jne). Hoidjakeele rutiinsed väljendid aitavad lapsel aru saada, kust algab samasugune foneetiline realisatsioon. Reduplikatsioon aitab mõista sõnu kui mitmest osast koosnevast tervikust, mis omakorda aitab hilisemas etapis tajuda sõnavormis esinevat muutumatut (tüvi) ja muutuvat (tunnused ja lõpud) osa. Reduplikatiivsed sõnad hõlbustavad eesti keelele iseloomulikku kõnetakti morfoloogia omandamist, sest tunnuseta vorme hakatakse tasapisi asendama morfoloogilisi elemente sisaldavate üksustega. \citep[19--20]{ARGUSdiss}
+Oma bakalaureusetöös uurisin laste üldistamisvõimet \citep{Vaik}. Väljamõeldud stiimulitega moodustuskatsest selgus, et lapsed oskavad juba varases eas uutele sõnadele reegleid üldistada, kuid seda ei tehta veatult. Selgus, et lapsed on omandanud sufiksite reeglipärase lisamise, kuid probleeme valmistasid tüveteisendused. Tüveteisenduslikud vead olid seotud foneemi/silbi asendamise, lisamise või ärajätmisega, nt sõnade \emph{lumber} ja \emph{muhkur} (tüüpsõna \emph{number}) puhul moodustati *\emph{lumberi}, *\emph{muhkuri}, *\emph{muhkurise}; sõnade \emph{pülaline} ja \emph{bobune} käänamisel moodustati *\emph{bobut}, *\emph{bobunet}, *\emph{pülalit}. Tüveteisenduslikest vigadest tehti enim laadivahelduslikke vigu, nt sõnade \emph{päsi} ja \emph{mäsi} (tüüpsõna \emph{käsi}) puhul üldistati partitiivi läbipaistvat lõppu *\emph{päsit}, *\emph{mäsit}; sõnade \emph{tammas} ja \emph{mammas} (tüüpsõna \emph{hammas}) puhul moodustati *\emph{tamma}, *\emph{mamma}, *\emph{tammase}, *\emph{mammase}. \citep{Vaik} Need eksimused pole juhuslikud, vaid peegeldavad lapse  arusaamu vormimoodustussüsteemi mustritest ja mallidest.
 
-Reili Argus \citep[23]{ARGUSdiss} kirjutab, et võiks justkui eeldada, et morfoloogilised formatiivid ja õiges astmes välte valimine raskendab morfoloogilise süsteemi omandamist, aga selgub, et eesti keeles omandatakse produktiivsed vältevaheldusmallid (nõrgeneva tüvega ühesilbilised substantiivid) juba perioodil, mil ei ole tunnused ega lõpud veel omandatatud. Vältevaheldus omandatakse varakult, kuna vältevahelduslikud sõnad on sisendkeeles sagedased ning väldete opositsioonidel on grammatiliste tähenduste eristamisel tähtis roll. Näiteks nõrga- või tugevaastmelised sõnad eristavad lapse jaoks grammatilisi tähendusi- valdaja ja objekt või objekt ja asukoht.
+Eesti keeles on noomenitel lõpuvaheldusmalle rohkem kui verbidel, mistõttu ei valmista Arguse sõnul verbide lõpuvaheldusmallid lastele ka probleeme, näiteks sellised tüvevaheldused nagu \emph{sööme}: \emph{süüa}, \emph{lööb}: \emph{lüüa}, \emph{ei pea}: \emph{pidime} on omandatud veatult \citep[24]{ARGUSdiss}. Verbide omandamine sõltub sellest, kuidas laps neid sisendkeeles kuuleb. Vihman ja Vija uurisid verbi vormimoodustust kahe lapse keelekasutuses (vt \citealp{Vihman_Vija}), kuid vaatluse alla võeti lisaks ka ühe lapse hoidja keelekasutus. Mõlemad lapsed kasutasid juba varases eas markeerimata verbivorme, mis olid ka sisendkeeles ühed kõige sagedasemad (imperatiivi ainsuse 2. pööre ja oleviku vormi eitus). Lisaks oli mõlema lapse puhul oli märgata, et ebaregulaarseid verbivorme omandatakse kiiremini kui reeglipäraseid, sest nende esinemissagedus on sisendkeeles suur. Verbide moodustamisel tegid lapsed kolme sorti vigu: markeerimata verbi kasutamine (\emph{mul on vaja *pese kätt}, \emph{valge kiisu *tudu}); fonoloogilised vead (\emph{ma *süüan}, \emph{*leidsi ülesse}, \emph{*oleb}, \emph{*loes}, \emph{*sajas}) ja morfoloogilised vead (\emph{ei taha putukas *läheme sisse}, \emph{sina *on paha poiss}). \citep{Vihman_Vija}
 
-Lõpuvaheldusest valmistab probleeme II-välteliste konsonantlõpuliste sõnade vormimoodustus. Peamiselt just selliste fonoloogiliselt keeruliste sõnadega (\emph{el}-, \emph{er}-lõpulised), kus laps väldib kolmest konsonandist koosnevat kaashäälikuühendit (nt *\emph{numbert}, *\emph{numberit} ’\emph{numbrit}’; *\emph{kahvelga}, *\emph{kahveliga} ’\emph{kahvliga}’). Raskusi on ka \emph{s}-lõpuliste sõnade vormimoodustusega (nt *\emph{kärbese} ’\emph{kärbse}’; *\emph{võõraseid} ’\emph{võõraid}’). Vigu esineb ka \emph{ne}-liiteliste sõnade vormimoodustusega, näiteks nominatiivkujulise tüve \emph{rebane} asemel kasutatakse *\emph{reba} ja genitiivivormina *\emph{rebali}. Olgugi, et Arguse poolt vaatluse all olevad lapsed olid vältevahelduse varakult omandanud, siis laadivaheldus koos lõpuvaheldusega nagu \emph{V} > \emph{me} põhjustas mõningaid raskusi. Näiteks oli laps ära õppinud vormi \emph{juhtmed} ning järgmiste vormide käänamine toimubki selle ühe vormi analoogial (ehk *\emph{juhtme} ’\emph{juhe}’; *\emph{juhtmet} ’\emph{juhet}’) ning hilisemas materjalis on näha, et lapse keelekasutusse tekib vorm *\emph{juhte} ’\emph{juhtme}’. See näitab, et laps on tajunud, et \emph{m}-häälik kaob, kuid ei oska seda veel õigesti kasutada. \citep[23--24]{ARGUSdiss}
+Keeleomandamise varases etapis on hoidjakeelele iseloomulik eripärane intonatsioon, lühemate lausete (ka verbita lausete) kasutamine, reduplikatiivsete ja onomatopoeetiliste sõnade rohkus, uue info kordamine, keerukate muutevormide vältimine, küsilaused, mitmuse esimese isiku ja deminutiivtuletiste kasutamine. (\citealp[178--182]{Korgesaar}; \citealp[26--29]{Orusalu}) Kuid lapse vanuse kasvades muutuvad lausungid lapsele suunatud kõnes pikemaks, onomatopoeetilised sõnad ja deminutiivtuletisted hakkavad kaduma, küsilauseid ja korduseid jääb vähemaks (\citealp[37]{Korgesaar2}; vt ka \citealp{VihmanV}). Hoidjakeel (kui ka muu ümbritsev keel) on keeleomandamise seisukohast oluline, sest sisendkeel hõlbustab lapsel sagedasemate keeleüksuste omandamist ja muudab lapse sisendkeele statistiliste ja süntaktiliste tunnuste suhtes vastuvõtlikumaks. Paraku pole kõik hoidjakeelele iseloomulikud tunnused (nt fonoloogiline lihtsustamine, reduplikatiivsete sõnade ja deminutiivtuletiste kasutamine) lapse jaoks ilmtingimata kõige kasulikumad, sest sisendi keelelise vaesuse tõttu peab laps puuduolevad üksused ise rekonstrueerima. (\citealp{BeyondBabytalk}; vt ka \citealp{Newport})
 
-Lõpuvaheldus pole nii süsteemne kui astmevaheldus ja selle omandamine on raske, kuna tüvevahelduslike vormide puhul tuleb lõpufoneemide järjestust vahetada. Lihtsaim viis sõnade moodustamiseks on lõpuhäälikute lisamine, kuid vahel üldistatakse muutesufiksit ka sõnadele, kus see ei ole normikohane, nt \emph{kauss}: *\emph{kausi}-\emph{t} (partitiivi läbipaistva lõpu -\emph{t} üldistamine), \emph{tühi}: *\emph{tühja}-\emph{sse} (illatiivi läbipaistva lõpu -\emph{sse} üldistamine). Eesti keeles on noomenitel lõpuvaheldusmalle rohkem kui pöördsõnadel, mistõttu ei valmista pöördsõnade lõpuvaheldusmallid lastele ka probleeme. Näiteks sellised tüvevaheldused nagu \emph{sööme}: \emph{süüa}, \emph{lööb}: \emph{lüüa}, \emph{ei pea}: \emph{pidime} on omandatud veatult. (\citealp[24, 26--27]{ARGUSdiss}; \citealp[20]{ARGUS_2})
+Morfoloogiasüsteemi omandamine toimub sõnaliigiti erineva kiirusega. Arvatakse, et noomeni morfoloogia omandatakse kiiremini kui verbi morfoloogia. Seda on põhjendatud sellega, et noomenite puhul tuleb omandada vähem morfoloogilisi kategooriaid. Lisaks arvatakse, et verbe omandatakse teisiti, sest noomenite referentsiaalsust on kergem hoomata ning verbid on semantiliselt keerukamad ja on rohkem seotud keele süntaktilise struktuuriga. \citep{Gentner} Ometigi uurimused näitavad, et keeltes, kus hoidjakeeles esineb rohkem verbe, on ka lapse varases kõnes sõnaliigiti kõige sagedasem verb (vt korea keel \citep{ChoiGopnik}; mandariini keel \citep{Tardif}). Nimisõnad on ühtlasema jaotusega kui verbid, st nimisõnu on küll palju, kuid ükski nimisõna ei tõuse sageduse poolest esile, ja erinevaid verbe on küll vähe, kuid mõned neist on esilduvamad (nt \emph{tegema} ja \emph{olema}). Seega peab laps uue verbiga kokku puutumisel tegema rohkem üldistusi kui nimisõnadega. \citep[38--39]{Argus_3}
 
-Reduplikatiivsuse kõrval on morfoloogia süsteemi omandamisel tähtis roll ka deminutiivtuletustel, mille käigus nihutatakse astmevaheldusega sõnad astmevahelduseta muuttüüpi. Näiteks \emph{kiisu} ja \emph{kutsu} saavad selle nihke tõttu partitiivi läbipaistva lõpu -\emph{t}: \emph{kiisu}-\emph{t}, \emph{kutsu}-\emph{t}. Siinkohal on hõlbustav tegur ka vormihomonüümia, sest tuletatud sõnad nihkuvad sellisesse muuttüüpi, kus nominatiivi- ja genitiivivormid on homonüümsed. Väidetakse, et samakujulised vormid soodustavad muuteparadigmade omandamist, kuid see võib olla ka pidurdavaks teguriks. Nimelt võib laps hakata käänama ka \emph{pesa}-tüüpi sõnu astmevahelduseta muuttüübi järgi, nt *\emph{muna}-\emph{t}, *\emph{saba}-\emph{t}. (\citealp[25]{ARGUSdiss}; \citealp[19--20]{ARGUS_2})
+Sõnaliikide jaotumist eesti keeles on uurinud Kadri Vider \citep{Vider} ning Argus ja Kõrgesaar \citep{Argus_3}. Kadri Vider uuris, kuidas sõnaliikide esinemissagedust lapsekeeles ja tema andmed pärinevad lindistustest lastega vanuses 1;11--3;11. Ta koostas sõnaliikide sagedussõnastiku, kus leksikaalsete üksuste tasandil leidus kõige enam substantiive, sellele järgnesid verbid, adverbid, adjektiivid, interjektsioonid, pronoomenid, kaassõnad, numeraalid ja konjunktsioonid, kuid sõnavormide tasandil oli esinemissageduse poolest kõige enam verbe, järgnesid substantiivid, adverbid ja pronoomenid, konjunktsioonid, adjektiivid, interjektsioonid, kaassõnad ja numeraalid. \citep{Vider}
 
-Keeleomandamise varases etapis on hoidjakeelele iseloomulik eripärane intonatsioon, lühemate lausete (ka verbita lausete) kasutamine, reduplikatiivsete ja onomatopoeetiliste sõnade rohkus, uue info kordamine, keerukate muutevormide vältimine, küsilaused, mitmuse esimese isiku ja deminutiivtuletiste kasutamine. (\citealp[178--182]{Korgesaar}; \citealp[26--29]{Orusalu}) Kuid lapse vanuse kasvades muutuvad lausungid lapsele suunatud kõnes pikemaks, onomatopoeetilised sõnad hakkavad kaduma, küsilauseid ja korduseid jääb vähemaks \citep[37]{Korgesaar2}. Hoidjakeel (kui ka muu ümbritsev keel) on keeleomandamise seisukohast oluline, sest sisendkeel hõlbustab lapsel sagedasemate keeleüksuste omandamist ja muudab lapse sisendkeele statistiliste ja süntaktiliste tunnuste suhtes vastuvõtlikumaks. Paraku pole kõik hoidjakeelele iseloomulikud tunnused (nt fonoloogiline lihtsustamine, reduplikatiivsete sõnade ja deminutiivtuletiste kasutamine) lapse jaoks ilmtingimata kõige kasulikumad, sest sisendi keelelise vaesuse tõttu peab laps puuduolevad üksused ise rekonstrueerima. \citealp{BeyondBabytalk}
-
-
-Morfoloogiasüsteemi omandamine toimub sõnaliigiti erineva kiirusega. Arvatakse, et noomeni morfoloogia omandatakse kiiremini kui verbi morfoloogia. Seda on põhjendatud sellega, et noomenite puhul tuleb omandada vähem morfoloogilisi kategooriaid. Lisaks arvatakse, et verbe omandatakse teisiti, sest noomenite referentsiaalsust on kergem hoomata ning verbid on semantiliselt keerukamad ja on rohkem seotud keele süntaktilise struktuuriga. \citep{Gentner} Ometigi uurimused näitavad, et keeltes, kus hoidjakeeles esineb rohkem verbe, on ka lapse varases kõnes sõnaliigiti kõige sagedasem verb (vt korea keel \citep{ChoiGopnik}; mandariini keel \citep{Tardif}). Nimisõnad on ühtlasema jaotusega kui verbid, st. nimisõnu on küll palju, kuid ükski nimisõna ei tõuse sageduse poolest esile, ja erinevaid verbe on küll vähe, kuid mõned neist on esilduvamad (nt \emph{tegema} ja \emph{olema}) Seega peab laps uue verbiga kokku puutumisel tegema rohkem üldistusi kui nimisõnadega. \citep[38--39]{Argus_3}
-
-Sõnaliikide jaotumist eesti keeles on uurinud Kadri Vider \citep{Vider} ning Argus ja Kõrgesaar \citep{Argus_3}. Kadri Vider uuris, kuidas sõnaliikide esinemissagedust lapsekeeles ja tema andmed pärinevad lindistustest lastega vanuses 1;11--3;11. Ta koostas sõnaliikide sagedussõnastiku, kus leksikaalsete üksuste tasandil leidus kõige enam substantiive, sellele järgnesid verbid, adverbid, adjektiivid, interjektsioonid, pronoomenid, kaassõnad, numeraalid ja konjunktsioonid, kuid sõnavormide tasandil oli esinemissageduse poolest kõige enam verbe, järgnesid substantiivid, adverbid ja pronoomenid, konjunktsioonid, adjektiivid, interjektsioonid, kaassõnad ja numeraalid. \citep{Vider} Argus ja Kõrgesaar uurisid sõnaliikide esinemissageduste jaotumist nii lapse- kui ka hoidjakeeles, kuid lisaks traditsioonilisele sõnaliigi jaotumisele võeti eraldi arvesse ka onomatopoeetilised sõnad. Selle uurimuse põhjal võib väita, et eesti laste varajane kõne on nimisõnakeskne, kuid see ei tulene nimisõnade suurest sagedusest sisendkeeles, kuna vaatlusperioodi alguses oli nimisõnu ja verbe pea sama palju ja vaatlusperioodi lõpus oli verbide osakaal nimisõnadest suurem. Onomatopoeetiliste sõnade osakaal lapse- ja hoidjakeeles on erinev: lapsekeeles on neid vaatlusperioodi alguses küllaltki palju, kuid enne 2-aastaseks saamist hakkab see järk-järgult vähenema. Hoidjakeeles oli võrreldes lapsega vähe onomatopoeetilisi sõnu ja enne lapse 2-aastaseks saamist muutub nende osakaal pea olematuks. Hoidjakeelele oli iseloomulik ka väike adjektiivide, kaassõnade, konjunktsioonide ja numeraalide osakaal, mis omakorda peegeldus ka lapse keelekasutuses. \citep{Argus_3}
+Argus ja Kõrgesaar uurisid sõnaliikide esinemissageduste jaotumist nii lapse- kui ka hoidjakeeles, kuid lisaks traditsioonilisele sõnaliigi jaotumisele võeti eraldi arvesse ka onomatopoeetilised sõnad. Selle uurimuse põhjal võib väita, et eesti laste varajane kõne on nimisõnakeskne, kuid see ei tulene nimisõnade suurest sagedusest sisendkeeles, kuna vaatlusperioodi alguses oli nimisõnu ja verbe pea sama palju ja vaatlusperioodi lõpus oli verbide osakaal nimisõnadest suurem. Onomatopoeetiliste sõnade osakaal lapse- ja hoidjakeeles on erinev: lapsekeeles on neid vaatlusperioodi alguses küllaltki palju, kuid enne 2-aastaseks saamist hakkab see järk-järgult vähenema. Hoidjakeeles oli võrreldes lapsega vähe onomatopoeetilisi sõnu ja enne lapse 2-aastaseks saamist muutub nende osakaal pea olematuks. Hoidjakeelele oli iseloomulik ka väike adjektiivide, kaassõnade, konjunktsioonide ja numeraalide osakaal, mis omakorda peegeldus ka lapse keelekasutuses. \citep{Argus_3}
 
 
 
@@ -167,7 +167,7 @@ suuremate tekstikorpuste loomiseks. Näiteks, 1991. aastal tehti Inglismaal algu
 
 \subsection{Eesti keele korpused}
 
-Tänapäeva kirjakeele korpus sai alguse 80ndate aastate \emph{baaskorpusest}, mille standardiks on Browni ja LOB-i korpused. Eesti kirjakeele korpus on suletud ja representatiivne. Korpus koosneb ühest miljonist sõnast, tekstid pärinevad aastatest 1984--1987 ja on jaotatud kümnesse tekstiklassi. Baaskorpusega liituvad ka \emph{niitkorpused} ehk \emph{läbilõikekorpused} (1890--1990), mis on suletud ja osaliselt representatiivsed, kuigi neis on vähem tekstiklasse. Baas- ja läbilõikekorpustes on kokku umbes 4 miljonit sõna. (\citealp[14--15]{KR}) \emph{Koondkorpus} (sai alguse 1990ndatel) on teise põlvkonna avatud korpus, mis koosneb umbes 250 miljonist sõnast. Korpus sisaldab palju ajalehetekste ja kasutatakse terviktekste (mitte katkendeid). Koondkorpuse alamhulk on \emph{Tasakaalus korpus}, mis sisaldab 5 miljonit sõna nii ilukirjandust, ajakirjandustekste ja teadustekste. Kolmanda põlvkonna korpused on automaatselt veebist korjatud, sisaldades foorumite, blogide ja kommentaariumide tekste. \citep[38]{M_OK2015} \emph{etTenTen} koosneb 270 miljonist sõnast 686000 veebilehelt. \citep{eTenTen}
+Tänapäeva kirjakeele korpus sai alguse 80ndate aastate \emph{baaskorpusest}, mille standardiks on Browni ja LOB-i korpused. Eesti kirjakeele korpus on suletud ja representatiivne. Korpus koosneb ühest miljonist sõnast, tekstid pärinevad aastatest 1984--1987 ja on jaotatud kümnesse tekstiklassi. Baaskorpusega liituvad ka \emph{niitkorpused} ehk \emph{läbilõikekorpused} (1890--1990), mis on suletud ja osaliselt representatiivsed, kuigi neis on vähem tekstiklasse. Baas- ja läbilõikekorpustes on kokku umbes 4 miljonit sõna. (\citealp[14--15]{KR}) \emph{Koondkorpus} (sai alguse 1990ndatel) on teise põlvkonna avatud korpus, mis koosneb umbes 250 miljonist sõnast. Korpus sisaldab palju ajalehetekste ja kasutatakse terviktekste (mitte katkendeid). Koondkorpuse alamhulk on \emph{Tasakaalus korpus}, mis sisaldab 5 miljonit sõna nii ilukirjandust, ajakirjandustekste ja teadustekste. Kolmanda põlvkonna korpused on automaatselt veebist korjatud, sisaldades foorumite, blogide ja kommentaariumide tekste. \citep[38]{M_OK2015} etTenTen koosneb 270 miljonist sõnast 686000 veebilehelt. \citep{etTenTen}
 
 Kõik eelnevad sisaldavad kirjalikku eesti keelt, kuid koostatakse ka mitmeid erikorpuseid:
 
@@ -181,8 +181,6 @@ Kõik eelnevad sisaldavad kirjalikku eesti keelt, kuid koostatakse ka mitmeid er
     \item foneetikakorpus jne.
 \end{enumerate}
 (\citealp{Keelekogu}; \citealp[17--22]{KR})
-
-Selle töö seisukohast SUULINE KORPUS
 
 \subsection{Korpuse märgendamine}
 
@@ -245,7 +243,7 @@ Märgendite abil pannakse paika andmete loogiline struktuur. XML-il pole eeldefi
 
 Kui kasutaja loob enda märgenduse, siis XML-protsessoril pole võimalik selle valiidsuses veenduda, sest pole midagi millegagi võrrelda. Selleks tuleb kasutajal XML-dokumendis defineerida kasutatav süntaks. XML-dokumentide valideerimiseks on kaks viisi: dokumenditüübi definitsioon (\emph{document type definition} -- DTD) ja XML-skeema (\emph{XML schema}). Nende asukoht on vahetult peale XML-versiooni deklaratsiooni ja kindlasti enne dokumendi keha. Juhul kui XML-doku\-ment on DTD või XML skeemaga vastavuses, siis on ka XML-dokument kehtiv. \citep{XML}
 
-Sellisel markeerimiskeelel on küll palju eeliseid, kuid puudusteks peetakse seda, et see on verboosne (nt kohustuslik lõpumärgend), nõuab kõrget valideerimisstandardit ja elemendid peavad rangelt üksteise sees paiknema. Näiteks suulises kõnes on palju pealerääkimisi, kuid vastavalt XML-i rangetele reeglitele pole elementide ristumine võimalik. Oma XML-i süntaksi kirjutamine pole lihtne (kõigi eelnevalt nimetataud puuduste tõttu), seega eelistavad inimesed kasutada juba teada tuntud kodeerimisskeemasid (nt CHILDES, Brown jne). \citep{LEECH}
+Sellisel markeerimiskeelel on küll palju eeliseid, kuid puudusteks peetakse seda, et see on verboosne (nt kohustuslik lõpumärgend), nõuab kõrget valideerimisstandardit ja elemendid peavad rangelt üksteise sees paiknema. Näiteks suulises kõnes on palju pealerääkimisi, kuid vastavalt XML-i rangetele reeglitele pole elementide ristumine võimalik. Oma XML-i süntaksi kirjutamine pole lihtne (kõigi eelnevalt nimetatud puuduste tõttu), seega eelistavad inimesed kasutada juba teada tuntud kodeerimisskeemasid (nt CHILDES, Brown jne). \citep{LEECH}
 
 \subsubsection{Morfoloogiline analüüs}
 
@@ -253,7 +251,7 @@ Morfoloogilise analüüsi käigus lisatakse iga sõna jaoks infot selle lemma eh
 
 Morfoloogiline analüüs koosneb kahest etapist -- üksiksõnade analüüsimine ja ühestamine. Analüsaator annab igale sõnale selle interpretatsioonid ehk analüüsivariandid. Seejärel toimub morfoloogiline ühestamine. Morfoloogiliseks ühestamiseks nimetatakse protsessi, kus kõikvõimalikest interpretatsioonidest tuleb välja valida antud konteksti sobiv analüüs.\citep[90]{KV}
 
-Selles magistritöös kasutatakse lastekeele korpuse morfoloogiliseks analüüsimiseks sõnastikupõhist morfoloogilist analüsaatorit. Sõnastikupõhisel morfoloogilisel analüüsimisel töödeldakse sõnavorme ja võrreldakse antud keele leksikoniga, juhul kui sõna leksikonis pole, siis kasutatakse mitmesuguseid heuristilisi reegleid. Sõnastikus eristatakse sõnaliike järgnevalt:
+Selles magistritöös kasutatakse lapsekeele korpuse morfoloogiliseks analüüsimiseks sõnastikupõhist morfoloogilist analüsaatorit. Sõnastikupõhisel morfoloogilisel analüüsimisel töödeldakse sõnavorme ja võrreldakse antud keele leksikoniga, juhul kui sõna leksikonis pole, siis kasutatakse mitmesuguseid heuristilisi reegleid. Sõnastikus eristatakse sõnaliike järgnevalt:
 
 
 \begin{itemize}
@@ -277,17 +275,13 @@ Selles magistritöös kasutatakse lastekeele korpuse morfoloogiliseks analüüsi
 \end{itemize}
 
 
-
-
 98\% eesti keele sisendteksti sõnadest on analüüsitavad nii, et kasutatakse sõnastikku, morfeemide loendeid ja nende kombineerimise eeskirju. Sõnadel lõigatakse maha lõpud ja liited ning võrreldakse sõnastikus olevate lekseemidega. Kuni 3\% teksti sõnadest pole sõnastikupõhiselt võimalik analüüsida, sest sõnastikus puudub selle kohta kirje. Oletamisega oletatakse sõna algvorm ja selle vorm puhtalt sõnavormi alusel. Paraku analüsaator ei paku alati õigeid analüüsivariante (vale analüüse kuni 0,1\%) ja selle peamised vead seisnevad selles, et sisendtekst pole analüsaatori jaoks mõeldud (analüsaator on mõeldud kirjakeele analüüsimiseks) ja et pärisnimed sarnanevad vormilt üldnimisõnadega. \citep[91--93]{KV}
-
-
 
 
 \newpage
 \section{CHILDES ja eesti keele alamkorpused}
 
-Selles peatükis tutvustatakse CHILDES-i korpust ja eesti keele alamkorpuseid, mida siinkirjutaja kasutab tulevase magistritöö materjalina. Lisaks antakse lühiülevaade alamkorpuste standardiseerimise probleemidest.
+Selles peatükis tutvustatakse CHILDES-i korpust ja eesti lapsekeele korpuste struktuuri, mida siinkirjutaja kasutab magistritöö andmestikuna. Lisaks antakse lühiülevaade alamkorpuste standardiseerimise probleemidest.
 
 \subsection{CHILDES}
 CHILDES (\emph{Child Language Data Exchange System}) on \emph{Talkbank}i alamkorpus, mis loodi 1984. aastal Brian MacWhinney (Carnagie Melloni ülikool) ja Catherine Snow (Harvardi ülikool) poolt selleks, et koondada kokku erinevate keeleuurijate kogutud keelematerjali eesmärgiga, et need oleksid kõigile vabalt kättesaadavad ja võimaldaksid eri keelte uurijatel oma andmeid ja uurimistulemusi teiste keeltega võrrelda. CHILDES-ist on saanud mahukas, rahvusvaheline ja usaldusväärne andmebaas, mis sisaldab nii audio- ja videolindistusi kui ka standardsel viisil transkribeeritud tekste. \citep[1]{Gillis}
@@ -302,7 +296,7 @@ CHILDES-i andmebaas jaguneb nelja suurde kategooriasse:
     \item kliinilised probleemid. \citep[1]{Gillis}
 \end{enumerate}
 
-Andmebaasi tekstide/lindistuste transkribeerimiseks/kodeerimiseks kasutatakse CHAT käsiraamatut (\emph{Codes of the Human Analysis of Transcripts}, vt \citep{CHAT}). CHAT käsiraamat on mõeldud selleks, et kõik lindistused/tekstid oleksid standardsel viisil transkribeeritud ja kodeeritud. Käsiraamatus on väga suur valik kodeeringuid, kuid transkribeerija ei ole kohustatud neid kõiki kasutama. Oluline oleks, et transkribeerimist ja kodeerimist tehakse vähemalt baastasemel. Lisaks CHAT käsiraamatule on keeleuurijatel võimalus kasutada ka analüüsimistarkvara ja redaktorit CLAN (\emph{Computerized Language Analysis}), mis abistab keeleuurijat korpuse transkribeerimisel, kodeerimisel ja analüüsimisel. CLAN võimaldab analüüsida kollokatsioone, sõna- ja foneemisagedusi, arvutada vormide ja lausungite keskmisi pikkusi. CLAN tarkvaraga loodud failiformaati nimetatakse CHAT-failiks ja see salvestatakse laiendiga .\emph{cha} (xxx.cha) \citep[1--2, 6]{Gillis} Talkbankis on kasutusel ka Chatter tarkvara, mis teostab CHAT-failide ranget valideerimist ja ka konverteerimist valiidseteks XML-failideks \citep{CHATTER}.
+Andmebaasi tekstide/lindistuste transkribeerimiseks ja kodeerimiseks kasutatakse CHAT käsiraamatut (\emph{Codes of the Human Analysis of Transcripts}, vt \citep{CHAT}). CHAT käsiraamat on mõeldud selleks, et kõik lindistused/tekstid oleksid standardsel viisil transkribeeritud ja kodeeritud. Käsiraamatus on väga suur valik kodeeringuid, kuid transkribeerija ei ole kohustatud neid kõiki kasutama. Oluline oleks, et transkribeerimist ja kodeerimist tehakse vähemalt baastasemel. Lisaks CHAT käsiraamatule on keeleuurijatel võimalus kasutada ka analüüsimistarkvara ja redaktorit CLAN (\emph{Computerized Language Analysis}), mis abistab keeleuurijat korpuse transkribeerimisel, kodeerimisel ja analüüsimisel. CLAN võimaldab analüüsida kollokatsioone, sõna- ja foneemisagedusi, arvutada vormide ja lausungite keskmisi pikkusi. CLAN tarkvaraga loodud failiformaati nimetatakse CHAT-failiks ja see salvestatakse laiendiga .\emph{cha} (xxx.cha) \citep[1--2, 6]{Gillis} Talkbankis on kasutusel ka Chatter tarkvara, mis teostab CHAT-failide ranget valideerimist ja ka konverteerimist valiidseteks XML-failideks \citep{CHATTER}.
 
 Hetkel on andmebaasis esindatud 39 keelt ja 2013. aasta maikuu seisuga koosnes andmebaas 13 miljonist lausungist ja rohkem kui 50 miljonist sõnavormist. Kõige suurema mahuga on esimesse kategooriasse kuuluvad ehk esimese keele korpused (11 miljonit lausungit ja 43 miljonit sõnavormi). Kõige suurema esindatavusega on inglise, saksa ja prantsuse keel.\citep[2--5]{Gillis}
 
@@ -374,20 +368,34 @@ Võrreldes täiskasvanutega esineb lapsekeeles rohkem vigaseid vorme. Transkribe
 \hfill
 
 
-Morfoloogiliselt märgendatud korpuse loomine on väga vajalik, sest CHILDES-i analüüsitarkvara ei võimalda eesti keele morfoloogilist analüüsimist ja selle käsitsi tegemine oleks väga ajamahukas töö. Seega, praegusel hetkel on lastekeele uurijatel automaatse statistika tegemine raskendatud ja paraku tehakse distributsioonianalüüse käsitsi \citep[78]{Argus2007}.
+Morfoloogiliselt märgendatud korpuse loomine on väga vajalik, sest CHILDES-i analüüsitarkvara ei võimalda eesti keele morfoloogilist analüüsimist ja selle käsitsi tegemine oleks väga ajamahukas töö. Seega, praegusel hetkel on lapsekeele uurijatel automaatse statistika tegemine raskendatud ja paraku tehakse distributsioonianalüüse käsitsi \citep[78]{Argus2007}.
 
 \subsection{Eesti keele alamkorpuste struktuur}
 
- Selles töös kasutatakse kolm keskset mõistet -- \emph{sõna}, \emph{sõnavorm} ja \emph{sõnavara}. Sõna all mõeldakse tekstisõna ehk tühikute vahele jäävat tähtede järjendit, nt lauses \emph{võtan teise pliiatsi} koosneb kolmest sõnast. Sõnavorm on unikaalne tekstisõna, nt lauses \emph{pliiats ja pliiatsiga} on kaks sõnavormi (need on ühe ja sama lekseemi \emph{pliiats} erinevad grammatilised vormid, siis selles töös käsitletakse neid kui kaht eri sõna); lauses \emph{punane pliiats ja roheline pliiats} on sõnavorme kokku neli. Sõnavara puhul on oluline rõhutada, et selles töös räägitakse sõnavarast kui leksikonist, mida hinnatakse sõnavormide alusel. Oletame, et lapse repertuaaris on vaid üks lause \emph{võtan punase pliiatsi ja rohelise pliiatsi}, siis selle lapse sõnavara suurus on 5 sõna. Kõiki peatükis esitatud andmeid kajastavad tabelid on leitavad töö lõpus lisadena.
+Selles töös kasutatakse kolm keskset mõistet -- \emph{sõna}, \emph{sõnavorm} ja \emph{sõnavara}. Sõna all mõeldakse tekstisõna ehk tühikute vahele jäävat tähtede järjendit, nt lauses \emph{võtan teise pliiatsi} koosneb kolmest sõnast. Sõnavorm on unikaalne tekstisõna, nt lauses \emph{pliiats ja pliiatsiga} on kaks sõnavormi (need on ühe ja sama lekseemi \emph{pliiats} erinevad grammatilised vormid, siis selles töös käsitletakse neid kui kaht eri sõna); lauses \emph{punane pliiats ja roheline pliiats} on sõnavorme kokku neli. Sõnavara puhul on oluline rõhutada, et selles töös räägitakse sõnavarast kui leksikonist, mida hinnatakse sõnavormide alusel. Oletame, et lapse repertuaaris on vaid üks lause \emph{võtan punase pliiatsi ja rohelise pliiatsi}, siis selle lapse sõnavara suurus on 5 sõna.
 
-CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lastekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}. Lisad 1--6 kajastavad laste vanuselist jaotumist alamkorpuste kaupa. Lisaks on välja toodud ka lapse nimi ja sugu, lapsega tehtud sessioonide arv, lapse ja ehk hoidjakeele sõnade arv igas sessioonis. Tabelis 1 on kujutatud lapse ja hoidja sõnade \% kogu korpuses.
+CHILDES-i andmebaasis on eesti laste suulise kõne lindistused olnud alates 1998. aastast. 2016. aasta märtsikuu seisuga koosneb eesti lapsekeele korpus seitsmest alamkorpusest, mis on oma nimed saanud korpuse koostajate järgi: Argus, Beek, Kapanen, Kohler, Kõrgesaar, Vija ja Zupping \citep{CHILDES}. Arguse, Beeki, Kapaneni, Vija ja Zuppingu korpustes on andmete kogumiseks kasutatud longituuduurimusele omast viisi, kus teatud perioodi jooksul salvestatakse lapse ja hoidja vestlusi intensiivselt ja mille tulemusena tekib tihe andmestik. Kohleri ja Kõrgesaare korpustes pärinevad andmed salvestustest mitme eri vanuses lapsega. Lisades 1--6 on iga alamkorpuse kohta koondlikult välja toodud lapse nimi, vanus, sugu, sessioonide arv, lapse ja hoidja sõnade koguarv igas vanuses.
+
+Kõikides alamkorpustes on alamkorpuse sõnade koguarvu poolest ülekaalus hoidja sõnad, mis on küllatki ootuspärane tulemus (vt joonis 2).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{koik_korpus_sonad}
+    \caption{hoidja ja lapse sõnade jaotumine alamkorpustes}
+\end{figure}
+
+Kõige mahukamad on Vija, Kõrgesaare ja Kohleri alamkorpused. Neist mahukaim on Vija korpus (vt joonis 2 ja lisa 1), sisaldades 226311 sõna, millest 49\% (110381 sõna) olid lapse sõnad ja hoidja sõnad 51\% (115930 sõna). Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. Kõrgesaare korpus (vt ka lisa 5) koosneb 159511 sõnast, neist 41\% (65819) on lapse sõnad ja 59\% (93692) hoidja sõnad. Materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. Kohleri korpus (vt ka lisa 7) sisaldab 70712 sõna, kus lapse sõnad moodustavad 14\% (10053 sõna) ja hoidja sõnad 86\% (60659 sõna). Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
+
+Beeki korpus (vt ka lisa 3) sisaldab 59136 sõna, millest lapse sõnad moodustavad 17\% (10164 sõna) ja hoidja sõnad 83\% (48972). Lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat. Kapaneni korpus (vt ka lisa 4) koosneb 45675 sõnast, neist 35\% (15938 sõna) on lapse sõnad ja 65\% (29737) hoidja sõnad. Kapaneni materjal pärineb lindistustest Martinaga vahemikus 1;3--2;7 eluaastat. Zuppingu korpus (vt ka lisa 6) sisaldab 42461 sõna, neist 27\% (11632) on lapse sõnad ja 73\% (30829) hoidja sõnad. Kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. Mahult kõige väiksem on Arguse korpus (vt ka lisa 2). Korpus sisaldab 13373 sõna, millest 32\% (4220) on lapse ja 68\% (9153) hoidja sõnad. Lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat.
+
+Tabel 1 näitab, kuidas jaotuvad kogu korpuse lapse ja hoidja sõnad alamkorpuste kaupa.
 
 \begin{table}[H]
 \centering
-\caption{Lapse ja hoidja sõnade \% kogu korpuses}
+\caption{lapse ja hoidja sõnade \% kogu korpuses}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-korpus                 & \multicolumn{1}{l|}{lapse sõnad}                                       & \multicolumn{1}{l|}{\% kogu korpusest} & \multicolumn{1}{l|}{hoidja sõnad}                                      & \multicolumn{1}{l|}{\% kogu korpusest} \\ \hline\hline
+korpus                 & \multicolumn{1}{l|}{lapse sõnad}                                       & \multicolumn{1}{l|}{\% kogu korpuses} & \multicolumn{1}{l|}{hoidja sõnad}                                      & \multicolumn{1}{l|}{\% kogu korpuses} \\ \hline\hline
 Vija                   & 110381                                                                 & 48\%                                   & 115930                                                                 & 30\%                                   \\ \hline
 Kõrgesaar              & 65819                                                                  & 29\%                                   & 93692                                                                  & 24\%                                   \\ \hline
 Argus                  & 4220                                                                   & 2\%                                    & 9153                                                                   & 2\%                                    \\ \hline
@@ -400,198 +408,42 @@ Kohler                 & 10053                                                  
 \end{tabular}
 \end{table}
 
-Kõige mahukamad on Vija, Kõrgesaare ja Kohleri alamkorpused. Neist mahukaim on Vija korpus (vt lisa 1), sisaldades 226311 sõna, millest 110381 olid lapse sõnad ja 115930 hoidja sõnad. Lapse sõnad moodustavad 48\% kõigi laste sõnade arvust, hoidja sõnad 30\% kõigi hoidja sõnade arvust (vt tabel 1). Lindistusi tehti Andreasega vahemikus 1;7--3;1 eluaastat. 
+Kogu korpuses moodustavad lapse sõnad 37\% (228207 sõna) ja hoidja sõnad 63\% (388972 sõna). Korpuse suuruseks on 617179 sõna. Kogu korpuses on Vija alamkorpus nii lapse kui hoidja sõnade poolest kõige suurema osakaaluga: lapse sõnad moodustavad 48\% kõigi laste sõnade arvust, hoidja sõnad 30\% kõigi hoidja sõnade arvust (vt tabel 1). Kõrgesaare alamkorpus moodustab kõigi laste sõnade arvust 29\%, hoidja sõnad 24\% kõigi hoidja sõnade arvust. Kohleri alamkorpuse lapse sõnad moodustavad 4\% kõigi laste sõnade arvust, hoidja sõnad 16\% kõigi hoidja sõnade arvust. Beeki alamkorpuse lapse sõnad moodustavad 4\% kõigi laste sõnade arvust, hoidja sõnad 13\% kõigi hoidja sõnade arvust.
 
-Kõrgesaare korpus (vt lisa 5) koosneb 159511 sõnast, neist 65819 on lapse sõnad ja 93692 hoidjasõnad. Lapse sõnad moodustavad 29\% kõigi laste sõnade arvust, hoidja sõnad 24\% kõigi hoidja sõnade arvust (vt tabel 1). Materjal pärineb lindistustest 12 erineva lapsega vahemikus 1;3--14;1 eluaastat. Siia pole sisse arvestatud transkriptsioone vestlustest, mille osalejateks olid vaid täiskasvanud. 
+Kapaneni alamkorpuse lapse sõnad moodustavad 7\% kõigi laste sõnade arvust, hoidja sõnad 8\% kõigi hoidja sõnade arvust. Zuppingu alamkorpuse lapse sõnad moodustavad 5\% kõigi laste sõnade arvust, hoidja sõnad 8\% kõigi hoidja sõnade arvust. Arguse alamkorpuse lapse sõnad moodustavad 2\% kõigi laste sõnade arvust, hoidja sõnad samuti 2\% kõigi hoidja sõnade arvust.
 
-Kohleri korpus (vt lisa 7) sisaldab 70712 sõna, kus lapse sõnade hulk on 10053 ja hoidjakeele sõnade hulk 60659. Lapse sõnad moodustavad 4\% kõigi laste sõnade arvust, hoidja sõnad 16\% kõigi hoidja sõnade arvust (vt tabel 1). Lindistusi tehti 8 erineva lapsega vahemikus 0;11--2;3 eluaastat.
-
-Beeki korpus (vt lisa 3) sisaldab 59136 sõna, millest lapse sõnad on 10164 ja hoidjasõnad 48972. Lapse sõnad moodustavad 4\% kõigi laste sõnade arvust, hoidja sõnad 13\% kõigi hoidja sõnade arvust (vt tabel 1). Lindistusi tehti Liisbetiga vahemikus 0;9--2;5 eluaastat.
-
-Kapaneni korpus (vt lisa 4) koosenb 45675 sõnast, neist 15938 lapse sõnad ja 29737 hoidjakeele sõnad. Lapse sõnad moodustavad 7\% kõigi laste sõnade arvust, hoidja sõnad 8\% kõigi hoidja sõnade arvust (vt tabel 1). Kapaneni materjal pärineb lindistustest Martinaga vahemikus 1;3--2;7 eluaastat. 
-
-Zuppingu korpus (vt lisa 6) sisaldab 42461 sõna, neist 11632 on lapse sõnad ja 30829 hoidjakeele sõnad. Lapse sõnad moodustavad 5\% kõigi laste sõnade arvust, hoidja sõnad 8\% kõigi hoidja sõnade arvust (vt tabel 1). Kõik lindistused on tehtud Lindaga vahemikus 1;3--4;2 eluaastat. 
-
-Mahult kõige väiksem on Arguse korpus (vt lisa 2). Korpus sisaldab 13373 sõna, millest 4220 on lapse ja 9153 hoidjasõnad. Lapse sõnad moodustavad 2\% kõigi laste sõnade arvust, hoidja sõnad samuti 2\% kõigi hoidja sõnade arvust (vt tabel 1). Lindistusi tehti Hendrikuga vahemikus 1;8--2;5 eluaastat.
-
-CHILDES-i eesti keele alamkorpuses on lapse sõnu 228207 (37\% kogu korpusest) ja hoidja sõnu 388972 (63\% kogu korpusest). Korpuse kogu suuruseks on 617179 sõna (vt tabel 1). Järgnevalt vaatame, kuidas jaotuvad lapse ja hoidja sõnad soo (võimaluse korral) ja vanuse järgi alamkorpuste kaupa.
-
-
-\subsubsection{Kõrgesaar}
-
-Joonisel 2 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Varasemalt olen kõiki vanuseid eristanud, kuid sellel joonisel on 10- ja 11-aastased ning 12-, 13- ja 14-aastased lapsed kokku pandud. Enamjaolt on kõigis vanusegruppides hoidja keele sõnad ülekaalus, v.a. 10--11- ja 12--14-aastased. 5-aastaste grupist alates on hoidja ja lapse sõnade osakaal mõnevõrra ``võrdsemalt'' jaotunud kui väiksemate lastega. 1-aastaste seas on hoidja sõnade osakaal lausa 92\% ja lapse sõnad vaid 8\%. 2-aastaste seas on hoidja sõnade osakaal 72\% ja lapse sõnad 28\%. 3- ja 4-aastaste laste puhul jaotuvad hoidja ja lapse sõnad enam-vähem ühesuguselt (69\% ja 31\% vs 70\% ja 30\%). 10--11-aastaste seas on lapse sõnade osakaal 51\% ja hoidja sõnu 49\%. 12--14-aastaste laste puhul on lapse sõnade osakaal 52\% ja hoidja sõnad 48\%.
+Korpuse üks koostamise põhimõte on, et korpus peab olema representatiivne ehk uuritava nähtuse suhtes esinduslik. Kui me uurime nii lapse kui hoidja keelekasutust, siis tuleb teada, kelle keelekasutust korpus esindab. Joonis 3 illustreerib seda, kuidas jaotuvad lapse ja hoidja sõnad kogu korpuses. Me näeme, et suurem osa transkriptsioonidest on tehtud vanuses 1 kuni 3. See tähendab, et korpuses on suur hulk sõnu, mis esindavad vaid teatud vanusegruppe ja see omakorda peegeldab paljude teiste vanusegruppide esinduslikkust.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{korgesaar_vanus_sonad}
-    \caption{Kõrgesaar: lapse ja hoidja sõnade vanuseline jaotumine}
+    \includegraphics[width=\textwidth, height=9cm]{lindistused_vanus_sonad_crop}
+    \caption{hoidja ja lapse sõnade jaotumine kogu korpuses vanuse järgi}
 \end{figure}
 
-Joonis 3 kujutab lapse ja hoidja sõnade soolist jaotumist. Nii tüdrukute kui ka poiste seas on ülekaalus hoidja sõnad, kuid poiste puhul on see jaotumine ühtlasem (56\% vs 70\%). Siinkohal peab arvesse võtma seda, et poistega tehtud sessioone oli rohkem kui tüdrukutega (37 sessiooni vs 9 sessiooni). Järelikult: mida rohkem sessioone, seda rohkem ka nii hoidja kui lapse sõnu. Vanuse kasvades hakkab laps loomult rohkem rääkima ja nii suureneb ka tema sõnade arv. Sellega saab põhjendada lapse ja hoidja sõnade võrdsemat jaotumist poiste seas, kuna Kõrgesaare korpuses on sessioonid vanuses 6--14 tehtud valdavalt poistega (8--aastaste ja 11-aastaste seas vaid üks sessioon tüdrukuga, vt lisa 5).
+Kui vaadata detailsemalt lapse ja hoidja sõnade jaotumist vanusegrupiti, siis kogu korpus esindab 2- ja 3-aastaste laste keelekasutust (vt joonis 4 (a)). Ülejäänud vanusegrupid (ehk 86\% kõikidest vanusegruppidest) esindavad korpuses lapse sõnu vaid 35,8\%. Hoidja sõnadest (vt joonis 4 (b)) on kõige suurema osakaaluga 2-aastaste (37,4\%), 1-aastaste (27,7\%) ja 3-aastaste (14,6\%) vanusegrupp. Ülejäänud vanusegrupid (ehk 80\%) esindavad hoidjate sõnadest vaid 20,3\%. Selline tulemus on loogiliselt põhjendatav: mida rohkem sessioone, seda rohkem sõnu ja seda suurem korpus. Kõigis alamkorpustes tehti kõige enam lindistusi just 1-, 2- ja 3-aastaste lastega.
+
+Korpus esindab enam-jaolt Andrease (Vija korpus) ja tema hoidja keelekasutust, sest Andrease sõnad moodustavad kõikide laste sõnadest lausa 48,4\% ja Andrease hoidja sõnad kõikidest hoidja sõnadest 29,8\% (vt joonis 5 (a) ja (b)). See tähendab, et ülejäänud lapsed (ehk 96\%) esindavad kogu korpuses lapse keelekasutust vaid natuke üle 50\%. Ja nendest ülejäänud lastest 56\% (ehk 14 last 25 lapsest) esindavad korpuses vähem kui 1\%. Hoidjate keelekasutus varieerub natuke rohkem: kogu korpuses esindab ülejäänud hoidjate keelekasutus 70,2\%, kuid hoidjatest 32\% (ehk 8 hoidjat 25 hoidjast) esindab kogu korpuses vähem kui 1\% hoidja sõnu. Ka siin mängivad olulist rolli lapsega tehtud sessioonide arv ja korpuse suurus. Näiteks Vija korpuse puhul on tegemist tiheda andmestikuga, kus Andreasega tehti kokku 74 sessiooni, kuid Kõrgesaare korpuses tehti Sirlini, Arturi ja Arabellaga vaid 1 sessioon, mistõttu on kogu korpuses nende laste keelekasutuse osakaal miniatuurne.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height=11cm]{korgesaar_sugu_sonad}
-    \caption{Kõrgesaar: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
-
-PPROBLEEM: ei tea, mida nende sõnavormidega teha. Ma eemaldasin need kumulatiivsed joonised. Ja muidugi vabandust nende tabelite pärast. Tegin kohatäitmiseks excelis kiirelt ära. Kui ütlete, et need tabelid oleksid vajalikud, siis teen R-is paremad (+ arvulised väärtused ka). Või panen lisadesse tabeli, kus need arvulised väärtused?
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{korgesaar_vanus_vormid_crop}
-    \caption{Kõrgesaar: sõnavormide vanuseline jaotumine}
+    \subfloat[lapse sõnad]{{\includegraphics[width=10cm]{vanus_laps_sonad} }}
+    \qquad
+    \subfloat[hoidja sõnad]{{\includegraphics[width=10cm]{vanus_hoidja_sonad} }}
+    \caption{lapse ja hoidja sõnade jaotumine kogu korpuses vanusegrupiti}
 \end{figure}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=11cm, height=9cm]{korgesaar_sugu}
-    \caption{Kõrgesaar: sõnavormide sooline jaotumine}
+    \subfloat[lapse sõnad]{{\includegraphics[width=10.5cm]{lapse_sonad_kogu_korpus} }}
+    \qquad
+    \subfloat[hoidja sõnad]{{\includegraphics[width=10.5cm]{hoidja_sonad_kogu_korpuses} }}
+    \caption{lapse ja hoidja sõnade jaotumine lapse järgi}
 \end{figure}
 
 
 
-
-\subsubsection{Kapanen}
-
-Joonisel 6 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 2- ja 3-aastaste vanusegrupis on hoidja ja lapse sõnade osakaal mõnevõrra ``võrdsemalt'' jaotunud kui 1-aastaste laste seas. 2-aastaste seas on hoidja sõnu 59\% ja lapse sõnu 41\%. 3-aastaste seas on hoidja sõnu 54\% ja lapse sõnu 46\%. 1-aastaste seas on hoidja sõnu 71\% ja lapse sõnu 29\%. Soolist jaotumist ei saa Kapaneni korpuse põhjal teha, kuna lindistuste materjal on salvestatud vaid ühe lapsega.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{kapanen_vanus_sonad}
-    \caption{Kapanen: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{kapanen_vanus_vormid}
-    \caption{Kapanen: sõnavormide vanuseline jaotumine}
-\end{figure}
-
-
-\subsubsection{Beek}
-
-Joonisel 8 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 0-aastaste laste seas on hoidja sõnu 89\% ja lapse sõnu 11\%. 1-aastaste seas on hoidja sõnu 90\% ja lapse sõnu vaid 10\%. 2-aastaste seas kahaneb hoidja sõnade (78\%) ja suureneb lapse sõnade osakaal (22\%). Beeki korpuses pole lapse ja hoidja sõnade soolist jaotumist võimalik teha.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{beek_vanus_sonad}
-    \caption{Beek: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm]{beek_vanus_vormid}
-    \caption{Beek: sõnavormide vanuseliseline jaotumine}
-\end{figure}
-
-
-
-
-\subsubsection{Kohler}
-
-Joonisel 10 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 0-aastaste laste seas on hoidja sõnu lausa 98\% ja lapse sõnu vaid 2\%. 1-aastaste seas on hoidja sõnu 89\% ja lapse sõnu vaid 11\%. 2-aastaste seas kahaneb hoidja sõnade (78\%) ja suureneb lapse sõnade osakaal (22\%).
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, height=9cm]{kohler_vanus_sonad}
-    \caption{Kohler: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-Joonis 11 kujutab lapse ja hoidja sõnade soolist jaotumist. Nii tüdrukute kui ka poiste seas on hoidja ja lapse sõnade jaotumine ühtlane. Tüdrukute seas on hoidja sõnade osakaal 87\% ja poiste seas 85\%. Lapse sõnade osakaal tüdrukute seas on 13\% ja poiste seas 15\%.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm, height=8cm]{kohler_sugu_sonad}
-    \caption{Kohler: lapse ja hoidja sõnade sooline jaotumine}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, height=9cm]{kohler_vanus_vormid}
-    \caption{Kohler: sõnavormide vanuseliseline jaotumine}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{kohler_sonavormid_sugu}
-    \caption{Kohler: sõnavormide sooline jaotumine}
-\end{figure}
-
-
-\subsubsection{Vija}
-
-Joonisel 14 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Valdavalt kõigis vanusegruppides on hoidja keele sõnad ülekaalus, v.a. 3-aastased. 1-aastaste laste seas on hoidja sõnade osakaal 75\% ja lapse sõnad 25\%. Vanuse suurenedes suureneb ka lapse sõnade osakaal ja väheneb hoidja sõnade osakaal. 2-aastaste seas on hoidja sõnade hulk 59\% ja lapse sõnu 41\%. 3-aastaste laste seas on hoidja sõnu vähem kui lapse sõnu (42\% vs 58\%). Vija korpuses pole lapse ja hoidja sõnade soolist jaotumist võimalik teha.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, height=9cm]{vija_vanus_sonad}
-    \caption{Vija: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=13cm, height=9cm]{vija_vanus_vormid}
-    \caption{Vija: sõnavormide vanuseline jaotumine}
-\end{figure}
-
-
-
-\subsubsection{Argus}
-
-Joonisel 16 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 1-aastaste laste seas on hoidja sõnade osakaal 78\% ja lapse sõnad 22\%. 2-aastaste seas on hoidja sõnade hulk 66\% ja lapse sõnu 34\%. Arguse korpuses pole lapse ja hoidja sõnade soolist jaotumist võimalik teha.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{argus_vanus_sonad}
-    \caption{Argus: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=8cm]{argus_vanus_vormid}
-    \caption{Argus: sõnavormide vanuseline kasv}
-\end{figure}
-
-
-
-\subsubsection{Zupping}
-
-Joonisel 18 on kujutatud lapse ja hoidja sõnade vanuselist jaotumist. Kõigis vanusegruppides on hoidja keele sõnad ülekaalus. 1-aastaste laste seas on hoidja sõnade osakaal 81\% ja lapse sõnad 19\%. 2- ja 3-aastaste laste seas on hoidja ja lapse sõnade jaotumine ühetaoline (66\% ja 34\%). 4-aastaste laste seas on hoidja sõnade osakaal 70\% ja lapse sõnu 30\%. Ka Zuppingu korpuses ei saa soolist jaotumist teha.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=11cm, height=9cm]{zupping_vanus_sonad}
-    \caption{Zupping: lapse ja hoidja sõnade vanuseline jaotumine}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=13cm, height=8cm]{zupping_vanus_vormid}
-    \caption{Zupping: sõnavormide vanuseline jaotumine}
-\end{figure}
-
-
-
-\subsubsection{Kõik alamkorpused}
-
-Kõikides alamkorpustes on alamkorpuse kogu sõnade arvu mõttes ülekaalus hoidja sõnad, mis on ka üsna ootuspärane (vt joonis 19). Kõige suurema osakaaluga hoidja sõnu on Kohleri (86\%) ja Beeki (83\%)korpuses, kõige vähem Vija (51\%) ja Kõrgesaare (59\%) korpuses. Arguse ja Kapaneni korpuses on hoidja sõnade jaotumine enam-vähem sarnane (68\% ja 65\%). Zuppingu korpuses moodustavad hoidja sõnad kogu alamkorpuse sõnade arvu poolest 73\%. Kõige ühtlasemalt jaotuvad lapse ja hoidja sõnad Vija korpuses, kus lapse sõnade protsent on 49. Korpused, kus lapse ja hoidja sõnade jaotumine on kõige ebaühtlasem, on Beek, Kohler ja Zupping. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{koik_korpus_sonad}
-    \caption{hoidja ja lapse sõnade jaotumine alamkorpustes}
-\end{figure}
-
-Tabelis 2 on välja toodud see, kuidas jaotub lapse, hoidja ja nende kattuv sõnavara igas alamkorpuses. Kõige ühtlasemalt jaotub lapse ja hoidja sõnavara Kapaneni korpuses (mõlema osakaal korpuses on 39\%) ja nende kattuv sõnavara on 22\%. Ka Kõrgesaare korpuses on jaotumine ühtlane -- lapse sõnavara moodustab 35\% ja hoidja sõnavara 36\%, seejuures kattuv sõnavara on 29\%. Vija ja Zuppingu korpusteski pole lapse ega hoidja sõnavaral suured erinevused (35\% ja 32\% ning 29\% ja 54\%). Kõige suuremad lahknevused on Beeki, Arguse ja Kohleri korpuses. Kohleri korpuses moodustab lapse sõnavara suurus kogu alamkorpuse sõnavarast 17\% ja hoidja sõnavara 58\%. Arguse korpuses moodustab lapse sõnavara kogu alamkorpuse sõnavarast 17\% ja hoidja sõnavara 69\%. Sõnavara jaotub kõige ebaühtlasemalt Beeki korpuses: lapse sõnavara moodustab 16\% ja hoidja sõnavara 78\%, kusjuures nende ühine sõnavara alamkorpuse kogu sõnavarast on vaid 6\%. Kõige suurem ühise sõnavara protsent alamkorpuses on Vijal (33\%). Vija korpuse puhul on huvitav see, et see on ainus alamkorpus, kus lapse sõnavara on rikkam kui hoidja sõnavara.
+Tabelis 2 on välja toodud see, kuidas jaotub lapse, hoidja ja nende kattuv sõnavara (ehk unikaalsete sõnade koguarv) igas alamkorpuses. Kõige ühtlasemalt jaotub lapse ja hoidja sõnavara Kapaneni korpuses (mõlema osakaal korpuses on 39\%) ja nende kattuv sõnavara on 22\%. Ka Kõrgesaare korpuses on jaotumine ühtlane -- lapse sõnavara moodustab 35\% ja hoidja sõnavara 36\%, seejuures kattuv sõnavara on 29\%. Vija ja Zuppingu korpusteski pole lapse ega hoidja sõnavaral suured erinevused (35\% ja 32\% ning 29\% ja 54\%). Kõige suuremad lahknevused on Beeki, Arguse ja Kohleri korpuses. Kohleri korpuses moodustab lapse sõnavara suurus kogu alamkorpuse sõnavarast 17\% ja hoidja sõnavara 58\%. Arguse korpuses moodustab lapse sõnavara kogu alamkorpuse sõnavarast 17\% ja hoidja sõnavara 69\%. Sõnavara jaotub kõige ebaühtlasemalt Beeki korpuses: lapse sõnavara moodustab 16\% ja hoidja sõnavara 78\%, nende ühine sõnavara alamkorpuse kogu sõnavarast on vaid 6\%. Kõige suurem ühise sõnavara \% on Vija alamkorpuses (33\%). Vija korpuse puhul on huvitav see, et see on ainus alamkorpus, kus lapse sõnavara on rikkam kui hoidja sõnavara.
 
 
 \begin{table}[H]
@@ -610,45 +462,17 @@ Zupping   & \begin{tabular}[c]{@{}c@{}}1615\\ 29\%\end{tabular} & \begin{tabular
 \end{tabular}
 \end{table}
 
-Joonis 14 illustreerib seda, kuidas jaotuvad lapse ja hoidja sõnad kogu korpuses. Me näeme, et suurem osa transkriptsioonidest on tehtud vanuses 1 kuni 3. See tähendab, et
- korpuses on suur hulk sõnu, mis esindavad vaid teatud vanusegruppe ja see omakorda peegeldab paljude teiste vanusegruppide esinduslikkust. Vanusegruppide võrdlemine sõna tasandil pole võimalik, sest näiteks 6- ja 12-aastaste vanusegruppi esindavad vaid ühe lapse ja hoidja sõnad. Olgugi, et võrreldes paljude teistega on 6-aastaste vanusegrupis nii lapse kui hoidja sõnade hulk suur, siis kumulatiivsete absoluutsageduste korral on 6-aastaste sõnade hulk miniatuurne. Kui me vaatame 0- kuni 2-aastaste vanusegruppi, siis märkame, et suurem osa lapse sõnu paiknevad sõnade arvu skaalal väga madalal, kuid hoidja sõnade arv paikneb pigem sõnade arvu skaalal kõrgemal ja võib lapse sõnadega võrreldes olla väga äärmuslik.
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth, height=9cm]{lindistused_vanus_sonad_crop}
-    \caption{hoidja ja lapse sõnade jaotumine kogu korpuses vanuse järgi}
-\end{figure}
-
-Korpuse üks koostamise põhimõte on, et korpus peab olema representatiivne ehk olema uuritava nähtuse suhtes esinduslik. Kui me uurime nii lapse kui hoidja keelekasutust, siis tuleb teada kelle keelekasutust korpus esindab. Andmed viitavad sellele, et see korpus esindab enam-jaolt Andrease ja tema hoidja keelekasutust, sest Andrease sõnad moodustavad kõikide laste sõnadest lausa 50,4\% ja Andrease hoidja sõnad kõikidest hoidja sõnadest 29,7\% (vt joonis 15 (a) ja (b)). See tähendab, et ülejäänud lapsed (ehk 96\%) esindavad vähem kui 50\% lapse keelekasutust kogu korpuses. Ja nendest ülejäänud lastest 54\% (ehk 14 last 26 lapsest) esindavad korpuses vähem kui 1\%. Hoidja keelekasutus varieerub natuke rohkem: ülejäänud hoidjate keelekasutusest 70,3\% esindab kogu korpuse hoidja keelekasutust, kuid hoidjatest 35\% (ehk 9 hoidjat 26 hoidjast) esindab kogu korpuses vähem kui 1\% sõnu.
-
-Vanuse järgi esindab korpuses lapse sõnu 2- ja 3-aastaste vanusegrupp (vt joonis 16 (a)). Ülejäänud vanusegrupid (ehk 86\% kõikidest vanusegruppidest) esindavad korpuses lapse sõnu vaid 35,8\%. Hoidja sõnadest (vt joonis 16 (b)) on kõige suurema osakaaluga 2-aastaste (37,4\%) ja 1-aastaste (27,7\%) ja 3-aastaste (14,6\%) vanusegrupp. Ülejäänud vanusegrupid (ehk 80\%) esindavad hoidjate sõnadest vaid 20,3\%.
-
-\begin{figure}[H]
-    \centering
-    \subfloat[lapse sõnad]{{\includegraphics[width=10.5cm]{lapse_sonad_kogu_korpus} }}
-    \qquad
-    \subfloat[hoidja sõnad]{{\includegraphics[width=10.5cm]{hoidja_sonad_kogu_korpuses} }}
-    \caption{lapse ja hoidja sõnade jaotumine lapse järgi}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-    \subfloat[lapse sõnad]{{\includegraphics[width=10cm]{vanus_laps_sonad} }}
-    \qquad
-    \subfloat[hoidja sõnad]{{\includegraphics[width=10cm]{vanus_hoidja_sonad} }}
-    \caption{lapse ja hoidja sõnade jaotumine kogu korpuses vanusegrupiti}
-\end{figure}
+Sõnavara kvantitatiivseks hindamiseks tuleb arvestada korpuse andmete kogumisviisi ja suurusega. Väikse andmestikuga korpused pole sõnavara ja harva esilduvate nähtuste uurimiseks kõige sobilikum viis, sest see võib viia valede järeldusteni. Tihe andmestik võimaldab jällegi saada rikkalikumat sõnavara, uurida lapse produktiivsust ja nähtusi, mis pole keeles nii sagedased. \citep{Tomasello} Kui vaadata Beeki, Arguse ja Zuppingu alamkorpustes lapse ja hoidja sõnavara kattumist, siis tekib küsimus, kas see vähene kattuvus tuleneb sellest, et lapsel ongi väike sõnavara, või sellest, et tegemist väikse korpusega? Alamkorpustes ei saa vanuse järgi lapse ja hoidja sõnavara kasvu adekvaatselt hinnata, sest tegu on väikeste andmestikega ja mõnes vanuses on last rohkem lindistatud. Lisaks tuleks ettevaatlikkusega suhtuda ka alamkorpuste võrdlemisse, sest iga korpus on koostatud erinevaid eesmärke ja viise silmas pidades.
 
 
 \newpage
 
-\section{Morfoloogiliselt märgendatud lastekeele korpus}
+\section{Morfoloogiliselt märgendatud lapsekeele korpus}
 
 \subsection{Tööprotsess}
 
-Magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lastekeele korpus, kuhu on koondatud kõik CHILDES-i eesti keele alamkorpused. Esialgne plaan oli konverteerida omalkäel kõik CHAT-failid XML-kujule, kuid sellega tekkisid mõningad tagasilöögid. Selleks, et CHAT-faile XML-kujule konverteerida, oleks tarvis, et kõik alamkorpused oleksid ühtsel kujul transkribeeritud ja kodeeritud. Peatükis 5.4 tõin välja mõned näited sellest, kui ebajärjepidevalt on seda tehtud. Isegi, kui korpused oleksid olnud standardsel kujul, siis oleks konverteerimisskripti tegemine muutunud väga keeruliseks ja ülejõukäivaks ülesandeks. Põhjus seisneb selles, et CHAT käsiraamatus on väga suur ja lai valik kodeeringuid, mida on paraku ühel inimesel raske hallata. Näide (5) illustreerib seda, kuidas juba üsna lühikeses transkriptsiooni lõigus võib kodeeringute kasutus väga mitmekesine olla (kodeeringu seletus paikneb lausungi järel).
+Magistritöö eesmärk on luua morfoloogiliselt märgendatud eesti lapsekeele korpus, kuhu on koondatud kõik CHILDES-i eesti keele alamkorpused. Esialgne plaan oli konverteerida omalkäel kõik CHAT-failid XML-kujule, kuid sellega tekkisid mõningad tagasilöögid. Selleks, et faile XML-kujule konverteerida, oleks tarvis, et kõik alamkorpused oleksid ühtsel kujul transkribeeritud ja kodeeritud. Peatükis 3.2 tõin välja mõned näited sellest, kui ebajärjepidevalt on seda tehtud. Isegi, kui korpused oleksid olnud standardsel kujul, siis oleks konverteerimisskripti tegemine muutunud väga keeruliseks ja ülejõukäivaks ülesandeks. Põhjus seisneb selles, et CHILDES-i transkriptsioonisüsteemis on väga suur ja lai valik kodeeringuid, mida on paraku ühel inimesel raske hallata. Näide (5) illustreerib seda, kuidas juba ühes lühikeses transkriptsiooni lõigus võib kodeeringute kasutus olla väga mitmekesine (kodeeringu seletus paikneb lausungi järel).
 
 (5)
 \begin{description}
@@ -656,7 +480,7 @@ Magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lastekeele ko
     \item*MOT:   kus sa $\pmb{+/}$. | \emph{vahele segamine}
     \item*CHI:   $\pmb{+<}$ \textbf{(}h\textbf{)}akkas põlema . | \emph{pealerääkimine}, \emph{mittetäielik sõna}
     \item*MOT:   see ei ole kefiir ju .
-    \item*CHI:   kefiir . $\pmb{[+}$ sr\textbf{]} | \emph{postcode}
+    \item*CHI:   kefiir . $\pmb{[+}$ sr\textbf{]} | üleskirjutaja poolt defineeritud \emph{postcode}
     \item*MOT:   see on piim .
     \item*FAT:   mis see kook teeb ?
     \item*FAT:   tuleb ära panna $\pmb{[=}$ visata\textbf{]} või ? | \emph{seletus, tähendus}
@@ -682,11 +506,11 @@ Magistritöö eesmärk on luua eesti morfoloogiliselt märgendatud lastekeele ko
 
 \hfill
 
-On arusaadav, et iga uurija transkribeerib ja kodeerib lindistusi lähtuvalt enda eesmärkidest. Ühelt poolt on hea, et CHAT käsiraamatus on niivõrd detailne kodeering, kuid teisalt võib selles orienteerumine vägagi raskeks osutuda. Kuna sellise konverteerimisskripti kirjutamise töömaht oleks selle magistritöö kirjutamise jaoks liiga töömahukaks osutunud, siis tuli leida uus lahendus. Korpuse tegemiseks vajalik keelematerjal pärineb samuti CHILDES-i andmebaasist, kuid need on juba eelnevalt CHAT-kujult XML-kujule konverteeritud failid. Aga kuna selle töö eesmärk on luua morfoloogiliselt märgendatud korpus, siis tuleb nendele XML-failidele ka lisada morfoloogiline tasand, mida neis failides ei ole. Kuna kõik CHILDES-i korpused on kirjeldatud oma XML-skeema (\emph{Talkbank}) järgi, siis tuli lähemalt tutvuda Talkbanki XML-skeema süntaksiga.
+On arusaadav, et iga uurija transkribeerib ja kodeerib lindistusi lähtuvalt enda eesmärkidest. Ühelt poolt on hea, et transkriptsioonisüsteem on niivõrd detailne, kuid teisalt võib selles orienteerumine vägagi raskeks osutuda. Kuna sellise konverteerimisskripti kirjutamise töömaht oleks selle magistritöö kirjutamise jaoks liiga töömahukaks osutunud, siis tuli leida uus lahendus. Korpuse tegemiseks vajalik keelematerjal pärineb samuti CHILDES-i andmebaasist, kuid need on juba eelnevalt CHAT-kujult XML-kujule konverteeritud failid. Aga kuna selle töö eesmärk on luua morfoloogiliselt märgendatud korpus, siis tuli nendele XML-failidele ka lisada morfoloogiline tasand, mida neis failides ei ole. Kuna kõik CHILDES-i korpused on kirjeldatud oma XML-skeema (\emph{Talkbank}) järgi, siis tuli lähemalt tutvuda Talkbanki XML-skeema süntaksiga.
 
 \subsubsection{\emph{Talkbank}i skeema}
 
-Joonisel 2 on kujutatud minu töö seisukohalt olulisimad skeema elemendid.
+Joonisel 6 on kujutatud minu töö seisukohalt olulisimad skeema elemendid.
 
 \begin{figure}[H]
     \centering
@@ -713,7 +537,7 @@ Näide (6) (Argus; hend10.xml)
   <comment type="Date">02-JUN-1997</comment>
 \end{lstlisting}
 
-Element \emph{<u>} tähistab kõneleja lausungit, selle kohustuslikeks atribuutideks on kõneleja ID ja lausungi järjekorra ID. \emph{<u>}-elemendil on palju alluvaid, aga selle töö juures osutusid olulisimateks \emph{<w>} ja \emph{<g>}. Element \emph{<w>} tähistab sõna ja \emph{<g>} sõnade gruppi. \emph{<g>} alluvaks võib olla tema ise või \emph{<w>}. Elemendi \emph{<w>} alluvaks võib olla \emph{<replacement>}. See element tähistab neid üksuseid, mida CHAT-i konventsioonide järgi kodeeritakse [: text] abil, vt näide (7) (vt ka näide (5) kifiir [: kefiir]).
+Element \emph{<u>} tähistab kõneleja lausungit, selle kohustuslikeks atribuutideks on kõneleja ID ja lausungi järjekorra ID. \emph{<u>}-elemendil on palju alluvaid, aga selle töö juures osutusid olulisimateks \emph{<w>} ja \emph{<g>}. Element \emph{<w>} tähistab sõna ja \emph{<g>} sõnade gruppi. \emph{<g>} alluvaks võib olla tema ise või \emph{<w>}. Elemendi \emph{<w>} alluvaks võib olla \emph{<replacement>}. See element tähistab neid üksuseid, mida CHILDES-i konventsioonide järgi kodeeritakse [: text] abil, vt näide (7) (vt ka näide (5) kifiir [: kefiir]).
 
 \hfill
 
@@ -742,9 +566,9 @@ Morfoloogilise tasandi lisamine algab elemendiga \emph{<mor>}, mille alluv on \e
 \end{figure}
 
 
-Programmi kirjutamiseks on kasutatud Python 3.4 versiooni. Töövoog (vt joonis 3) on jaotatud 4 suuremaks osaks: XML-failide sisselugemine, faili parsimine, töötlemine ja modifitseeritud XML-faili salvestamine. Faili parsimiseks kasutan Pythoni moodulit \emph{ElementTree}, mis võimaldab lugeda ja genereerida XML hierarhiat. Parsimise käigus pannakse paika XML-faili juurelement ja sellele alluvad elemendid. Töötluse käigus navigeeritakse esmalt iga vestlusest osavõtja lausungi juurde. Seejärel leitakse kõik sõned ehk \emph{<w>}-elemendid. Juhul kui \emph{<w>}-elemendi alluv on element \emph{<replacement>}, siis uueks sõneks määratakse \emph{<replacement>}-elemendi \emph{<w>}-element.
+Programmi kirjutamiseks on kasutatud Python 3.4 versiooni. Töövoog (vt joonis 7) on jaotatud 4 suuremaks osaks: XML-failide sisselugemine, faili parsimine, töötlemine ja modifitseeritud XML-faili salvestamine. Faili parsimiseks kasutan Pythoni moodulit \emph{ElementTree}, mis võimaldab lugeda ja genereerida XML hierarhiat. Parsimise käigus pannakse paika XML-faili juurelement ja sellele alluvad elemendid. Töötluse käigus navigeeritakse esmalt iga vestlusest osavõtja lausungi juurde. Seejärel leitakse kõik sõned ehk \emph{<w>}-elemendid. Juhul kui \emph{<w>}-elemendi alluv on element \emph{<replacement>}, siis uueks sõneks määratakse \emph{<replacement>}-elemendi \emph{<w>}-element.
 
-Kui lausungi sõne on leitud, siis tehakse sõnele morfoloogiline analüüs. Morfoloogilise analüsaatorina kasutatakse \emph{etanat}. Sõne analüüs salvestatakse mällu. Kui analüsaator saab sisendiks seni nägemata sõne (ehk mida mälus ei eksisteeri), siis tehakse sellele morfoloogiline analüüs. Põhjus seisneb programmi optimeerimises: morfoloogilise analüsaatori kutsumine iga sõne juures on üsna kulukas protsess. Seejärel lisatakse igale sõnele morfoloogiline tasand. Programm genereerib kirjutatud koodis järk-järgult puu elemendid ning morfoloogilisele tasandile jõudes hakkab sõne analüüse neile vastavatesse elementidesse lisama (vt joonis 27 ja näide (8)). Juhul kui sõne analüüse on rohkem kui üks, siis igale analüüsile genereeritakse uuesti morfoloogilise taseme elemendid. Samme korratakse seni, kuni jõutakse viimase lausungini ja lõpptulemus salvestatakse modifitseeritud XML-faili.
+Kui lausungi sõne on leitud, siis tehakse sõnele morfoloogiline analüüs. Morfoloogilise analüsaatorina kasutatakse \emph{etanat}. Sõne analüüs salvestatakse mällu. Kui analüsaator saab sisendiks seni nägemata sõne (ehk mida mälus ei eksisteeri), siis tehakse sellele morfoloogiline analüüs. Põhjus seisneb programmi optimeerimises: morfoloogilise analüsaatori kutsumine iga sõne juures on üsna kulukas protsess. Seejärel lisatakse igale sõnele morfoloogiline tasand. Programm genereerib kirjutatud koodis järk-järgult puu elemendid ning morfoloogilisele tasandile jõudes hakkab sõne analüüse neile vastavatesse elementidesse lisama (vt joonis 7 ja näide (8)). Juhul kui sõne analüüse on rohkem kui üks, siis igale analüüsile genereeritakse uuesti morfoloogilise taseme elemendid. Samme korratakse seni, kuni jõutakse viimase lausungini ja lõpptulemus salvestatakse modifitseeritud XML-faili.
 
 Näide (8) (Vija; 11120.xml)
 \begin{lstlisting}
@@ -933,14 +757,12 @@ vanus                  & \multicolumn{3}{c|}{lapse sõnad}                      
 \end{tabular}}
 \end{table}
 
+Võtame esmalt vaatluse alla hoidja sõnad. Tabelitest 3--9 on näha, et nii analüüsi saanud kui ka tundmatuks jäänud sõnade osakaal igas alamkorpuses on üsna stabiilselt jaotunud. Analüüsitud sõnade üldine osakaal varieerub alamkorpusetes 94\%--98\% vahel ja tundmatute sõnade osakaal 2\%--8\% vahel. Need tulemused on lootustäratavad, kuna tegemist on suulise keelega, mille erijooned võivad olla kirjakeele analüüsimiseks loodud morfoloogilise analüsaatori jaoks problemaatilised. Näiteks uue meedia keelekasutus (ehk internetikeel) on oma spontaansuse ja mitteformaalsuse tõttu sarnane suulisele keelele ja erineb kirjakeelest nii leksikoni kui ortograafia poolest. Uue meedia korpuste esmasel morfoloogilisel analüüsimisel saadi tundmatute sõnade protsendiks jututubades 27,2\%, foorumites 10.3\%, kommentaariumites 5,6\% ja uudisgruppides 11,7\% \citep{UUSMEEDIA}. Pärast kasutajasõnastiku ja eeltöötluse rakendamist vähenes tundmatute sõnade protsent jututubades 10,5\%, foorumites 8.8\%, kommentaariumites 4,8\% ja uudisgruppides 10,5\%-ni. Seega väike tundmatute sõnade \% hoidja keeles on hea, kuid need andmed võivad viidata ka sellele, et korpuse transkribeerijad on pannud hoidjakeelt kirja kirjakeelele sarnaselt.
 
-ÄKKI NEED TABELID KA PIGEM LISADESSE?
-Võtame esmalt vaatluse alla hoidja sõnad. Tabelitest on näha, et nii analüüsi saanud kui ka tundmatuks jäänud sõnade osakaal igas korpuses on üsna stabiilselt jaotunud. Analüüsitud sõnade üldine osakaal igas korpuses varieerub 94\%--98\% vahel ja tundmatute sõnade osakaal 2\%--8\% vahel. Need tulemused on lootustäratavad, kuna tegemist on suulise keelega, mille erijooned võivad olla kirjakeele analüüsimiseks loodud morfoloogilise analüsaatori jaoks problemaatilised. Näiteks uue meedia keelekasutus (ehk internetikeel) on oma spontaansuse ja mitteformaalsuse tõttu sarnane suulisele keelele ja erineb kirjakeelest nii leksikoni kui ortograafia poolest. Uue meedia korpuste esmasel morfoloogilisel analüüsimisel saadi tundmatute sõnade protsendiks jututubades 27,2\%, foorumites 10.3\%, kommentaariumites 5,6\% ja uudisgruppides 11,7\% \citep{UUSMEEDIA}. Pärast kasutajasõnastiku ja eeltöötluse rakendamist vähenes tundmatute sõnade protsent jututubades 10,5\%, foorumites 8.8\%, kommentaariumites 4,8\% ja uudisgruppides 10,5\%-ni. Seega väike tundmatute sõnade \% hoidja keeles on hea, kuid need andmed võivad viidata ka sellele, et korpuse transkribeerijad on pannud hoidja keelt kirja kirjakeelele sarnaselt.
-
-Lapse sõnade puhul varieerub analüüsitud sõnade üldine osakaal igas korpuses 57\%--96\% vahel ja tundmatud sõnad 4\%--43\% vahel. Kõige suurem tundmatute sõnade osakaal on Beeki korpuses (vt tabel 5). Seal varieerub tundmatute sõnade \% 34 ja 74 vahel. Beekile järgneb Kapaneni korpus (vt tabel 4), kus tundmatute sõnade \% varieerub 11 ja 30 vahel. Zuppingu korpuses (vt tabel 9) varieerub 5 ja 32\% vahel ning Arguse korpuses (vt tabel 8) 15 ja 36\% vahel. Kõige väiksem tundmatute sõnade osakaal on Vija (vt tabel 7) ja Kohleri korpuses (vt tabel 6). Vija korpuses varieerub tundmatute sõnade protsent 3 ja 22 vahel, kuid Kohleri korpuses 0 ja 7 vahel. Kõrgesaare korpuses (vt tabel 3) varieerub tundmatute sõnade osakaal vahemikus 6\%--53\%. Olenemata sellest, et tundmatute sõnade \% amplituut on suur, jääb üldine skoor alla 10\%. Huvitav see, et kui teiste korpuste puhul üldjuhul vanuse suurenemisega kahaneb tundmatute sõnade osakaal, siis näiteks Kohleri korpuses 1. vanusegrupp ehk 0-aastaste puhul on tundmatuid sõnu 0\%. Sama on ka Beeki korpuses, kus 0-aastaste protsent on väiksem kui 1-aastaste seas (69\% vs 74\%).
+Lapse sõnade puhul varieerub analüüsitud sõnade üldine osakaal igas alamkorpuses 57\%--96\% vahel ja tundmatud sõnad 4\%--43\% vahel. Kõige suurem tundmatute sõnade osakaal on Beeki alamkorpuses (vt tabel 5). Seal varieerub tundmatute sõnade \% 34 ja 74 vahel. Beekile järgneb Kapaneni alamkorpus (vt tabel 4), kus tundmatute sõnade \% varieerub 11 ja 30 vahel. Zuppingu alamkorpuses (vt tabel 9) varieerub 5 ja 32\% vahel ning Arguse alamkorpuses (vt tabel 8) 15 ja 36\% vahel. Kõige väiksem tundmatute sõnade osakaal on Vija (vt tabel 7) ja Kohleri alamkorpuses (vt tabel 6). Vija korpuses varieeruvad tundmatud sõnad 3 ja 22 \% vahel, kuid Kohleri korpuses 0--7 \% vahel. Kõrgesaare korpuses (vt tabel 3) varieerub tundmatute sõnade osakaal vahemikus 6\%--53\%. Olenemata sellest, et tundmatute sõnade \% amplituut on suur, jääb üldine skoor alla 10\%. Huvitav see, et kui teiste korpuste puhul üldjuhul vanuse suurenemisega kahaneb tundmatute sõnade osakaal, siis näiteks Kohleri korpuses 1. vanusegrupp ehk 0-aastaste puhul on tundmatuid sõnu 0\%. Sellesse peab natuke kriitiliselt suhtuma, sest see tuleneb väiksest sõnade koguarvust. Sama on ka Beeki korpuses, kus 0-vanusegrupi protsent on väiksem kui 1-aastaste seas (69\% vs 74\%).
 
 Need andmed võivad viidata sellele, et tundmatute sõnade osakaal võib sõltuda paljuski transkribeerijast, täpsemalt transkribeerija üleskirjutamise viisist. Alamkorpuste standardiseerimise alapeatükis kirjutasin, et transkribeerija peab nägema ja teadma, mida lindistuses tegelikult öelda taheti, ja vastavad kodeeringud peaksid transkriptsioonis olema nii lisatud, et vead oleksid juba esimesel tasandil liigitatud.
-Selleks, et morfoloogiline analüsaator saaks oma tööd hästi teha, oleks tarvis, et transkribeerijad kasutaksid üleskirjutamisel kodeeringut ([: sõna]), mis asendab kõneleja poolt produtseeritud sõna selle kirjakeelele vastava sõnaga. Näiteks vaatame Kohleri korpuses 1.vanusegruppi, kus tundmatute sõnade osakaal on 0\%. Analüüsitud sõnavorme on kokku 4:
+Selleks, et morfoloogiline analüsaator saaks oma tööd hästi teha, oleks tarvis, et transkribeerijad kasutaksid üleskirjutamisel kodeeringut ([: sõna]), mis asendab kõneleja poolt produtseeritud sõna selle kirjakeelele vastava sõnaga. Näiteks vaatame Kohleri korpuses 1. vanusegruppi, kus tundmatute sõnade osakaal on 0\%. Lapse sõnu on kokku 6 ja sõnavorme 4:
 
 \begin{table}[H]
 \begin{tabular}{|l|l|l|}
@@ -953,27 +775,29 @@ täh        & aitäh   & \_I\_ aitäh+0 \\ \hline
 \end{tabular}
 \end{table}
 
-Me näeme, et kontekstita need sõnad justkui ei tähenda miskit, aga kuna nendele sõnadele on juurde lisatud kodeering selle kohta, mida need tegelikkuses tähendavad või mida laps üritas öelda, siis nii saab morfoloogiline analüsaaator oma tööga hästi hakkama ja seetõttu pole selle lapse keelekasutuses ühtki tundmatut sõna. See annab alust arvata, et nii on ka teiste korpuste puhul.
+Me näeme, et kontekstita need sõnad justkui ei tähenda miskit, aga kuna nendele sõnadele on juurde lisatud kodeering selle kohta, mida need tegelikkuses tähendavad või mida laps üritas öelda, siis nii saab morfoloogiline analüsaaator oma tööga hästi hakkama ja seetõttu pole selle lapse keelekasutuses ühtki tundmatut sõna. See annab alust arvata, et neis alamkorpustes, kus tundmatute sõnade osakaal on väike, 
+kasutatakse kõne transkribeerimisel kodeeringut [: sõna], nt Zuppingu korpuses pole seda kordagi kasutatud.
 
-Seni olen arutlenud vaid tundmatute sõnade teemal, kuid morfoloogilise analüsaatori adekvaatsuse hindamiseks tuleb vaatluse alla võtta ka analüüsi saanud sõnad. Selleks oli tarvis faile käsitsi läbi vaadata. Igast korpusest valisin juhuslikkuse alusel ühe faili ja hindasin iga sõna puhul, kas saadud analüüs on õige või mitte. Joonisel 28 on kujutatud, kuidas jaotuvad iga alamkorpuse kaupa õige ja vale analüüsi saanud sõnad.
+Seni olen arutlenud vaid tundmatute sõnade teemal, kuid morfoloogilise analüsaatori adekvaatsuse hindamiseks tuleb vaatluse alla võtta ka analüüsi saanud sõnad. Selleks oli tarvis faile käsitsi läbi vaadata. Igast korpusest valisin juhuslikkuse alusel ühe faili ja hindasin iga sõna puhul, kas saadud analüüs on õige või mitte. Joonisel 8 on kujutatud, kuidas jaotuvad alamkorpustes tundmatud, õige ja vale analüüsi saanud sõnad.
 \hfill
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{kasitsi_valed_oiged_crop}
-    \caption{õige ja vale analüüsi saanud sõnad korpuse kaupa}
+    \includegraphics[width=\textwidth]{kasitsi_crop}
+    \caption{tundmatud, õige ja vale analüüsi saanud sõnad alamkorpuse kaupa}
 \end{figure}
 
-Kõige paremad tulemused olid Zuppingu korpuses, kus keelematerjal pärineb lindistusest lapsega vanuses 4;2. Vale analüüsi saanud sõnu oli vaid 1\% ja õige analüüsi 99\% kõikidest analüüsi saanud sõnadest. Kohleri korpuses olid vale analüüsi saanud 2\% sõnadest (lapse vanus 1;11). Nii Arguse kui ka Kõrgesaare korpuses olid analüüsitud sõnadest 3\% saanud vale analüüsi (Argusel laps vanuses 1;8 ja Kõrgesaarel 1;3). Vija korpuse puhul (laps vanuses 1;7) oli vale analüüsi saanud 8\% kõikidest analüüsitutest sõnadest. Kapaneni korpuses (laps vanuses 1;3) oli 9\% analüüsi saanud sõnadest saanud vale analüüsi. Protsentuaalselt oli kõige enam vale analüüsi saanud sõnu (17\%) Beeki korpuses (laps vanuses 0;9). Siinkohal tuleks muidugi tähelepanu pöörata ka sellele, et tekkinud on tahtmatu vanuseline järjestus -- kõige vähem vale analüüsi saanud sõnu on Zuppingi korpuses, kus lapse vanus on 4;2, ja kõige enam Beeki korpuses, kus lapse vanus on 0;9. Paraku pole vale analüüsi saanud sõnadel vanusega midagi pistmist, pigem on küsimus transkriptsioonide üleskirjutajas. Kui me vaatame Kapaneni ja Beeki korpustes tundmatute (nii hoidja- kui lapsekeeles) ja vale analüüsi saanud sõnade osakaalu, siis näeme, et just neis korpustes on need kõige suuremad ja just nendes korpustes kasutatakse nii lapse kui hoidja kõne transkribeerimisel kuuldeortograafiat ja sedagi mitte järjepidevalt. Näiteks Kapaneni ja Beeki korpuses kasutatakse läbi segi \emph{head isu} ja \emph{ead isu}, \emph{präegu} ja \emph{praegu}, \emph{jaaah} ja \emph{jah}, \emph{eiä} ja \emph{ei}, \emph{äitäh} ja \emph{aitäh} jne. Lisaks veel sõnaalgulised klusiilid \emph{buutuda} ja \emph{puutuda}, \emph{boti} ja \emph{poti}, \emph{balju} ja \emph{palju} jne. Ja selline üleskirjutusviis mõjutab ka morfoloogilise analüsaatori väljundit nii tundmatute kui ka vale analüüsi saanud sõnade osas, nt sõna \emph{ead} saab analüüsiks 
-\emph{iga+d \_S\_ Pl Nom iga+d}, sõna \emph{präägust} saab analüüsiks \emph{prääk+0 \_S\_ Sg Gen}.
+Kõige paremad tulemused olid Zuppingu alamkorpuses, kus keelematerjal pärineb lindistusest lapsega vanuses 4;2. Kõikidest sõnadest oli vale analüüsi saanud sõnu vaid 1\%, õige analüüsi saanud sõnu 96\% ja tundmatuid sõnu 3\%. Kohleri alamkorpuses (lapse vanus 1;11) olid kõikidest sõnadest vale analüüsi saanud 2\%, õige analüüsi 95\% ja tundmatuks jäänud sõnu 3\%. Nii Arguse kui ka Kõrgesaare korpuses olid kõikidest sõnadest 3\% saanud vale analüüsi (Argusel laps vanuses 1;8 ja Kõrgesaarel 1;3). Vija alamkorpuses (laps vanuses 1;7) oli kõikidest sõnadest vale analüüsi saanud 7\%. Kapaneni korpuses (laps vanuses 1;3) oli 8\% sõnadest saanud vale analüüsi. Protsentuaalselt oli kõige enam vale analüüsi saanud sõnu (13\%) Beeki korpuses (laps vanuses 0;9).
+
+Siinkohal tuleks muidugi tähelepanu pöörata ka sellele, et tekkinud on tahtmatu vanuseline järjestus -- kõige vähem vale analüüsi saanud sõnu on Zuppingu korpuses, kus lapse vanus on 4;2, ja kõige enam Beeki korpuses, kus lapse vanus on 0;9. Paraku pole vale analüüsi saanud sõnadel vanusega midagi pistmist, pigem on küsimus transkriptsioonide üleskirjutajas. Kui me vaatame Kapaneni ja Beeki alamkorpustes (vt tabel 4 ja 5) tundmatute ja vale analüüsi saanud sõnade osakaalu, siis näeme, et just neis korpustes on need kõige suuremad ja just nendes korpustes kasutatakse kõige enam nii lapse kui hoidja kõne transkribeerimisel kuuldeortograafiat ja sedagi mitte järjepidevalt. Näiteks Kapaneni ja Beeki korpuses kasutatakse läbisegi \emph{head isu} ja \emph{ead isu}, \emph{präegu} ja \emph{praegu}, \emph{jaaah} ja \emph{jah}, \emph{eiä} ja \emph{ei}, \emph{äitäh} ja \emph{aitäh} jne. Lisaks veel sõnaalgulised klusiilid \emph{buutuda} ja \emph{puutuda}, \emph{boti} ja \emph{poti}, \emph{balju} ja \emph{palju} jne. Selline üleskirjutusviis mõjutab ka morfoloogilise analüsaatori väljundit nii tundmatute kui ka vale analüüsi saanud sõnade osas, nt sõna \emph{ead} saab analüüsiks \emph{iga+d \_S\_ Pl Nom iga+d}, sõna \emph{präägust} saab analüüsiks \emph{prääk+0 \_S\_ Sg Gen}.
 
 
 Täielikult vigadeta morfoloogiliselt märgendatud korpus eeldab, et iga sõnavorm saab õige sõnaliigilise kuuluvuse, käändsõnade puhul õige arvu ja käände, verbide puhul õige arvu, isiku, tegumoe, aja, kõneviisi ja kõnelaadi. Õige analüüsi valimine läheb keeruliseks siis, kui sõna paikneb kahe sõnaliigi vahel või kasutatakse teise sõnaliigi funktsioonis. Suur osa kategooriatest on vormi põhjal üheselt määratavad, kuid on selliseid mitteühesuse tüüpe, mis valmistavad isegi käsitsi määramisel raskusi, nt käändsõnad ja verbid, mille vormidest arenevad adpositsioonid ja adverbid (nt \emph{kätte}, \emph{käes}, \emph{alates}), verbi ja adjektiivi piirimail paiknevad partitsiibid (nt \emph{surnud}, \emph{kadunud}) ning adverbi ja konjunktsioonide piirimail paiknevad sõnad (nt \emph{aga}, \emph{nagu}, \emph{kui}). Morfoloogilise analüüsi mõttes oleks hea, kui sellist piirimail asetsemist oleks võimalikult vähe ja seetõttu peaksid sõnaliigid olema kirjeldatud nii, et ka süntaksit saaks võimalikult otstarbekalt kirjeldada. (\citealp[102--104]{Sonaliik}; \citealp[627--631]{Sonaliik2}).
 
-Uue meedia korpuses võeti morfoloogilisel märgendamisel kasutusele partikli sõnaliik. Partikkel on muutumatu mittetäistähenduslik sõna, millel on eelkõige suhtluslik ja emotsionaalne funktsioon. \citep[4]{UUSMEEDIA} Ka lastekeele korpuse puhul tuleks mõelda mõne uue sõnaliigi kasutusele võtmise peale. Näiteks, mida teha onomatopeetiliste sõnadega? Onomatopoeetilistest sõnadest ei saa üle vaadata, sest need kuuluvad lapse esimeste sõnade hulka ja on ka hoidjakeeles sagedased. Reili Argus eristab helijäljenduslike sõnade hulgas ka \emph{imitatiive}, mis on onomatopoeetilised sõnad, mille häälikuline kuju võib olla varieeruv, kuid ei muutu morfoloogiliselt. Tüüpiliseks imitatiiviks on nt kiirabiauto signaali imiteeriv \emph{viuviu}, kõndmise väljendamiseks kasutatav \emph{tipa-tapa}. \citep[19--22]{IMITATIIV}
+Uue meedia korpuses võeti morfoloogilisel märgendamisel kasutusele partikli sõnaliik. Partikkel on muutumatu mittetäistähenduslik sõna, millel on eelkõige suhtluslik ja emotsionaalne funktsioon. \citep[4]{UUSMEEDIA} Ka lapsekeele korpuse puhul tuleks mõelda mõne uue sõnaliigi kasutusele võtmise peale. Näiteks, mida teha onomatopoeetiliste sõnadega? Onomatopoeetiliste sõnade rolli on alatähtsustatud, kuid olenemata sellest, kas keel on häälikusümboolika poolest rikas või mitte, kuuluvad onomatopoeetilised sõnad lapse esimeste sõnade hulka ja on ka hoidjakeeles sagedased (\citealp{Laing_1}; vt ka \citealp{Laing_2}). Reili Argus eristab onomatopoeetiliste sõnade hulgas ka \emph{imitatiive}, mis on onomatopoeetilised sõnad, mille häälikuline kuju võib olla varieeruv, kuid ei muutu morfoloogiliselt. Tüüpiliseks imitatiiviks on nt kiirabiauto signaali imiteeriv \emph{viuviu}, kõndmise väljendamiseks kasutatav \emph{tipa-tapa}. \citep[19--22]{IMITATIIV}
 
-Lisaks sellele, et onomatopoeetiliste sõnade ja imitatiivide piir on hägune, on onomatopoeetilised sõnad ja imitatiivid ka lapse varases keelekasutuses sõnaliigililt mitmesed. \citep[20--21]{IMITATIIV} Eesti keele käsiraamat (VIIDE) jagab tähenduse järgi onomatopoeetilised sõnad interjektsioonide alla. Hennoste nimetab jällegi interjektsiooni sõnaliigiliseks prügikastiks, sest sinna on pandud kokku erinevad üksused. Hennoste arvates on onomatopoeetilised sõnad interjektioonide alla paigutatud sellepärast, et neil on kaldeline foneetiline ja fonoloogiline struktuur ning nad paiknevad sõna ja mittesõna piirimail. \citep[67]{Hennoste} Näites (1) ja (2) jääb segaseks, kas laps kasutab imitatiive nimisõna või verbina:
+Lisaks sellele, et onomatopoeetiliste sõnade ja imitatiivide piir on hägune, on onomatopoeetilised sõnad ja imitatiivid ka lapse varases keelekasutuses sõnaliigililt mitmesed. \citep[20--21]{IMITATIIV} Eesti keele käsiraamat (\citealp{EKK}) jagab tähenduse järgi onomatopoeetilised sõnad interjektsioonide alla. Hennoste nimetab jällegi interjektsiooni sõnaliigiliseks prügikastiks, sest sinna on pandud kokku erinevad üksused. Hennoste arvates on onomatopoeetilised sõnad interjektioonide alla paigutatud sellepärast, et neil on kaldeline foneetiline ja fonoloogiline struktuur ning nad paiknevad sõna ja mittesõna piirimail. \citep[67]{Hennoste} Näites (1) ja (2) jääb imitatiivi sõnaliigiline kuuluvus segaseks:
 
 (1)
 \begin{description}
@@ -991,34 +815,41 @@ Lisaks sellele, et onomatopoeetiliste sõnade ja imitatiivide piir on hägune, o
 \end{description}
 \%comment: Hendrik joonistab vilkureid \citep[28]{IMITATIIV}
 
-Väidetakse, et enne presüntaktilist perioodi ongi raske sõnu liigitada ja sõnaliikidest saab alles siis rääkida, kui laps hakkab kasutama mitmesõnalisi väljendeid. Liigitusprobleemid tekivad eelkõige siis, kui sõnal puuduvad morfoloogilised ja süntaktilised tunnused. Kui lapse lausung pole pikem kui üks sõna, siis pole ka laiemast kontekstist kasu. \citep[27--29]{IMITATIIV}
+Argus analüüsib neid nimisõnaks või verbiks \citep[28]{IMITATIIV}, kuid neid võib analüüsida isoleeritud onomatopoeetilisteks sõnadeks. Väidetakse, et enne presüntaktilist perioodi ongi raske sõnu liigitada ja sõnaliikidest saab alles siis rääkida, kui laps hakkab kasutama mitmesõnalisi väljendeid. Liigitusprobleemid tekivad eelkõige siis, kui sõnal puuduvad morfoloogilised ja süntaktilised tunnused. Kui lapse lausung on ilma morfoloogiliste tunnusteta, siis pole ka laiemast kontekstist kasu. \citep[27--29]{IMITATIIV}
 
-Vale analüüsi saanud sõnadest tegin sagedusloendid ja hindasin morfoloogilise analüsaatori adekvaatsust. Hindasin seda, kas on õige lemma, sõnaliik ja morfoloogilised kategooriad. Vale analüüsi saanud sõnade puhul oli väga raske nende sõnaliigilist kuuluvust määrata, sest tihipeale polnud isegi konteksti olemasolul aru saada millega tegu. Seega pole ime, et analüsaator sellega hakkama ei saa ja ei peagi saama, sest tegu on kirjakeelest hälbiva tekstitüübiga. Vale analüüsi saanud sõnad jaotasin 5 erinevasse rühma.
+Transkriptsioonide käsitsi läbivaatamise puhul hindasin seda, kas tegu on õige lemma, sõnaliigi ja morfoloogiliste kategooriatega. Vale analüüsi saanud sõnade puhul oli väga raske nende sõnaliigilist kuuluvust määrata, sest tihipeale polnud isegi konteksti olemasolul aru saada, millega tegu. Kui see valmistab juba inimesele probleeme, siis pole kahtluski, et analüsaator sellega hakkama saaks, sest tegu on kirjakeelest hälbiva tekstitüübiga. Vale analüüsi saanud sõnadest tegin sagedusloendi ja jaotasin need sõnad 5 erinevasse rühma.
 
-\textbf{Esimese rühma} moodustavad onomatopeetilised sõnad: \emph{viu}, \emph{viuviu}, \emph{nämm}, \emph{amps}, \emph{mämmmämm}, \emph{mämm}, \emph{tapa}, \emph{summ}, \emph{pimm}, \emph{klõps}, \emph{pomm}, \emph{kiiga}, \emph{plaksu-plaksu}, \emph{patsu}, \emph{piiks-piiks-piiks-piiks}, \emph{piiks-piiks}, \emph{pats-pats-pats-pats}, \emph{amps}, \emph{kaak}, \emph{keps}, \emph{sulla}, \emph{kop}, \emph{mõmm}, \emph{põmm}, \emph{kaaga}, \emph{kõps}, \emph{patsu-patsu}, \emph{nämm}, \emph{pisspiss}, \emph{köhi}, \emph{aia}. Nendele sõnadele oli raske sõnaliigilist kuuluvust määrata, mistõttu paigutasin ``kirvemeetodil'' kõik helijäljenduslikud sõnad ühe rühma.
+\textbf{Esimese rühma} moodustavad onomatopeetilised sõnad: \emph{viu}, \emph{viuviu}, \emph{nämm}, \emph{amps}, \emph{mämmmämm}, \emph{mämm}, \emph{tapa}, \emph{summ}, \emph{pimm}, \emph{klõps}, \emph{pomm}, \emph{kiiga}, \emph{plaksu-plaksu}, \emph{patsu}, \emph{piiks-piiks-piiks-piiks}, \emph{piiks-piiks}, \emph{pats-pats-pats-pats}, \emph{amps}, \emph{kaak}, \emph{keps}, \emph{sulla}, \emph{kop}, \emph{mõmm}, \emph{põmm}, \emph{kaaga}, \emph{kõps}, \emph{patsu-patsu}, \emph{nämm}, \emph{pisspiss}, \emph{köhi}, \emph{aia}, \emph{tiks}. Nendele sõnadele oli raske sõnaliigilist kuuluvust määrata, mistõttu paigutasin ``kirvemeetodil'' kõik helijäljenduslikud sõnad ühte rühma.
 
 
-\textbf{Teise rühma} moodustavad häälitsused ja sõnad, mille tähendusest pole võimalik aru saada ka konteksti olemasolul: \emph{paa}, \emph{eo}, \emph{änn}, \emph{tiks}, \emph{t}, \emph{pupe}, \emph{pigi}, \emph{op}, \emph{muks}, \emph{kookai}, \emph{kaka}, \emph{jää}, \emph{manni}, \emph{öö}, \emph{ämm}, \emph{mm}, \emph{a}, \emph{ä}, \emph{s}, \emph{emm}, \emph{mm}.
+\textbf{Teise rühma} moodustavad häälitsused ja sõnad, mille tähendusest pole võimalik aru saada ka konteksti olemasolul: \emph{paa}, \emph{eo}, \emph{änn}, \emph{t}, \emph{pupe}, \emph{pigi}, \emph{op}, \emph{muks}, \emph{kookai}, \emph{kaka}, \emph{jää}, \emph{manni}, \emph{öö}, \emph{ämm}, \emph{mm}, \emph{a}, \emph{ä}, \emph{s}, \emph{emm}, \emph{mm}.
 
 \textbf{Kolmanda rühma} moodustavad pärisnimed, mis puuduvad morfoloogilise analüsaatori leksikonist: \emph{Tiibu}, \emph{Triibu}, \emph{Liisu}, \emph{Tups}, \emph{Tuksi}, \emph{Carlos}, \emph{Sirts}, \emph{Sirtsu}, \emph{Annika}, \emph{Antsu}, \emph{Pitsu}, \emph{Alari}.
 
 \textbf{Neljanda rühma} moodustavad sõnad, mis saavad, kas vale lemma või sõnaliigi: 
-\emph{mõmmi}, \emph{siuke}, \emph{venna}, \emph{tudu}, \emph{pai}, \emph{siukse}, \emph{nuku}, \emph{kalli-kalli}, \emph{kalli}, \emph{vot-vot}, \emph{tantsi-tantsi}, \emph{näri-näri}, \emph{mida-mida}, \emph{musi-musi}, \emph{kapp-kapp}, \emph{kapp-kapp-kapp-kapp}, \emph{istu-istu}, \emph{aitab-aitab}, \emph{aluspüksid-aluspüksid-aluspüksid}, \emph{ruttu-ruttu-ruttu}, \emph{väga-väga}, \emph{ja-ja-ja}, \emph{et-et-et}, \emph{tule-tule}, \emph{pisspissi}, \emph{mine-mine}. Siia alla kuuluvad ka sõnad nagu \emph{kuule}, \emph{palun}, \emph{näe}. Need sõnad on siin seetõttu, et need paiknevad verbi ja interjektsiooni piirimail ning oleksid justkui tekkinud täistähenduslike sõnade muutumise teel. 
+\emph{mõmmi}, \emph{siuke}, \emph{venna}, \emph{tudu}, \emph{pai}, \emph{siukse}, \emph{nuku}, \emph{kalli-kalli}, \emph{kalli}, \emph{vot-vot}, \emph{tantsi-tantsi}, \emph{näri-näri}, \emph{mida-mida}, \emph{musi-musi}, \emph{kapp-kapp}, \emph{kapp-kapp-kapp-kapp}, \emph{istu-istu}, \emph{aitab-aitab}, \emph{aluspüksid-aluspüksid-aluspüksid}, \emph{ruttu-ruttu-ruttu}, \emph{väga-väga}, \emph{ja-ja-ja}, \emph{et-et-et}, \emph{tule-tule}, \emph{pisspissi}, \emph{mine-mine}. Siia alla kuuluvad ka sõnad nagu \emph{kuule}, \emph{palun}, \emph{näe}. Need sõnad on siin seetõttu, et need paiknevad verbi ja interjektsiooni piirimail ning oleksid justkui tekkinud täistähenduslike sõnade muutumise teel.
 
-\textbf{Viienda rühma} moodustavad sõnad, mis oma vormilt vigased (st on läbinud teatud täheteisendused) ja mida CHAT-failides kodeeritakse [\emph{= explanation}] abil: \emph{ütted} (\emph{ütled}), \emph{ükskold} (\emph{ükskord}), \emph{pilukat} (\emph{pirukas}), \emph{ea} (\emph{hea}), \emph{kah} (\emph{diktofon}), \emph{tee} (\emph{terve}), \emph{kesse} (\emph{kes see}), \emph{emmmee} (\emph{emme}), \emph{auh} (\emph{arvuti}), \emph{te} (\emph{see}), \emph{papa} (\emph{kõndima}), \emph{lau} (\emph{laud}), \emph{kiku} (\emph{diktofon}), \emph{kolla} (\emph{kollane}), \emph{teda} (\emph{seda}), \emph{täh} (\emph{aitäh}), \emph{laua} (\emph{laulma}), \emph{kuku} (\emph{luku}), \emph{kiigu} (\emph{kiik}), \emph{au} (\emph{arvuti}), \emph{olla} (\emph{alla}), \emph{määgu} (\emph{mänguasjad}), \emph{kukk} (\emph{trukk} või \emph{raamat}), \emph{koss} (\emph{koos}), \emph{kõrre} (\emph{kõrgel}), \emph{katte} (\emph{kätte}), \emph{kurki} (\emph{kurku}), \emph{noosi} (\emph{joonista}), \emph{kispi} (\emph{küpsis}), \emph{takku} (\emph{traktor}), \emph{ots} (\emph{otsas}), \emph{mammu} (\emph{mari}), \emph{äi} (\emph{ai}), \emph{utu} (\emph{lutt}), \emph{kiika} (\emph{kiikuda}), \emph{kass} (\emph{kastis}), \emph{kapi} (\emph{käbi}), \emph{takka} (\emph{traktor}), \emph{ussi} (\emph{sussid}), \emph{eita} (\emph{ei taha}), \emph{ängi} (\emph{mängib}), \emph{väigi} (\emph{värvi}), \emph{uu} (\emph{õun}), \emph{uksi} (\emph{nutikas}), \emph{toodi} (\emph{joonista}), \emph{tisse} (\emph{televiisori}), \emph{tahta} (\emph{tahan}), \emph{sea} (\emph{see}), \emph{raama} (\emph{raamat}), \emph{puusi} (\emph{pluusi}), \emph{puuniks} (\emph{pruuniks}), \emph{pusti} (\emph{püsti}), \emph{punnu} (\emph{punnis}), \emph{präägust}, \emph{pettu} (\emph{peitu}), \emph{palu} (\emph{palun}), \emph{memme} (\emph{me me}), \emph{märgi} (\emph{värvi}), \emph{mängu} (\emph{mänguasjad}), \emph{mähku} (\emph{mähe}), \emph{laadi} (\emph{lahti}), \emph{kuudi} (\emph{uurima}), \emph{kumme} (\emph{kolm}), \emph{ku} (\emph{diktofon}), \emph{koo} (\emph{koos}), \emph{kõne} (\emph{põnev}), \emph{kombe} (\emph{kombekas}), \emph{kiidu} (\emph{kiisu}), \emph{kii} (\emph{diktofon}), \emph{kat} (\emph{kaks}), \emph{kalju} (\emph{karu}), \emph{kaapi} (\emph{kapi}), \emph{boodi} (\emph{voodi}), \emph{aula} (\emph{laulda}), \emph{auk} (\emph{arvuti}), \emph{aru} (\emph{arvuti}), \emph{ala} (\emph{sajajalgne}), \emph{kipsist} (\emph{küpsist}), \emph{kiisupilt} (\emph{kiisu pilt}), \emph{keti} (\emph{kõdi}), \emph{lutu} (\emph{lutt}), \emph{kumme} (\emph{kummikud}), \emph{sala} (\emph{sajajalgne}), \emph{pillu} (\emph{piilub}), \emph{patt} (\emph{part}), \emph{panni} (\emph{banaanid}), \emph{paa} (\emph{maal}), \emph{olu} (\emph{orav}), \emph{oa} (\emph{orav}), \emph{süü} (\emph{süüa}), \emph{sunni} (\emph{sünnipäev}), \emph{punni} (\emph{punnis}), \emph{käia} (\emph{käima}), \emph{võta} (\emph{võtta}), \emph{õue} (\emph{õues}), \emph{maitse} (\emph{maitsevad}), \emph{koti} (\emph{kott}), \emph{mai} (\emph{mari}), \emph{aua} (\emph{koer}), \emph{voot} (\emph{vot}), \emph{Kate} (\emph{Kattre}).
+\textbf{Viienda rühma} moodustavad sõnad, mis on oma vormilt vigased (st on läbinud teatud täheteisendused) ja mida CHILDES-i transkriptsioonisüsteemis kodeeritakse [\emph{= explanation}] abil: \emph{ütted} (\emph{ütled}), \emph{ükskold} (\emph{ükskord}), \emph{pilukat} (\emph{pirukas}), \emph{ea} (\emph{hea}), \emph{kah} (\emph{diktofon}), \emph{tee} (\emph{terve}), \emph{kesse} (\emph{kes see}), \emph{emmmee} (\emph{emme}), \emph{auh} (\emph{arvuti}), \emph{te} (\emph{see}), \emph{papa} (\emph{kõndima}), \emph{lau} (\emph{laud}), \emph{kiku} (\emph{diktofon}), \emph{kolla} (\emph{kollane}), \emph{teda} (\emph{seda}), \emph{täh} (\emph{aitäh}), \emph{laua} (\emph{laulma}), \emph{kuku} (\emph{luku}), \emph{kiigu} (\emph{kiik}), \emph{au} (\emph{arvuti}), \emph{olla} (\emph{alla}), \emph{määgu} (\emph{mänguasjad}), \emph{kukk} (\emph{trukk} või \emph{raamat}), \emph{koss} (\emph{koos}), \emph{kõrre} (\emph{kõrgel}), \emph{katte} (\emph{kätte}), \emph{kurki} (\emph{kurku}), \emph{noosi} (\emph{joonista}), \emph{kispi} (\emph{küpsis}), \emph{takku} (\emph{traktor}), \emph{ots} (\emph{otsas}), \emph{mammu} (\emph{mari}), \emph{äi} (\emph{ai}), \emph{utu} (\emph{lutt}), \emph{kiika} (\emph{kiikuda}), \emph{kass} (\emph{kastis}), \emph{kapi} (\emph{käbi}), \emph{takka} (\emph{traktor}), \emph{ussi} (\emph{sussid}), \emph{eita} (\emph{ei taha}), \emph{ängi} (\emph{mängib}), \emph{väigi} (\emph{värvi}), \emph{uu} (\emph{õun}), \emph{uksi} (\emph{nutikas}), \emph{toodi} (\emph{joonista}), \emph{tisse} (\emph{televiisori}), \emph{tahta} (\emph{tahan}), \emph{sea} (\emph{see}), \emph{raama} (\emph{raamat}), \emph{puusi} (\emph{pluusi}), \emph{puuniks} (\emph{pruuniks}), \emph{pusti} (\emph{püsti}), \emph{punnu} (\emph{punnis}), \emph{präägust}, \emph{pettu} (\emph{peitu}), \emph{palu} (\emph{palun}), \emph{memme} (\emph{me me}), \emph{märgi} (\emph{värvi}), \emph{mängu} (\emph{mänguasjad}), \emph{mähku} (\emph{mähe}), \emph{laadi} (\emph{lahti}), \emph{kuudi} (\emph{uurima}), \emph{kumme} (\emph{kolm}), \emph{ku} (\emph{diktofon}), \emph{koo} (\emph{koos}), \emph{kõne} (\emph{põnev}), \emph{kombe} (\emph{kombekas}), \emph{kiidu} (\emph{kiisu}), \emph{kii} (\emph{diktofon}), \emph{kat} (\emph{kaks}), \emph{kalju} (\emph{karu}), \emph{kaapi} (\emph{kapi}), \emph{boodi} (\emph{voodi}), \emph{aula} (\emph{laulda}), \emph{auk} (\emph{arvuti}), \emph{aru} (\emph{arvuti}), \emph{ala} (\emph{sajajalgne}), \emph{kipsist} (\emph{küpsist}), \emph{kiisupilt} (\emph{kiisu pilt}), \emph{keti} (\emph{kõdi}), \emph{lutu} (\emph{lutt}), \emph{kumme} (\emph{kummikud}), \emph{sala} (\emph{sajajalgne}), \emph{pillu} (\emph{piilub}), \emph{patt} (\emph{part}), \emph{panni} (\emph{banaanid}), \emph{paa} (\emph{maal}), \emph{olu} (\emph{orav}), \emph{oa} (\emph{orav}), \emph{süü} (\emph{süüa}), \emph{sunni} (\emph{sünnipäev}), \emph{punni} (\emph{punnis}), \emph{käia} (\emph{käima}), \emph{võta} (\emph{võtta}), \emph{õue} (\emph{õues}), \emph{maitse} (\emph{maitsevad}), \emph{koti} (\emph{kott}), \emph{mai} (\emph{mari}), \emph{aua} (\emph{koer}), \emph{voot} (\emph{vot}), \emph{Kate} (\emph{Kattre}).
 
-VEEL JUTTU?
+Tundmatute ning vale analüüsi saanud sõnade hulka saab vähendada analüsaatori allkeelespetsiifilisemaks muutmise teel. Analüsaatori käitumise kohandamiseks tuleks anda sellele sobiv kasutajasõnastik. Kasutajasõnastik on fail, kus igal real on analüüsitav sõnavorm ja selle analüüs. Iga sõna korral kontrollib analüsaator esmalt, kas sõna on kasutajasõnastikus või mitte. Kui on, siis võetakse sealt sõna analüüs, kui ei, siis minnakse morfoloogilist analüüsi tegema. Nii saab kasutajasõnastikku panna sõnu, mida analüsaator muidu analüüsida ei suudaks, ja sõnu, mis peaksid konkreetses tekstis teistsuguse analüüsi saama.
+
+Esimesese rühma ehk onomatopoeetiliste sõnade puhul on raske nende sõnaliigilist kuuluvust määrata, seega tuleks mõelda kasutajasõnastikus uue sõnaliigi defineerimise peale. Teine küsimus on selles, kuidas onomatopoeetilisi sõnu tuvastada? CHILDES-i transkriptsioonisüsteemis on omajagu spetsiifilisi märgendusi, mida on võimalik igale sõnale külge liita. Onomatopoeetiliste sõnade markeerimiseks esitatakse märgendus \underline{@o} --> \emph{piip}@o, \emph{summ}@o \emph{summ}@o. Sellist tüüpi märgenduse kasutamine teeks onomatopoeetilised sõnad nähtavaks ja oluliselt lihtsustaks nende ekstraheerimist. Kui need sõnad on tuvastatavad, siis on võimalik neid ka automaatselt kasutajasõnastikku lisada. Ainsana on onomatopoeetiliste sõnade markeerimist kasutatud Vija alamkorpuses (781 korral). Seega, praegune olukord näeb ette seda, et onomatopoeetiliste sõnade tuvastamiseks tuleb palju käsitööd teha.
+
+Teise rühma kuuluvad häälitsused ja sõnad, mille tähendusest pole isegi konteksti olemasolul võimalik aru saada. Loomulikult ei tasu juuksekarva lõhki ajada, kuid sellised sõnad on analüsaatori jaoks problemaatilised. Näiteks \emph{t}, \emph{op},  \emph{mm}, \emph{a}, \emph{ä}, \emph{s}, \emph{emm}, \emph{mm} analüüsitakse lühenditeks. Selliste ühe või mitmetäheliste ``sõnade'' valesti analüüsimise vältimiseks ja tuvastamiseks piisaks, kui kasutada spetsiifilist märgendust @\emph{k} (mitme tähe jaoks) või @\emph{l} (ühe tähe jaoks). @\emph{l} märgendust on kasutatud Vija (343x), Zuppingu (3x) ja Kohleri (41x) alamkorpustes. ``Sõna'' \emph{eo} saab analüüsiks \emph{idu+0 \_S\_ Sg Gen}, kuid konteksti vaadates saab aru, et laps ei räägi idudest, vaid tegemist on silbitamisega. Ja selliste sõnade nagu \emph{kaka}, \emph{öö}, \emph{ämm} puhul on tegemist häälitsustega, kuid analüsaatori jaoks näevad need välja kui traditsioonilised eesti keele sõnad ja seetõttu saavad omale vale analüüsi.
+
+Kolmanda ja neljanda rühma sõnade valesti analüüsimise vastu ei saa üleskirjutaja midagi teha. Kolmanda rühma sõnad ehk pärisnimed puuduvad analüsaatori kasutajasõnastikust, aga et nende kirjapilt sarnaneb teistele eestikeelsetele sõnadele, siis saavad need ka vale analüüsi. Neljandas rühmas on palju reduplikatiivseid sõnu, mille puhul on analüsaator õigesti analüüsinud nende sõnaliigi ja morfoloogilised kategooriad, kuid on andnud vale lemma, nt \emph{väga-väga+0 \_D\_}, \emph{mine-mine+0 \_V\_ Pers Prs Imprt Sg2}. Lisaks on seal sellised sõnad, mis on muidu astmevahelduslikud, kuid on nihutatud astmevahelduseta tüüpi, nagu 
+\emph{mõmmi}, \emph{venna}, \emph{nuku}, mida analüüsitakse genitiivivormideks. Kolmanda ja neljanda rühma sõnade tuvastamiseks ja kasutajasõnastiku täiendamiseks tuleb transkriptsioone palju käsitsi üle vaadata.
+
+Viienda rühma sõnad moodustavad sõnad, mis on oma vormilt vigased (st läbinud teatud täheteisendused) ja mida CHILDES-i transkriptsioonisüsteemis kodeeritakse [\emph{= explanation}] abil. MA KIRJUTAN SIIA KONKREETSE JUTU VEEL JUURDE.
+
 
 
 \newpage
 \section{Edasine töö}
 
-Selles töös jõuti lastekeele korpuse morfoloogilise analüüsimise esimese katsetuseni ning selle töö kõige huvitamad aspektid lükkuvad paraku tulevikku. Selles osas annangi ülevaate sellest, kuidas korpusega edasi toimida ehk kuidas oleks võimalik korpuse morfoloogilise analüüsi kvaliteeti tõsta.
+Selles töös jõuti lapsekeele korpuse morfoloogilise analüüsimise esimese katsetuseni. Selles osas annangi ülevaate sellest, kuidas korpusega edasi toimida ehk kuidas oleks võimalik korpuse morfoloogilise analüüsi kvaliteeti tõsta.
 
-\textbf{Kasutajasõnastik}: selleks, et tundmatute ning vale analüüsi saanud sõnade hulka vähendada, tuleks morfoloogilise analüsaatori käitumist muuta. Analüsaatorit on võimalik allkeelespetsiifilisemaks kohandada, kui anda sellele sobiv kasutajasõnastik. Kasutajasõnastik on fail, kus igal real on analüüsitav sõnavorm ja selle analüüs. Iga sõna korral kontrollib analüsaator esmalt, kas sõna on kasutajasõnastikus või mitte. Kui on, siis võetakse sealt sõna analüüs, kui ei, siis minnakse morfoloogilist analüüsi tegema. Nii saab kasutajasõnastikku panna sõnu, mida analüsaator muidu analüüsida ei suudaks, ja sõnu, mis peaksid konkreetses tekstis teistsuguse analüüsi saama.
-
-Kasutajasõnastiku tegemiseks oleks tarvis tundmatuid sõnu lähemalt vaadata. 
-Järgnevalt esitan iga alamkorpuse 20 kõige sagedasemat tundmatut sõnavormi (sulgudes olev arv tähistab selle esinemissagedust alamkorpuses).
+\textbf{Kasutajasõnastik}: selleks, et tundmatute ning vale analüüsi saanud sõnade hulka vähendada, tuleks morfoloogilise analüsaatori käitumist muuta. Kasutajasõnastiku tegemiseks oleks tarvis tundmatuid sõnu lähemalt vaadata. Järgnevalt esitan iga alamkorpuse 20 kõige sagedasemat tundmatut sõnavormi (sulgudes olev arv tähistab selle esinemissagedust alamkorpuses).
 
 \textbf{Kõrgesaar}: \emph{vä} (651), \emph{nimodi} (251), \emph{ää} (234), \emph{brmm} (166), \emph{ästi} (129), \emph{nooh} (109), \emph{onju} (104), \emph{präegu} (100), \emph{allo} (97), \emph{Sirlin} (96), \emph{tegelt} (93), \emph{aah} (89), \emph{eksole} (80), \emph{mmh} (69), \emph{mmm} (64), \emph{Demi} (60), \emph{niimodi} (54), \emph{süia} (51), \emph{brumm} (48), \emph{ops} (47).
 
@@ -1034,7 +865,7 @@ Järgnevalt esitan iga alamkorpuse 20 kõige sagedasemat tundmatut sõnavormi (s
 
 \textbf{Zupping}: \emph{onju} (83), \emph{äla} (76), \emph{ää} (48), \emph{Eddy} (32), \emph{mõnna} (31), \emph{vä} (29), \emph{mmm} (28), \emph{taan} (27), \emph{jee} (26), \emph{opa} (26), \emph{enna} (25), \emph{daa} (25), \emph{opsti} (24), \emph{pika} (24), \emph{älle} (23), \emph{Ipa} (23), \emph{Krissu} (21), \emph{oih} (20), \emph{numbe} (20), \emph{koppadi} (19).
 
-Iga alamkorpuse sõnavorme vaadates märkame sarnaseid jooni:
+Iga alamkorpuse sõnavorme vaadates märkame sarnaseid sõnaliike:
 
 \begin{itemize}
     \item pärisnimed: \emph{Sirlin}, \emph{Atsu}, \emph{Liisbet}, \emph{Lote}, \emph{Martiina}, \emph{Ninnu}, \emph{Taimo}, \emph{Stella}, \emph{Vallu}, \emph{Sandor}, \emph{Sanna}, \emph{Kelly}, \emph{Demi}, \emph{Sandori}, \emph{Eddy}, \emph{Ipa}, \emph{Krissu};
@@ -1065,15 +896,12 @@ Zupping   & 1355                                              & \begin{tabular}[
 
 \textbf{Korpuse märgendamise ja standardiseerimise paremaks muutmine}: spontaanse kõne lindistamine ja üleskirjutamine on kahtlemata väga töö- ja ajamahukas , kuid selle töö käigus on kerkinud üles mitmeid üleskirjutamise kitsaskohti (vt ka ptk 4.2).
 
-Üheks suureks kitsaskohaks on sellised sõnad, mis on läbinud teatud täheteisendused. Osad transkribeerijad on lapse poolt öeldut kirjakeelsemaks muutnud, osad jällegi kasutavad üleskirjutamisel palju kuuldeortograafiat (ja sedagi ebajärjepidevalt). Hennoste kirjutab, et suulise kõne transkriptsiooni koostamisel on kaks printsiipi. Esimene printsiip on autentsus ehk transkriptsioonis peab säilima informatsioon, mis on suhtluse loomuse suhtes tõene. Teine printsiip on praktilisus ehk transkribeerimise tavad peavad olema andmete korraldamise ja analüüsi viisi suhtes praktilised. See tähendab seda, et märgendada tuleb neid nähtuseid, mida uurijal on tarvis, kuid et see üldist pilti üle ei küllastaks. \citep[92--93]{Hennoste} On arusaadav, et iga transkriptsioon on üles kirjutatud vastavalt uurija eesmärkidele, kuid siinkohal tuleks mõelda sellele, kuidas selline üleskirjutamise viis mõjutab sellele järgnevat analüüsi ja töötlust. Morfoloogilise analüüsi seisukohalt on hetkeolukord selline, et suur osa vale analüüsi saanud (vt alaptk 5.2 esitatud viiendat sõnarühma) ja tundmatuks jäänud sõnu sõltuvad paraku üleskirjutamise viisist. Küsimus ei ole selles, et korpuse tegija peab kvaliteetsema analüüsi nimel loobuma autentsusest ja praktilisusest, vaid selles, kas transkribeerija on nõus natuke rohkem vaeva nägema ja valmis üles märkima nii vigaseid (ehk mida laps tegelikult ütles) kui õigeid (ehk mida öelda taheti, kirjakeelne variant) vorme.
+Üheks suureks kitsaskohaks on sellised sõnad, mis on läbinud teatud täheteisendused. Osad transkribeerijad on lapse poolt öeldut kirjakeelsemaks muutnud, osad jällegi kasutavad üleskirjutamisel palju kuuldeortograafiat (ja sedagi ebajärjepidevalt). Hennoste kirjutab, et suulise kõne transkriptsiooni koostamisel on kaks printsiipi. Esimene printsiip on autentsus ehk transkriptsioonis peab säilima informatsioon, mis on suhtluse loomuse suhtes tõene. Teine printsiip on praktilisus ehk transkribeerimise tavad peavad olema andmete korraldamise ja analüüsi viisi suhtes praktilised. See tähendab seda, et märgendada tuleb neid nähtuseid, mida uurijal on tarvis, kuid et see üldist pilti üle ei küllastaks. \citep[92--93]{Hennoste} On arusaadav, et iga transkriptsioon on üles kirjutatud vastavalt uurija eesmärkidele, kuid siinkohal tuleks mõelda sellele, kuidas selline üleskirjutamise viis mõjutab sellele järgnevat analüüsi ja töötlust. Morfoloogilise analüüsi seisukohalt on hetkeolukord selline, et suur osa vale analüüsi saanud (vt alaptk 4.2 esitatud viiendat sõnarühma) ja tundmatuks jäänud sõnu sõltuvad paraku üleskirjutamise viisist. Küsimus ei ole selles, et korpuse tegija peab kvaliteetsema analüüsi nimel loobuma autentsusest ja praktilisusest, vaid selles, kas transkribeerija on nõus natuke rohkem vaeva nägema ja valmis üles märkima nii vigaseid (ehk mida laps tegelikult ütles) kui õigeid (ehk mida öelda taheti, kirjakeelne variant) vorme.
 
-Teine aspekt, mida põgusalt alapeatükis 4.2 puudutasin, on onomatopoeetilised sõnad ja häälitsused. CHAT konventsioonide järgi on iga sõna külge võimalik liita spetsiaalseid märgendusi: \underline{@o} on onomatopoeetilise sõna markeerimiseks, \underline{@x} saab kasutada sõna välja jätmiseks, \underline{@k} abil saab silpe markeerida, \underline{@l} abil saab ühte häälikut markeerida, \underline{@c} ehk lapse väljamõeldud vormi markeerimiseks, \underline{@z} abil saab transkribeerija kasutada oma defineeritud märgendust jpm. Hetkeolukord näeb ette, et kasutajasõnastikku täiendatakse käsitsi, kuid spetsiaalsete märgenduste kasutamine võimaldaks seda automaatselt teha.
+Teine aspekt (vt ptk 4.2) on onomatopoeetilised sõnad ja häälitsused. CHILDES-i konventsioonide järgi on iga sõna külge võimalik liita spetsiaalseid märgendusi: \underline{@o} on onomatopoeetilise sõna markeerimiseks, \underline{@x} saab kasutada sõna välja jätmiseks, \underline{@k} abil saab silpe markeerida, \underline{@l} abil saab ühte häälikut markeerida, \underline{@c} ehk lapse väljamõeldud vormi markeerimiseks, \underline{@z} abil saab transkribeerija kasutada oma defineeritud märgendust jpm. Hetkeolukord näeb ette, et kasutajasõnastikku täiendatakse käsitsi, kuid spetsiaalsete märgenduste kasutamine võimaldaks seda automaatselt teha.
 
-SPETS MÄRGENDUSED: VIJA-OTHRALT, ZUPPING: 1X, ÜLEJÄÄNUD 0X
+\textbf{Korpuse ühestamine}: korpus on praegusel kujul ühestamata, see tähendab, et kõikvõimalikud analüüsid on alles jäetud. Pikemas perspektiivis on kindlasti plaan teha nii, et iga sõna saaks vaid ühe analüüsivariandi, kuid see nõuab palju käsitsi üle vaatamist.
 
-\textbf{Korpuse ühestamine}: korpus on praegusel kujul ühestamata, see tähendab, et kõikvõimalikud analüüsid on alles jäetud. Pikemas perspektiivis on kindlasti plaan teha nii, et iga sõna saaks vaid ühe analüüsivariandi.
-
-VEEL JUTTU? ALGSELT OLI PLAAN KA MINGISUGUST ESMAST STATISTIKAT LISADA, AGA MA EI JÕUA. OLENEB MUIDUGI ÜLDISELT TÖÖKVALITEEDIST. KUI EI TULE PALJU ÜMBERTEGEMISI, SIIS ÄKKI..
 
 \newpage
 \addcontentsline{toc}{section}{Kokkuvõte}
